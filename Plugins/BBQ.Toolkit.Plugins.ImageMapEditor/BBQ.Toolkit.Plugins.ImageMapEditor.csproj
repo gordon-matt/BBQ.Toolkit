@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F430DE71-941B-4C93-951E-9C6F5FF447E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BBQ.Toolkit.Plugins.ImageMapEditor</RootNamespace>
+    <AssemblyName>BBQ.Toolkit.Plugins.ImageMapEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design">
+      <HintPath>..\..\Lib\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\Lib\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImageMapEditorPlugin.cs" />
+    <Compile Include="Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CircleHotSpot.cs" />
+    <Compile Include="Models\ImageMap.cs" />
+    <Compile Include="Models\ImageMapHotSpot.cs" />
+    <Compile Include="Models\PolygonHotSpot.cs" />
+    <Compile Include="Models\RectangleHotSpot.cs" />
+    <Compile Include="Models\Shape.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddCircleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddCircleForm.Designer.cs">
+      <DependentUpon>AddCircleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPolygonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddPolygonForm.Designer.cs">
+      <DependentUpon>AddPolygonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddRectangleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddRectangleForm.Designer.cs">
+      <DependentUpon>AddRectangleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FileNameInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FileNameInputDialog.Designer.cs">
+      <DependentUpon>FileNameInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HotSpotInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HotSpotInputDialog.Designer.cs">
+      <DependentUpon>HotSpotInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RadiusInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RadiusInputDialog.Designer.cs">
+      <DependentUpon>RadiusInputDialog.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddCircleForm.resx">
+      <DependentUpon>AddCircleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddPolygonForm.resx">
+      <DependentUpon>AddPolygonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddRectangleForm.resx">
+      <DependentUpon>AddRectangleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FileNameInputDialog.resx">
+      <DependentUpon>FileNameInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HotSpotInputDialog.resx">
+      <DependentUpon>HotSpotInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RadiusInputDialog.resx">
+      <DependentUpon>RadiusInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Add.png" />
+    <Content Include="Images\Cancel.png" />
+    <Content Include="Images\Circle.png" />
+    <Content Include="Images\OK.png" />
+    <Content Include="Images\Open.png" />
+    <Content Include="Images\Polygon.png" />
+    <Content Include="Images\Radius.png" />
+    <Content Include="Images\Rectangle.png" />
+    <Content Include="Images\Refresh.png" />
+    <Content Include="Images\Retry.png" />
+    <Content Include="Images\Shapes.png" />
+    <Content Include="Images\ShapesIcon.ico" />
+    <Content Include="Images\Start.png" />
+    <Content Include="Images\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BBQ.Toolkit.Common\BBQ.Toolkit.Common.csproj">
+      <Project>{9DA83345-A476-4889-BC54-37FA7822A551}</Project>
+      <Name>BBQ.Toolkit.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY /Y /S "$(TargetDir)*.*" "$(SolutionDir)$(SolutionName)\$(OutDir)Plugins\*.*"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
