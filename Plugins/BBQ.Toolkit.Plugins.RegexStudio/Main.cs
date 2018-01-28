@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using BBQ.Toolkit.Plugins.RegexStudio.Controls;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.RegexStudio
 {
@@ -202,7 +203,7 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
         }
         private void cbNonECMAOptions_CheckedChanged(object sender, EventArgs e)
         {
-            CheckBox box = sender as CheckBox;
+            KryptonCheckBox box = sender as KryptonCheckBox;
             if (box.Checked)
             {
                 this.cbECMAScript.Checked = false;

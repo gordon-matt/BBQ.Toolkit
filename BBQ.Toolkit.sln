@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBQ.Toolkit", "BBQ.Toolkit\BBQ.Toolkit.csproj", "{57A12DDF-07C8-4908-9087-17701C415FB0}"
 EndProject
@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBQ.Toolkit.Plugins.SimpleC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBQ.Toolkit.Plugins.ImageMapEditor", "Plugins\BBQ.Toolkit.Plugins.ImageMapEditor\BBQ.Toolkit.Plugins.ImageMapEditor.csproj", "{F430DE71-941B-4C93-951E-9C6F5FF447E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kore", "..\..\Widecommerce\KoreCMS\Kore\Kore.csproj", "{07DA13DA-9F8D-405B-9E84-2E905F5C511A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kore", "..\..\Widecommerce\KoreCMS\Kore\Kore.csproj", "{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{0DCA0D5A-F162-4028-A1A6-8057A5D7DDBE}"
 EndProject
@@ -137,16 +137,16 @@ Global
 		{F430DE71-941B-4C93-951E-9C6F5FF447E3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F430DE71-941B-4C93-951E-9C6F5FF447E3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F430DE71-941B-4C93-951E-9C6F5FF447E3}.Release|x86.ActiveCfg = Release|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A}.Release|x86.ActiveCfg = Release|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,7 +159,10 @@ Global
 		{4AA6557C-DFDB-466E-8096-AA88D80D0B6D} = {B3CA5EF0-20F3-49BC-8C29-7ACC7F46001D}
 		{3D0B147D-5293-43A9-AE44-6FAB08F818C4} = {B3CA5EF0-20F3-49BC-8C29-7ACC7F46001D}
 		{F430DE71-941B-4C93-951E-9C6F5FF447E3} = {B3CA5EF0-20F3-49BC-8C29-7ACC7F46001D}
-		{07DA13DA-9F8D-405B-9E84-2E905F5C511A} = {0DCA0D5A-F162-4028-A1A6-8057A5D7DDBE}
+		{F5B45103-1BE4-401D-A90D-D4CD7A0AC5D4} = {0DCA0D5A-F162-4028-A1A6-8057A5D7DDBE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE586885-49C6-4994-A08B-1CA3A7667018}
 	EndGlobalSection
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
