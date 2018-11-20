@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BBQ.Toolkit.Common</RootNamespace>
     <AssemblyName>BBQ.Toolkit.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -39,6 +39,9 @@
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
       <HintPath>..\Lib\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Kore, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\KoreFramework.1.0.4\lib\Kore.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -72,12 +75,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Widecommerce\KoreCMS\Kore\Kore.csproj">
-      <Project>{07da13da-9f8d-405b-9e84-2e905f5c511a}</Project>
-      <Name>Kore</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Forms\SqlConnectionControl.resx">
       <DependentUpon>SqlConnectionControl.cs</DependentUpon>
