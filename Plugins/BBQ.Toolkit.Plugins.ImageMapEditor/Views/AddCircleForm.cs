@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BBQ.Toolkit.Plugins.ImageMapEditor.Models;
 using ComponentFactory.Krypton.Toolkit;
@@ -24,7 +20,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
 
         private Pen pen = new Pen(Color.Blue, 2.0F);
 
-        #endregion
+        #endregion Private Members
 
         public CircleHotSpot HotSpot { get; private set; }
 
@@ -52,7 +48,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             pen.Dispose();
         }
 
-        #endregion
+        #endregion Constructor & Form Event Handlers
 
         private void tsBtnRetry_Click(object sender, EventArgs e)
         {

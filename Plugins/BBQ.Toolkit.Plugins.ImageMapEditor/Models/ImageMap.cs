@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace BBQ.Toolkit.Plugins.ImageMapEditor.Models
@@ -12,7 +10,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Models
             HotSpots = new List<ImageMapHotSpot>();
         }
 
-        public string ID { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
@@ -21,7 +19,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Models
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.AppendFormat(@"<map id=""{0}"" name=""{1}"">", ID, Name);
+            sb.AppendFormat(@"<map id=""{0}"" name=""{1}"">", Id, Name);
 
             foreach (var hotSpot in HotSpots)
             {

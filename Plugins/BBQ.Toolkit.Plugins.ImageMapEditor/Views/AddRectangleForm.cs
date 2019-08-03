@@ -21,7 +21,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
 
         private Pen pen = new Pen(Color.Blue, 2.0F);
 
-        #endregion
+        #endregion Private Members
 
         public RectangleHotSpot HotSpot { get; private set; }
 
@@ -48,7 +48,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             pen.Dispose();
         }
 
-        #endregion
+        #endregion Constructor & Form Event Handlers
 
         private void tsBtnRetry_Click(object sender, EventArgs e)
         {

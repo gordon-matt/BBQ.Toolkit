@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BBQ.Toolkit.Plugins.ImageMapEditor.Models
+﻿namespace BBQ.Toolkit.Plugins.ImageMapEditor.Models
 {
-    public enum Shape
+    public enum Shape : byte
     {
         Rectangle,
         Circle,

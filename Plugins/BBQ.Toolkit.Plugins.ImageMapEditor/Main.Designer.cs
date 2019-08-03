@@ -90,9 +90,9 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             // pictureBox
             // 
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.Location = new System.Drawing.Point(0, 39);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(783, 408);
+            this.pictureBox.Size = new System.Drawing.Size(783, 369);
             this.pictureBox.TabIndex = 23;
             this.pictureBox.TabStop = false;
             // 
@@ -110,8 +110,8 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.txtHtml);
             this.Name = "Main";
             this.Size = new System.Drawing.Size(783, 526);

@@ -10,8 +10,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Models
 
         public override string ToString()
         {
-            return string.Format(@"<area shape=""circle"" coords=""{0},{1},{2}"" href=""{3}"" alt=""{4}"" />",
-                Center.X, Center.Y, Radius, Url, Title);
+            return $@"<area shape=""circle"" coords=""{Center.X},{Center.Y},{Radius}"" href=""{Url}"" alt=""{Title}"" />";
         }
     }
 }
