@@ -17,6 +17,7 @@ namespace BBQ.Toolkit.Common.Forms
         private const string SQL_CONNECTION_STRING_FORMAT_WA = "Data Source={0};Initial Catalog={1};Integrated Security=true";
 
         public delegate void DatabaseChangedEventHandler();
+
         public event DatabaseChangedEventHandler DatabaseChanged;
 
         public string Server
@@ -42,6 +43,7 @@ namespace BBQ.Toolkit.Common.Forms
                 else { cmbServer.Text = value; }
             }
         }
+
         public string Database
         {
             get
@@ -65,16 +67,19 @@ namespace BBQ.Toolkit.Common.Forms
                 else { cmbDatabase.Text = value; }
             }
         }
+
         public string UserName
         {
             get { return txtUserName.Text.Trim(); }
             set { txtUserName.Text = value; }
         }
+
         public string Password
         {
             get { return txtPassword.Text.Trim(); }
             set { txtPassword.Text = value; }
         }
+
         public bool IntegratedSecurity
         {
             get { return cbIntegratedSecurity.Checked; }
@@ -126,7 +131,7 @@ namespace BBQ.Toolkit.Common.Forms
                     }
                 }
 
-                #endregion
+                #endregion Checks
 
                 if (IntegratedSecurity)
                 {
@@ -171,17 +176,15 @@ namespace BBQ.Toolkit.Common.Forms
         private void cmbDatabase_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbTable.Items.Clear();
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (var connection = new SqlConnection(ConnectionString))
             {
                 Tables = connection.GetTableNames();
                 Tables.ForEach(x => cmbTable.Items.Add(x));
 
-                if (DatabaseChanged != null)
-                {
-                    DatabaseChanged();
-                }
+                DatabaseChanged?.Invoke();
             }
         }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             cmbServer.Items.Clear();
@@ -202,7 +205,7 @@ namespace BBQ.Toolkit.Common.Forms
             if (!string.IsNullOrEmpty(Server))
             {
                 cmbDatabase.Items.Clear();
-                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                using (var connection = new SqlConnection(ConnectionString))
                 {
                     connection.GetDatabaseNames().ForEach(x => cmbDatabase.Items.Add(x));
                 }

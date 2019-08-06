@@ -17,52 +17,58 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
 
         public Main()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.rTxtInput.Text = "This is a test: Project test EndProject";
-            this.txtOutput.Text = "This is for the output";
-            this.studioFile = new RegexStudioFile();
+            rTxtInput.Text = "This is a test: Project test EndProject";
+            txtOutput.Text = "This is for the output";
+            studioFile = new RegexStudioFile();
         }
 
         private void btnFindMatches_Click(object sender, EventArgs e)
         {
-            Regex regex = this.BuildRegex();
+            var regex = BuildRegex();
             if (regex != null)
             {
-                this.ClearMatches();
-                foreach (Match match in regex.Matches(this.InputText))
+                ClearMatches();
+                foreach (Match match in regex.Matches(InputText))
                 {
-                    this.tvOutput.AddMatch(regex, match);
+                    tvOutput.AddMatch(regex, match);
                 }
             }
         }
+
         private void btnReplace_Click(object sender, EventArgs e)
         {
-            this.txtOutput.Text = this.BuildRegex().Replace(this.InputText, this.ReplacementString);
+            txtOutput.Text = BuildRegex().Replace(InputText, ReplacementString);
         }
+
         private void btnShowCSharpCode_Click(object sender, EventArgs e)
         {
-            this.txtOutput.Text = this.BuildCSharpCode();
+            txtOutput.Text = BuildCSharpCode();
         }
 
         private string BuildCSharpCode()
         {
-            Regex regex = this.BuildRegex();
+            var regex = BuildRegex();
+
             if (regex == null)
             {
                 return string.Empty;
             }
-            StringBuilder builder = new StringBuilder();
+
+            var builder = new StringBuilder();
             builder.Append("Regex regex = new Regex(");
             builder.Append(Environment.NewLine);
             builder.Append("@\"");
             builder.Append(regex.ToString());
             builder.Append("\",");
             builder.Append(Environment.NewLine);
+
             bool flag = false;
-            if (this.cbCompiled.Checked)
+            if (cbCompiled.Checked)
             {
                 if (flag)
                 {
@@ -72,7 +78,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
                 builder.Append("RegexOptions.Compiled");
                 flag = true;
             }
-            if (this.cbECMAScript.Checked)
+
+            if (cbECMAScript.Checked)
             {
                 if (flag)
                 {
@@ -82,7 +89,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
                 builder.Append("RegexOptions.ECMAScript");
                 flag = true;
             }
-            if (this.cbExplicitCapture.Checked)
+
+            if (cbExplicitCapture.Checked)
             {
                 if (flag)
                 {
@@ -92,7 +100,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
                 builder.Append("RegexOptions.ExplicitCapture");
                 flag = true;
             }
-            if (this.cbIgnoreCase.Checked)
+
+            if (cbIgnoreCase.Checked)
             {
                 if (flag)
                 {
@@ -102,7 +111,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
                 builder.Append("RegexOptions.IgnoreCase");
                 flag = true;
             }
-            if (this.cbIgnorePatternWS.Checked)
+
+            if (cbIgnorePatternWS.Checked)
             {
                 if (flag)
                 {
@@ -112,7 +122,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
                 builder.Append("RegexOptions.IgnorePatternWhitespace");
                 flag = true;
             }
-            if (this.cbMultiline.Checked)
+
+            if (cbMultiline.Checked)
             {
                 if (flag)
                 {
@@ -122,7 +133,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
                 builder.Append("RegexOptions.Multiline");
                 flag = true;
             }
-            if (this.cbRightToLeft.Checked)
+
+            if (cbRightToLeft.Checked)
             {
                 if (flag)
                 {
@@ -132,7 +144,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
                 builder.Append("RegexOptions.RightToLeft");
                 flag = true;
             }
-            if (this.cbSingleline.Checked)
+
+            if (cbSingleline.Checked)
             {
                 if (flag)
                 {
@@ -142,47 +155,58 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
                 builder.Append("RegexOptions.Singleline");
                 flag = true;
             }
+
             builder.Append(");");
             return builder.ToString();
         }
+
         private Regex BuildRegex()
         {
-            RegexOptions none = RegexOptions.None;
-            if (this.cbCompiled.Checked)
+            var none = RegexOptions.None;
+
+            if (cbCompiled.Checked)
             {
                 none |= RegexOptions.Compiled;
             }
-            if (this.cbECMAScript.Checked)
+
+            if (cbECMAScript.Checked)
             {
                 none |= RegexOptions.ECMAScript;
             }
-            if (this.cbExplicitCapture.Checked)
+
+            if (cbExplicitCapture.Checked)
             {
                 none |= RegexOptions.ExplicitCapture;
             }
-            if (this.cbIgnoreCase.Checked)
+
+            if (cbIgnoreCase.Checked)
             {
                 none |= RegexOptions.IgnoreCase;
             }
-            if (this.cbIgnorePatternWS.Checked)
+
+            if (cbIgnorePatternWS.Checked)
             {
                 none |= RegexOptions.IgnorePatternWhitespace;
             }
-            if (this.cbMultiline.Checked)
+
+            if (cbMultiline.Checked)
             {
                 none |= RegexOptions.Multiline;
             }
-            if (this.cbRightToLeft.Checked)
+
+            if (cbRightToLeft.Checked)
             {
                 none |= RegexOptions.RightToLeft;
             }
-            if (this.cbSingleline.Checked)
+
+            if (cbSingleline.Checked)
             {
                 none |= RegexOptions.Singleline;
             }
+
             try
             {
-                return new Regex(this.Pattern, none);
+                return new Regex(Pattern, none);
             }
             catch (Exception exception)
             {
@@ -193,149 +217,158 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
 
         private void cbECMAScript_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.cbECMAScript.Checked)
+            if (cbECMAScript.Checked)
             {
-                this.cbSingleline.Checked = false;
-                this.cbExplicitCapture.Checked = false;
-                this.cbRightToLeft.Checked = false;
-                this.cbIgnorePatternWS.Checked = false;
+                cbSingleline.Checked = false;
+                cbExplicitCapture.Checked = false;
+                cbRightToLeft.Checked = false;
+                cbIgnorePatternWS.Checked = false;
             }
         }
+
         private void cbNonECMAOptions_CheckedChanged(object sender, EventArgs e)
         {
-            KryptonCheckBox box = sender as KryptonCheckBox;
+            var box = sender as KryptonCheckBox;
             if (box.Checked)
             {
-                this.cbECMAScript.Checked = false;
+                cbECMAScript.Checked = false;
             }
         }
 
         private void Clear()
         {
-            this.ClearMatches();
-            this.rTxtInput.Clear();
-            this.Pattern = string.Empty;
-            this.ReplacementString = string.Empty;
-            this.cbCompiled.Checked = true;
-            this.cbECMAScript.Checked = false;
-            this.cbExplicitCapture.Checked = false;
-            this.cbIgnoreCase.Checked = true;
-            this.cbIgnorePatternWS.Checked = false;
-            this.cbMultiline.Checked = true;
-            this.cbRightToLeft.Checked = false;
-            this.cbSingleline.Checked = false;
+            ClearMatches();
+            rTxtInput.Clear();
+            Pattern = string.Empty;
+            ReplacementString = string.Empty;
+            cbCompiled.Checked = true;
+            cbECMAScript.Checked = false;
+            cbExplicitCapture.Checked = false;
+            cbIgnoreCase.Checked = true;
+            cbIgnorePatternWS.Checked = false;
+            cbMultiline.Checked = true;
+            cbRightToLeft.Checked = false;
+            cbSingleline.Checked = false;
         }
+
         private void ClearMatches()
         {
-            this.tvOutput.Nodes.Clear();
-            this.txtOutput.Clear();
-            this.rTxtInput.SelectAll();
-            this.rTxtInput.SelectionBackColor = Color.White;
+            tvOutput.Nodes.Clear();
+            txtOutput.Clear();
+            rTxtInput.SelectAll();
+            rTxtInput.SelectionBackColor = Color.White;
         }
+
         private void LoadStudioFile()
         {
-            this.cbCompiled.Checked = this.studioFile.Compiled;
-            this.cbECMAScript.Checked = this.studioFile.ECMAScript;
-            this.cbExplicitCapture.Checked = this.studioFile.ExplicitCapture;
-            this.cbIgnoreCase.Checked = this.studioFile.IgnoreCase;
-            this.cbIgnorePatternWS.Checked = this.studioFile.IgnorePatternWhitespace;
-            this.cbMultiline.Checked = this.studioFile.Multiline;
-            this.cbRightToLeft.Checked = this.studioFile.RightToLeft;
-            this.cbSingleline.Checked = this.studioFile.Singleline;
-            this.InputText = this.studioFile.MatchText;
-            this.Pattern = this.studioFile.Pattern;
-            this.ReplacementString = this.studioFile.ReplacementString;
+            cbCompiled.Checked = studioFile.Compiled;
+            cbECMAScript.Checked = studioFile.ECMAScript;
+            cbExplicitCapture.Checked = studioFile.ExplicitCapture;
+            cbIgnoreCase.Checked = studioFile.IgnoreCase;
+            cbIgnorePatternWS.Checked = studioFile.IgnorePatternWhitespace;
+            cbMultiline.Checked = studioFile.Multiline;
+            cbRightToLeft.Checked = studioFile.RightToLeft;
+            cbSingleline.Checked = studioFile.Singleline;
+            InputText = studioFile.MatchText;
+            Pattern = studioFile.Pattern;
+            ReplacementString = studioFile.ReplacementString;
         }
 
         private void mnuMainFileNew_Click(object sender, EventArgs e)
         {
-            this.Clear();
+            Clear();
         }
+
         private void mnuMainFileOpen_Click(object sender, EventArgs e)
         {
-            if (this.dlgOpenFile.ShowDialog() == DialogResult.OK)
+            if (dlgOpenFile.ShowDialog() == DialogResult.OK)
             {
-                this.studioFile = RegexStudioFile.Load(this.dlgOpenFile.FileName);
-                this.Clear();
-                this.LoadStudioFile();
+                studioFile = RegexStudioFile.Load(dlgOpenFile.FileName);
+                Clear();
+                LoadStudioFile();
             }
         }
+
         private void mnuMainFileSave_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(this.studioFile.FilePath))
+            if (!string.IsNullOrEmpty(studioFile.FilePath))
             {
-                this.SaveStudioFile(this.studioFile.FilePath);
+                SaveStudioFile(studioFile.FilePath);
             }
-            else if (this.dlgSaveFile.ShowDialog() == DialogResult.OK)
+            else if (dlgSaveFile.ShowDialog() == DialogResult.OK)
             {
-                this.SaveStudioFile(this.dlgSaveFile.FileName);
+                SaveStudioFile(dlgSaveFile.FileName);
             }
         }
+
         private void mnuMainFileSaveAs_Click(object sender, EventArgs e)
         {
-            if (this.dlgSaveFile.ShowDialog() == DialogResult.OK)
+            if (dlgSaveFile.ShowDialog() == DialogResult.OK)
             {
-                this.SaveStudioFile(this.dlgSaveFile.FileName);
+                SaveStudioFile(dlgSaveFile.FileName);
             }
         }
 
         private void rTxtInput_Enter(object sender, EventArgs e)
         {
-            if (this.rTxtInput.Text.Equals("This is a test: Project test EndProject", StringComparison.OrdinalIgnoreCase))
+            if (rTxtInput.Text.Equals("This is a test: Project test EndProject", StringComparison.OrdinalIgnoreCase))
             {
-                this.rTxtInput.Clear();
+                rTxtInput.Clear();
             }
         }
 
         private void SaveStudioFile(string filePath)
         {
-            this.studioFile.Compiled = this.cbCompiled.Checked;
-            this.studioFile.ECMAScript = this.cbECMAScript.Checked;
-            this.studioFile.ExplicitCapture = this.cbExplicitCapture.Checked;
-            this.studioFile.IgnoreCase = this.cbIgnoreCase.Checked;
-            this.studioFile.IgnorePatternWhitespace = this.cbIgnorePatternWS.Checked;
-            this.studioFile.Multiline = this.cbMultiline.Checked;
-            this.studioFile.RightToLeft = this.cbRightToLeft.Checked;
-            this.studioFile.Singleline = this.cbSingleline.Checked;
-            this.studioFile.MatchText = this.InputText;
-            this.studioFile.Pattern = this.Pattern;
-            this.studioFile.ReplacementString = this.ReplacementString;
-            this.studioFile.Save(filePath);
+            studioFile.Compiled = cbCompiled.Checked;
+            studioFile.ECMAScript = cbECMAScript.Checked;
+            studioFile.ExplicitCapture = cbExplicitCapture.Checked;
+            studioFile.IgnoreCase = cbIgnoreCase.Checked;
+            studioFile.IgnorePatternWhitespace = cbIgnorePatternWS.Checked;
+            studioFile.Multiline = cbMultiline.Checked;
+            studioFile.RightToLeft = cbRightToLeft.Checked;
+            studioFile.Singleline = cbSingleline.Checked;
+            studioFile.MatchText = InputText;
+            studioFile.Pattern = Pattern;
+            studioFile.ReplacementString = ReplacementString;
+            studioFile.Save(filePath);
         }
 
         private void tvOutput_GroupChanged(GroupChangedEventArgs e)
         {
-            this.rTxtInput.SelectAll();
-            this.rTxtInput.SelectionBackColor = Color.White;
-            this.txtOutput.Text = e.Group.Value;
-            this.rTxtInput.Select(e.Group.Index, e.Group.Length);
-            this.rTxtInput.SelectionBackColor = Color.Yellow;
-            this.rTxtInput.ScrollToCaret();
+            rTxtInput.SelectAll();
+            rTxtInput.SelectionBackColor = Color.White;
+            txtOutput.Text = e.Group.Value;
+            rTxtInput.Select(e.Group.Index, e.Group.Length);
+            rTxtInput.SelectionBackColor = Color.Yellow;
+            rTxtInput.ScrollToCaret();
         }
+
         private void tvOutput_MatchChanged(MatchChangedEventArgs e)
         {
-            this.rTxtInput.SelectAll();
-            this.rTxtInput.SelectionBackColor = Color.White;
-            this.txtOutput.Text = e.Match.Value;
-            this.rTxtInput.Select(e.Match.Index, e.Match.Length);
-            this.rTxtInput.SelectionBackColor = Color.Yellow;
-            this.rTxtInput.ScrollToCaret();
+            rTxtInput.SelectAll();
+            rTxtInput.SelectionBackColor = Color.White;
+            txtOutput.Text = e.Match.Value;
+            rTxtInput.Select(e.Match.Index, e.Match.Length);
+            rTxtInput.SelectionBackColor = Color.Yellow;
+            rTxtInput.ScrollToCaret();
         }
 
         private string InputText
         {
-            get { return this.rTxtInput.Text.Trim(); }
-            set { this.rTxtInput.Text = value; }
+            get { return rTxtInput.Text.Trim(); }
+            set { rTxtInput.Text = value; }
         }
+
         private string Pattern
         {
-            get { return this.txtPattern.Text.Trim(); }
-            set { this.txtPattern.Text = value; }
+            get { return txtPattern.Text.Trim(); }
+            set { txtPattern.Text = value; }
         }
+
         private string ReplacementString
         {
-            get { return this.txtReplacementString.Text; }
-            set { this.txtReplacementString.Text = value; }
+            get { return txtReplacementString.Text; }
+            set { txtReplacementString.Text = value; }
         }
     }
 }

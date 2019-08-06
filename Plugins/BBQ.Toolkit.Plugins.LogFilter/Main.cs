@@ -1,23 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Kore;
-using Kore.IO;
 using Kore.Collections;
-using System.IO;
+using Kore.IO;
 
 namespace BBQ.Toolkit.Plugins.LogFilter
 {
-    public enum OutputType
+    public enum OutputType : byte
     {
         Distinct,
         Matching
     }
+
     public partial class Main : UserControl
     {
         private string InputFile
@@ -25,11 +22,13 @@ namespace BBQ.Toolkit.Plugins.LogFilter
             get { return txtInput.Text.Trim(); }
             set { txtInput.Text = value; }
         }
+
         private string OutputFile
         {
             get { return txtOutput.Text.Trim(); }
             set { txtOutput.Text = value; }
         }
+
         private OutputType OutputType
         {
             get
@@ -49,6 +48,7 @@ namespace BBQ.Toolkit.Plugins.LogFilter
                 }
             }
         }
+
         private string Matching
         {
             get { return txtMatching.Text; }

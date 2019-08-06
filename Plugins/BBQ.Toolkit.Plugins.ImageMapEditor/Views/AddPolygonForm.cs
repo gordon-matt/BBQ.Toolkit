@@ -13,11 +13,9 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
         #region Private Members
 
         private readonly Image image;
-
         private bool inDrawingMode = false;
-        private List<Point> points;
-
         private Pen pen = new Pen(Color.Blue, 2.0F);
+        private List<Point> points;
 
         #endregion Private Members
 
@@ -29,6 +27,12 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
         {
             InitializeComponent();
             this.image = image;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            pen.Dispose();
         }
 
         private void AddPolygonForm_Load(object sender, EventArgs e)
@@ -45,36 +49,22 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             btnStop.Enabled = true;
         }
 
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            pen.Dispose();
-        }
-
         #endregion Constructor & Form Event Handlers
 
-        private void tsBtnOK_Click(object sender, EventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
-            var dialog = new HotSpotInputDialog();
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                HotSpot = new PolygonHotSpot
-                {
-                    Title = dialog.AlternateText,
-                    Url = dialog.Url,
-                    Coordinates = points
-                };
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
+            inDrawingMode = true;
+            points = new List<Point>();
+            pictureBox.Invalidate();
+            btnStart.Enabled = false;
+            btnStop.Enabled = true;
         }
 
-        private void tsBtnCancel_Click(object sender, EventArgs e)
+        private void btnStop_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            inDrawingMode = false;
+            btnStop.Enabled = false;
+            btnStart.Enabled = true;
         }
 
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
@@ -109,20 +99,28 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void tsBtnCancel_Click(object sender, EventArgs e)
         {
-            inDrawingMode = true;
-            points = new List<Point>();
-            pictureBox.Invalidate();
-            btnStart.Enabled = false;
-            btnStop.Enabled = true;
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
 
-        private void btnStop_Click(object sender, EventArgs e)
+        private void tsBtnOK_Click(object sender, EventArgs e)
         {
-            inDrawingMode = false;
-            btnStop.Enabled = false;
-            btnStart.Enabled = true;
+            var dialog = new HotSpotInputDialog();
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                HotSpot = new PolygonHotSpot
+                {
+                    Title = dialog.AlternateText,
+                    Url = dialog.Url,
+                    Coordinates = points
+                };
+
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
     }
 }

@@ -10,39 +10,14 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
 {
     public partial class Main : UserControl
     {
-        private Pen pen = new Pen(Color.Blue, 2.0F);
+        private Graphics g;
         private Image image;
         private ImageMap imageMap = new ImageMap();
-        private Graphics g;
+        private Pen pen = new Pen(Color.Blue, 2.0F);
 
         public Main()
         {
             InitializeComponent();
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            LoadImage();
-        }
-
-        private void LoadImage()
-        {
-            var dialog = new FileNameInputDialog();
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                image = Image.FromFile(dialog.SelectedFileName);
-
-                pictureBox.Image = image;
-                pictureBox.Width = image.Width;
-                pictureBox.Height = image.Height;
-                g = pictureBox.CreateGraphics();
-            }
-            else
-            {
-                dialog.Dispose();
-                LoadImage();
-            }
         }
 
         private void AddHotSpot(ImageMapHotSpot hotSpot)
@@ -71,15 +46,29 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             g.DrawRectangle(pen, rectangle);
         }
 
-        private void tsBtnRectangle_Click(object sender, EventArgs e)
+        private void LoadImage()
         {
-            var form = new AddRectangleForm(image);
+            var dialog = new FileNameInputDialog();
 
-            if (form.ShowDialog() == DialogResult.OK)
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                AddHotSpot(form.HotSpot);
-                DrawRectangle(form.HotSpot.TopLeft, form.HotSpot.BottomRight);
+                image = Image.FromFile(dialog.SelectedFileName);
+
+                pictureBox.Image = image;
+                pictureBox.Width = image.Width;
+                pictureBox.Height = image.Height;
+                g = pictureBox.CreateGraphics();
             }
+            else
+            {
+                dialog.Dispose();
+                LoadImage();
+            }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            LoadImage();
         }
 
         private void tsBtnCircle_Click(object sender, EventArgs e)
@@ -101,6 +90,17 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             {
                 AddHotSpot(form.HotSpot);
                 DrawPolygon(form.HotSpot.Coordinates);
+            }
+        }
+
+        private void tsBtnRectangle_Click(object sender, EventArgs e)
+        {
+            var form = new AddRectangleForm(image);
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                AddHotSpot(form.HotSpot);
+                DrawRectangle(form.HotSpot.TopLeft, form.HotSpot.BottomRight);
             }
         }
     }

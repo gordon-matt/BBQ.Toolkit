@@ -10,45 +10,24 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
     {
         #region IUserControlPlugin Members
 
-        public UserControl Content
-        {
-            get { return new Main(); }
-        }
+        public UserControl Content => new Main();
 
-        #endregion
+        #endregion IUserControlPlugin Members
 
         #region IPlugin Members
 
-        public string Title
-        {
-            get { return "Xml Formatter"; }
-        }
+        public string Title => "Xml Formatter";
 
-        public string Description
-        {
-            get { return string.Empty; }
-        }
+        public string Description => string.Empty;
 
-        public string Group
-        {
-            get { return "Xml"; }
-        }
+        public string Group => "Text";
 
-        public string SubGroup
-        {
-            get { return null; }
-        }
+        public string SubGroup => null;
 
-        public Image Icon
-        {
-            get { return null; }
-        }
+        public Image Icon => null;
 
-        public ISettingsControl SettingsControl
-        {
-            get { return null; }
-        }
+        public ISettingsControl SettingsControl => null;
 
-        #endregion
+        #endregion IPlugin Members
     }
 }

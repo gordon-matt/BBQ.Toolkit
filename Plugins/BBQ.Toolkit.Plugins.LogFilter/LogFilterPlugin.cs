@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel.Composition;
-using BBQ.Toolkit.Common;
-using System.Windows.Forms;
+﻿using System.ComponentModel.Composition;
 using System.Drawing;
+using System.Windows.Forms;
+using BBQ.Toolkit.Common;
 
 namespace BBQ.Toolkit.Plugins.LogFilter
 {
@@ -14,45 +10,24 @@ namespace BBQ.Toolkit.Plugins.LogFilter
     {
         #region IUserControlPlugin Members
 
-        public UserControl Content
-        {
-            get { return new Main(); }
-        }
+        public UserControl Content => new Main();
 
-        #endregion
+        #endregion IUserControlPlugin Members
 
         #region IPlugin Members
 
-        public string Title
-        {
-            get { return "Log Filter"; }
-        }
+        public string Title => "Log Filter";
 
-        public string Description
-        {
-            get { return string.Empty; }
-        }
+        public string Description => string.Empty;
 
-        public string Group
-        {
-            get { return "Text"; }
-        }
+        public string Group => "Text";
 
-        public string SubGroup
-        {
-            get { return null; }
-        }
+        public string SubGroup => null;
 
-        public Image Icon
-        {
-            get { return null; }
-        }
+        public Image Icon => null;
 
-        public ISettingsControl SettingsControl
-        {
-            get { return null; }
-        }
+        public ISettingsControl SettingsControl => null;
 
-        #endregion
+        #endregion IPlugin Members
     }
 }

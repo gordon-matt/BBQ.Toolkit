@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.IO;
 using System.Text;
-using System.Xml.Linq;
-using System.IO;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace BBQ.Toolkit.Plugins.XmlFormatter
 {
@@ -22,6 +19,7 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
 
             return text;
         }
+
         public static string UnEscapeXML(string xml)
         {
             string text = xml;
@@ -34,16 +32,17 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
 
             return text;
         }
+
         public static string PrettyPrint(string xml)
         {
             //load unformatted xml into a dom
-            XDocument document = XDocument.Parse(xml);
+            var document = XDocument.Parse(xml);
 
             //will hold formatted xml
-            StringBuilder stringBuilder = new StringBuilder();
+            var stringBuilder = new StringBuilder();
 
             //pumps the formatted xml into the StringBuilder above
-            StringWriter stringWriter = new StringWriter(stringBuilder);
+            var stringWriter = new StringWriter(stringBuilder);
 
             //does the formatting
             XmlTextWriter xmlTextWriter = null;
@@ -56,7 +55,7 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
                 //we want the output formatted
                 xmlTextWriter.Formatting = Formatting.Indented;
 
-                //get the dom to dump its contents into the xmlTextWriter 
+                //get the dom to dump its contents into the xmlTextWriter
                 document.WriteTo(xmlTextWriter);
             }
             finally

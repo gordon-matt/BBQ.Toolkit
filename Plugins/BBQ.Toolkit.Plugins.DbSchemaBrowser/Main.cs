@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common.Forms;
-using Kore.Collections;
 
 namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
 {
@@ -15,6 +14,7 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             get { return txtConnectionString.Text; }
             set { txtConnectionString.Text = value; }
         }
+
         private string Table
         {
             get
@@ -50,7 +50,7 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
                 connection.Close();
                 dataGridView.DataSource = schema;
 
-                List<string> metaTables = new List<string>();
+                var metaTables = new List<string>();
                 foreach (DataRow row in schema.Rows)
                 {
                     metaTables.Add(row.Field<string>("CollectionName"));
@@ -62,7 +62,7 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
 
         private void cmbTable_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 var schema = connection.GetSchema(Table);

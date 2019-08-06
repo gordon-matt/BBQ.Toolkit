@@ -10,7 +10,7 @@ namespace BBQ.Toolkit.Controls
     public class PluginTreeView : TreeView
     {
         //TODO: Check same image not being added multiple times
-        ImageList imageList = new ImageList();
+        private ImageList imageList = new ImageList();
 
         public Size ImageListImageSize
         {
@@ -20,7 +20,7 @@ namespace BBQ.Toolkit.Controls
 
         public PluginTreeView()
         {
-            this.ImageList = imageList;
+            ImageList = imageList;
             imageList.Images.Add(Resources.TreeImage);
         }
 
@@ -28,7 +28,7 @@ namespace BBQ.Toolkit.Controls
         {
             #region Main Plugin Node
 
-            TreeNode pluginItem = new TreeNode(plugin.Title);
+            var pluginItem = new TreeNode(plugin.Title);
             pluginItem.Tag = plugin;
 
             if (plugin.Icon != null)
@@ -38,7 +38,7 @@ namespace BBQ.Toolkit.Controls
                 pluginItem.SelectedImageIndex = imageList.Images.Count - 1;
             }
 
-            #endregion
+            #endregion Main Plugin Node
 
             #region SubGroup
 
@@ -56,7 +56,7 @@ namespace BBQ.Toolkit.Controls
                 // Do nothing (check for main group next)
             }
 
-            #endregion
+            #endregion SubGroup
 
             #region Group
 
@@ -80,24 +80,25 @@ namespace BBQ.Toolkit.Controls
             {
                 if (subGroup != null)
                 {
-                    this.Nodes.Add(subGroup);
+                    Nodes.Add(subGroup);
                 }
-                else { this.Nodes.Add(pluginItem); }
+                else { Nodes.Add(pluginItem); }
                 return;
             }
 
-            #endregion
+            #endregion Group
 
             if (group == null && subGroup == null)
             {
-                this.Nodes.Add(pluginItem);
+                Nodes.Add(pluginItem);
             }
         }
+
         public void AddSettingsControl(IPlugin plugin)
         {
             #region Main Plugin Node
 
-            TreeNode pluginItem = new TreeNode(plugin.Title);
+            var pluginItem = new TreeNode(plugin.Title);
             pluginItem.Tag = plugin.SettingsControl;
 
             if (plugin.Icon != null)
@@ -107,7 +108,7 @@ namespace BBQ.Toolkit.Controls
                 pluginItem.SelectedImageIndex = imageList.Images.Count - 1;
             }
 
-            #endregion
+            #endregion Main Plugin Node
 
             #region SubGroup
 
@@ -125,7 +126,7 @@ namespace BBQ.Toolkit.Controls
                 // Do nothing (check for main group next)
             }
 
-            #endregion
+            #endregion SubGroup
 
             #region Group
 
@@ -149,32 +150,36 @@ namespace BBQ.Toolkit.Controls
             {
                 if (subGroup != null)
                 {
-                    this.Nodes.Add(subGroup);
+                    Nodes.Add(subGroup);
                 }
-                else { this.Nodes.Add(pluginItem); }
+                else { Nodes.Add(pluginItem); }
                 return;
             }
 
-            #endregion
+            #endregion Group
 
             if (group == null && subGroup == null)
             {
-                this.Nodes.Add(pluginItem);
+                Nodes.Add(pluginItem);
             }
         }
+
         private TreeNode EnsureNode(TreeNode treeNode)
         {
-            TreeNode node = this.Nodes.Cast<TreeNode>().SingleOrDefault(x => x.Text == treeNode.Text);
+            var node = Nodes.Cast<TreeNode>().SingleOrDefault(x => x.Text == treeNode.Text);
 
             if (node == null)
             {
-                this.Nodes.Add(treeNode);
+                Nodes.Add(treeNode);
                 return treeNode;
             }
             else
             {
                 foreach (TreeNode subNode in treeNode.Nodes)
-                { node.Nodes.Add(subNode); }
+                {
+                    node.Nodes.Add(subNode);
+                }
+
                 return node;
             }
         }

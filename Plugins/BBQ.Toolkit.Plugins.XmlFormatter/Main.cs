@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Kore.IO;
 using System.IO;
+using System.Windows.Forms;
 using Kore;
+using Kore.IO;
 
 namespace BBQ.Toolkit.Plugins.XmlFormatter
 {

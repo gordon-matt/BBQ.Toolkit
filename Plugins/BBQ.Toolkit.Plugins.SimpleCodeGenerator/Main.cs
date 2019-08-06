@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using System.Xml.Linq;
+using System.Windows.Forms;
 using Kore;
-using BBQ.Toolkit.Common;
 
 namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
 {
@@ -28,36 +22,32 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             string[] split = txtInput.Text.Split(new string[] { "\r\n" }, StringSplitOptions.None);
             int number = 1;
             foreach (string item in split)
             {
                 string text = txtTemplate.Text.Replace("[[N]]", number.ToString());
-
-                sb.Append(string.Format("{0}{1}", string.Format(text, item), Environment.NewLine));
-                //sb.Append(string.Format("{0}{1}", string.Format(text, item), ","));
-                //sb.Append(string.Format(text, item));
+                sb.Append($"{string.Format(text, item)}{Environment.NewLine}");
                 number++;
             }
-
 
             string newText = sb.ToString();
             foreach (Match match in rgxToLower.Matches(sb.ToString()))
             {
-                Regex rgxReplace = new Regex(match.Value);
+                var rgxReplace = new Regex(match.Value);
                 newText = rgxReplace.Replace(newText, match.Groups["value"].Value.ToLowerInvariant());
             }
 
             foreach (Match match in rgxToUpper.Matches(newText))
             {
-                Regex rgxReplace = new Regex(match.Value);
+                var rgxReplace = new Regex(match.Value);
                 newText = rgxReplace.Replace(newText, match.Groups["value"].Value.ToUpperInvariant());
             }
 
             foreach (Match match in rgxToPascal.Matches(newText))
             {
-                Regex rgxReplace = new Regex(match.Value);
+                var rgxReplace = new Regex(match.Value);
                 newText = rgxReplace.Replace(newText, match.Groups["value"].Value.ToPascalCase());
             }
 
@@ -72,13 +62,12 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
                 newText = newText.Replace(match.Value, camel);
             }
 
-
             txtOutput.Text = newText;
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetData("Text", (Object)txtOutput.Text);
+            Clipboard.SetData("Text", txtOutput.Text);
         }
     }
 }

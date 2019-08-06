@@ -7,9 +7,11 @@ namespace BBQ.Toolkit.Common
         Normal,
         Dialog
     }
-    public interface IFormPlugin: IPlugin
+
+    public interface IFormPlugin : IPlugin
     {
         Form Content { get; }
+
         ShowAs ShowAs { get; }
     }
 }

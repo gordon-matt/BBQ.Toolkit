@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using Kore.Collections;
 using BBQ.Toolkit.Common;
 using ComponentFactory.Krypton.Toolkit;
+using Kore.Collections;
 
 namespace BBQ.Toolkit.Views
 {
@@ -36,9 +36,9 @@ namespace BBQ.Toolkit.Views
             if (e.Node.Tag == null)
             { return; }
 
-            ISettingsControl settingsPlugin = e.Node.Tag as ISettingsControl;
+            var settingsPlugin = e.Node.Tag as ISettingsControl;
 
-            UserControl control = settingsPlugin.ControlContent;
+            var control = settingsPlugin.ControlContent;
             contentPanel.Controls.Clear();
             contentPanel.Controls.Add(control);
             control.Dock = DockStyle.Fill;
@@ -46,11 +46,12 @@ namespace BBQ.Toolkit.Views
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

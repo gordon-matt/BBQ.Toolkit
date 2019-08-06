@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Kore;
-using System.IO;
-using Kore.IO;
 using Kore.Collections;
+using Kore.IO;
 
 namespace BBQ.Toolkit.Plugins.FileDiffOutput
 {
-    public enum OutputType
+    public enum OutputType : byte
     {
         File1Differences,
         File2Differences
@@ -40,16 +36,19 @@ namespace BBQ.Toolkit.Plugins.FileDiffOutput
                 }
             }
         }
+
         private string File1
         {
             get { return txtFile1.Text.Trim(); }
             set { txtFile1.Text = value; }
         }
+
         private string File2
         {
             get { return txtFile2.Text.Trim(); }
             set { txtFile2.Text = value; }
         }
+
         private string OutputFile
         {
             get { return txtOutput.Text.Trim(); }
@@ -90,7 +89,7 @@ namespace BBQ.Toolkit.Plugins.FileDiffOutput
             var file1Lines = new FileInfo(inputFile1).GetText().ToLines();
             var file2Lines = new FileInfo(inputFile2).GetText().ToLines();
 
-            List<string> newLines = new List<string>();
+            var newLines = new List<string>();
             foreach (string line in file1Lines)
             {
                 if (!file2Lines.Contains(line))

@@ -24,6 +24,7 @@ namespace BBQ.Toolkit.Common.Forms
                 cmbTable.Visible = value;
             }
         }
+
         public string Server
         {
             get
@@ -47,6 +48,7 @@ namespace BBQ.Toolkit.Common.Forms
                 else { cmbServerName.Text = value; }
             }
         }
+
         public string Database
         {
             get
@@ -70,21 +72,25 @@ namespace BBQ.Toolkit.Common.Forms
                 else { cmbDatabase.Text = value; }
             }
         }
+
         public string UserName
         {
             get { return txtUserName.Text.Trim(); }
             set { txtUserName.Text = value; }
         }
+
         public string Password
         {
             get { return txtPassword.Text.Trim(); }
             set { txtPassword.Text = value; }
         }
+
         public bool IntegratedSecurity
         {
             get { return rbUseWindowsAuthentication.Checked; }
             set { rbUseWindowsAuthentication.Checked = value; }
         }
+
         public string ConnectionString
         {
             get
@@ -122,7 +128,7 @@ namespace BBQ.Toolkit.Common.Forms
                     }
                 }
 
-                #endregion
+                #endregion Checks
 
                 if (IntegratedSecurity)
                 {
@@ -144,9 +150,10 @@ namespace BBQ.Toolkit.Common.Forms
         {
             SqlDataSourceEnumerator.Instance.GetAvailableSqlServers().ForEach(x => cmbServerName.Items.Add(x));
         }
+
         private void btnTestConnection_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (var connection = new SqlConnection(ConnectionString))
             {
                 if (connection.Validate())
                 {
@@ -177,7 +184,7 @@ namespace BBQ.Toolkit.Common.Forms
 
                 if (AllowTableSelection)
                 {
-                    using (SqlConnection connection = new SqlConnection(ConnectionString))
+                    using (var connection = new SqlConnection(ConnectionString))
                     {
                         string databaseName = cmbDatabase.SelectedItem.ToString();
                         connection.GetTableNames(databaseName).ForEach(x => cmbTable.Items.Add(x));
@@ -185,6 +192,7 @@ namespace BBQ.Toolkit.Common.Forms
                 }
             }
         }
+
         private void cmbServerName_DropDown(object sender, EventArgs e)
         {
             if (cmbServerName.Items.Count == 0)
@@ -206,7 +214,7 @@ namespace BBQ.Toolkit.Common.Forms
             if (!string.IsNullOrEmpty(Server))
             {
                 cmbDatabase.Items.Clear();
-                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                using (var connection = new SqlConnection(ConnectionString))
                 {
                     connection.GetDatabaseNames().ForEach(x => cmbDatabase.Items.Add(x));
                 }

@@ -10,45 +10,24 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
     {
         #region IUserControlPlugin Members
 
-        public UserControl Content
-        {
-            get { return new Main(); }
-        }
+        public UserControl Content => new Main();
 
-        #endregion
+        #endregion IUserControlPlugin Members
 
         #region IPlugin Members
 
-        public string Title
-        {
-            get { return "Db Schema Browser"; }
-        }
+        public string Title => "Db Schema Browser";
 
-        public string Description
-        {
-            get { return "View Sql Metadata"; }
-        }
+        public string Description => "View Sql Metadata";
 
-        public string Group
-        {
-            get { return "Database"; }
-        }
+        public string Group => "Database";
 
-        public string SubGroup
-        {
-            get { return null; }
-        }
+        public string SubGroup => null;
 
-        public Image Icon
-        {
-            get { return null; }
-        }
+        public Image Icon => null;
 
-        public ISettingsControl SettingsControl
-        {
-            get { return null; }
-        }
+        public ISettingsControl SettingsControl => null;
 
-        #endregion
+        #endregion IPlugin Members
     }
 }

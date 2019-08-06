@@ -18,20 +18,20 @@ namespace BBQ.Toolkit.Views
         {
             InitializeComponent();
 
-            using (AggregateCatalog aggregateCatalog = new AggregateCatalog(
+            using (var aggregateCatalog = new AggregateCatalog(
                 new AssemblyCatalog(typeof(Program).Assembly),
                 new DirectoryCatalog(Path.Combine(Application.StartupPath, "Plugins"))))
             {
-                using (CompositionContainer container = new CompositionContainer(aggregateCatalog))
+                using (var container = new CompositionContainer(aggregateCatalog))
                 {
                     container.ComposeParts(this);
                 }
             }
 
-            Program.Plugins = this.plugins;
-            this.plugins = null;
+            Program.Plugins = plugins;
+            plugins = null;
 
-            foreach (IPlugin plugin in Program.Plugins)
+            foreach (var plugin in Program.Plugins)
             {
                 pluginTreeView.AddPlugin(plugin);
             }
@@ -42,19 +42,19 @@ namespace BBQ.Toolkit.Views
             if (e.Node.Tag == null)
             { return; }
 
-            IPlugin plugin = e.Node.Tag as IPlugin;
+            var plugin = e.Node.Tag as IPlugin;
 
             if (plugin is IUserControlPlugin)
             {
-                UserControl control = ((IUserControlPlugin)plugin).Content;
+                var control = ((IUserControlPlugin)plugin).Content;
                 splitContainer.Panel2.Controls.Clear();
                 splitContainer.Panel2.Controls.Add(control);
                 control.Dock = DockStyle.Fill;
             }
             else if (plugin is IFormPlugin)
             {
-                IFormPlugin formPlugin = (IFormPlugin)plugin;
-                Form form = formPlugin.Content;
+                var formPlugin = (IFormPlugin)plugin;
+                var form = formPlugin.Content;
 
                 if (formPlugin.ShowAs == ShowAs.Dialog)
                 {
