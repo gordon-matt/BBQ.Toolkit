@@ -32,21 +32,20 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
         {
             this.lblConnectionString = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.txtConnectionString = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.panelTop = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.bnConnect = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lblTable = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cmbTable = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.btnConnectionStringBuilder = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.panelTop)).BeginInit();
-            this.panelTop.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblConnectionString
             // 
-            this.lblConnectionString.Location = new System.Drawing.Point(10, 7);
+            this.lblConnectionString.Location = new System.Drawing.Point(12, 10);
             this.lblConnectionString.Name = "lblConnectionString";
             this.lblConnectionString.Size = new System.Drawing.Size(111, 20);
             this.lblConnectionString.TabIndex = 0;
@@ -56,29 +55,15 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             // 
             this.txtConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConnectionString.Location = new System.Drawing.Point(127, 7);
+            this.txtConnectionString.Location = new System.Drawing.Point(129, 10);
             this.txtConnectionString.Name = "txtConnectionString";
-            this.txtConnectionString.Size = new System.Drawing.Size(350, 23);
+            this.txtConnectionString.Size = new System.Drawing.Size(339, 23);
             this.txtConnectionString.TabIndex = 1;
-            // 
-            // panelTop
-            // 
-            this.panelTop.Controls.Add(this.bnConnect);
-            this.panelTop.Controls.Add(this.lblTable);
-            this.panelTop.Controls.Add(this.cmbTable);
-            this.panelTop.Controls.Add(this.btnConnectionStringBuilder);
-            this.panelTop.Controls.Add(this.lblConnectionString);
-            this.panelTop.Controls.Add(this.txtConnectionString);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(589, 68);
-            this.panelTop.TabIndex = 2;
             // 
             // bnConnect
             // 
             this.bnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bnConnect.Location = new System.Drawing.Point(522, 4);
+            this.bnConnect.Location = new System.Drawing.Point(513, 7);
             this.bnConnect.Name = "bnConnect";
             this.bnConnect.Size = new System.Drawing.Size(62, 28);
             this.bnConnect.TabIndex = 7;
@@ -87,7 +72,7 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             // 
             // lblTable
             // 
-            this.lblTable.Location = new System.Drawing.Point(10, 36);
+            this.lblTable.Location = new System.Drawing.Point(12, 39);
             this.lblTable.Name = "lblTable";
             this.lblTable.Size = new System.Drawing.Size(43, 20);
             this.lblTable.TabIndex = 6;
@@ -97,7 +82,7 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             // 
             this.cmbTable.DropDownWidth = 218;
             this.cmbTable.FormattingEnabled = true;
-            this.cmbTable.Location = new System.Drawing.Point(127, 36);
+            this.cmbTable.Location = new System.Drawing.Point(129, 39);
             this.cmbTable.Name = "cmbTable";
             this.cmbTable.Size = new System.Drawing.Size(218, 21);
             this.cmbTable.Sorted = true;
@@ -107,7 +92,7 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             // btnConnectionStringBuilder
             // 
             this.btnConnectionStringBuilder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConnectionStringBuilder.Location = new System.Drawing.Point(483, 4);
+            this.btnConnectionStringBuilder.Location = new System.Drawing.Point(474, 7);
             this.btnConnectionStringBuilder.Name = "btnConnectionStringBuilder";
             this.btnConnectionStringBuilder.Size = new System.Drawing.Size(33, 28);
             this.btnConnectionStringBuilder.TabIndex = 4;
@@ -118,10 +103,24 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 68);
+            this.dataGridView.Location = new System.Drawing.Point(0, 77);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(589, 349);
+            this.dataGridView.Size = new System.Drawing.Size(589, 340);
             this.dataGridView.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.bnConnect);
+            this.panel1.Controls.Add(this.lblTable);
+            this.panel1.Controls.Add(this.txtConnectionString);
+            this.panel1.Controls.Add(this.cmbTable);
+            this.panel1.Controls.Add(this.lblConnectionString);
+            this.panel1.Controls.Add(this.btnConnectionStringBuilder);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(589, 77);
+            this.panel1.TabIndex = 4;
             // 
             // Main
             // 
@@ -129,14 +128,13 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.panelTop);
+            this.Controls.Add(this.panel1);
             this.Name = "Main";
             this.Size = new System.Drawing.Size(589, 417);
-            ((System.ComponentModel.ISupportInitialize)(this.panelTop)).EndInit();
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -145,11 +143,11 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
 
         private KryptonLabel lblConnectionString;
         private KryptonTextBox txtConnectionString;
-        private KryptonPanel panelTop;
         private KryptonButton btnConnectionStringBuilder;
         private KryptonLabel lblTable;
         private KryptonComboBox cmbTable;
         private KryptonDataGridView dataGridView;
         private KryptonButton bnConnect;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -43,6 +43,12 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
 
         private void bnConnect_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(ConnectionString))
+            {
+                MessageBox.Show("Connection string has not been set!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
