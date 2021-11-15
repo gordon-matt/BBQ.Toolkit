@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.ImageMapEditor
 {
@@ -38,7 +38,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.tsBtnPolygon = new System.Windows.Forms.ToolStripButton();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.txtHtml = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtHtml = new Krypton.Toolkit.KryptonTextBox();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();

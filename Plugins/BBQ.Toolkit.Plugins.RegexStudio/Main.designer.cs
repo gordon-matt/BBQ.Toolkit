@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 using BBQ.Toolkit.Plugins.RegexStudio.Controls;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.RegexStudio
 {
@@ -32,28 +32,28 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtPattern = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtPattern = new Krypton.Toolkit.KryptonTextBox();
             this.grpPattern = new System.Windows.Forms.GroupBox();
             this.grpOptions = new System.Windows.Forms.GroupBox();
-            this.cbCompiled = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
-            this.cbIgnorePatternWS = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
-            this.cbRightToLeft = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
-            this.cbECMAScript = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
-            this.cbExplicitCapture = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
-            this.cbSingleline = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
-            this.cbMultiline = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
-            this.cbIgnoreCase = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
-            this.btnFindMatches = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.cbCompiled = new Krypton.Toolkit.KryptonCheckBox();
+            this.cbIgnorePatternWS = new Krypton.Toolkit.KryptonCheckBox();
+            this.cbRightToLeft = new Krypton.Toolkit.KryptonCheckBox();
+            this.cbECMAScript = new Krypton.Toolkit.KryptonCheckBox();
+            this.cbExplicitCapture = new Krypton.Toolkit.KryptonCheckBox();
+            this.cbSingleline = new Krypton.Toolkit.KryptonCheckBox();
+            this.cbMultiline = new Krypton.Toolkit.KryptonCheckBox();
+            this.cbIgnoreCase = new Krypton.Toolkit.KryptonCheckBox();
+            this.btnFindMatches = new Krypton.Toolkit.KryptonButton();
             this.grpReplacementString = new System.Windows.Forms.GroupBox();
-            this.txtReplacementString = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.btnReplace = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.pnlTop = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.btnShowCSharpCode = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtOutput = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtReplacementString = new Krypton.Toolkit.KryptonTextBox();
+            this.btnReplace = new Krypton.Toolkit.KryptonButton();
+            this.pnlTop = new Krypton.Toolkit.KryptonPanel();
+            this.btnShowCSharpCode = new Krypton.Toolkit.KryptonButton();
+            this.txtOutput = new Krypton.Toolkit.KryptonTextBox();
             this.splitContainerOutput = new System.Windows.Forms.SplitContainer();
             this.tvOutput = new BBQ.Toolkit.Plugins.RegexStudio.Controls.MatchTreeView();
             this.splitContainerMain = new System.Windows.Forms.SplitContainer();
-            this.rTxtInput = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.rTxtInput = new Krypton.Toolkit.KryptonRichTextBox();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.mnuMainFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMainFileNew = new System.Windows.Forms.ToolStripMenuItem();

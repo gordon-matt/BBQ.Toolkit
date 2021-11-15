@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
 {
@@ -30,14 +30,14 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTemplate = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtTemplate = new Krypton.Toolkit.KryptonTextBox();
             this.grpTemplate = new System.Windows.Forms.GroupBox();
             this.grpInput = new System.Windows.Forms.GroupBox();
-            this.txtInput = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtInput = new Krypton.Toolkit.KryptonTextBox();
             this.grpOutput = new System.Windows.Forms.GroupBox();
-            this.txtOutput = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.btnCreate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnCopy = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtOutput = new Krypton.Toolkit.KryptonTextBox();
+            this.btnCreate = new Krypton.Toolkit.KryptonButton();
+            this.btnCopy = new Krypton.Toolkit.KryptonButton();
             this.grpTemplate.SuspendLayout();
             this.grpInput.SuspendLayout();
             this.grpOutput.SuspendLayout();

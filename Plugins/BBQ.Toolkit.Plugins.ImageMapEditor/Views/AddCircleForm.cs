@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Plugins.ImageMapEditor.Models;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
 {

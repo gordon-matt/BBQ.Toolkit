@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Common.Forms
 {
@@ -30,18 +30,18 @@ namespace BBQ.Toolkit.Common.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRefresh = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.lblTable = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.cmbTable = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.txtPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblPassword = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txtUserName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblUserName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.cbIntegratedSecurity = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
-            this.lblDatabase = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.cmbServer = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.cmbDatabase = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.lblServer = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.btnRefresh = new Krypton.Toolkit.KryptonButton();
+            this.lblTable = new Krypton.Toolkit.KryptonLabel();
+            this.cmbTable = new Krypton.Toolkit.KryptonComboBox();
+            this.txtPassword = new Krypton.Toolkit.KryptonTextBox();
+            this.lblPassword = new Krypton.Toolkit.KryptonLabel();
+            this.txtUserName = new Krypton.Toolkit.KryptonTextBox();
+            this.lblUserName = new Krypton.Toolkit.KryptonLabel();
+            this.cbIntegratedSecurity = new Krypton.Toolkit.KryptonCheckBox();
+            this.lblDatabase = new Krypton.Toolkit.KryptonLabel();
+            this.cmbServer = new Krypton.Toolkit.KryptonComboBox();
+            this.cmbDatabase = new Krypton.Toolkit.KryptonComboBox();
+            this.lblServer = new Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbServer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDatabase)).BeginInit();

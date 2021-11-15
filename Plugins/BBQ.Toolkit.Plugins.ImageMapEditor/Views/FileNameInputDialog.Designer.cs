@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
 {
@@ -30,11 +30,11 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtFileName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblFileName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.btnBrowse = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtFileName = new Krypton.Toolkit.KryptonTextBox();
+            this.lblFileName = new Krypton.Toolkit.KryptonLabel();
+            this.btnBrowse = new Krypton.Toolkit.KryptonButton();
+            this.btnOK = new Krypton.Toolkit.KryptonButton();
+            this.btnCancel = new Krypton.Toolkit.KryptonButton();
             this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 

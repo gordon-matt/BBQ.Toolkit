@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using BBQ.Toolkit.Plugins.RegexStudio.Controls;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.RegexStudio
 {

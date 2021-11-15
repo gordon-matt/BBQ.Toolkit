@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.FileDiffOutput
 {
@@ -30,21 +30,21 @@ namespace BBQ.Toolkit.Plugins.FileDiffOutput
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblFile1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txtFile1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.btnBrowseFile1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnBrowseFile2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtFile2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblFile2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.btnBrowseOutput = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtOutput = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblOutput = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.btnRun = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.rbFile1 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.rbFile2 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.lblFile1 = new Krypton.Toolkit.KryptonLabel();
+            this.txtFile1 = new Krypton.Toolkit.KryptonTextBox();
+            this.btnBrowseFile1 = new Krypton.Toolkit.KryptonButton();
+            this.btnBrowseFile2 = new Krypton.Toolkit.KryptonButton();
+            this.txtFile2 = new Krypton.Toolkit.KryptonTextBox();
+            this.lblFile2 = new Krypton.Toolkit.KryptonLabel();
+            this.btnBrowseOutput = new Krypton.Toolkit.KryptonButton();
+            this.txtOutput = new Krypton.Toolkit.KryptonTextBox();
+            this.lblOutput = new Krypton.Toolkit.KryptonLabel();
+            this.btnRun = new Krypton.Toolkit.KryptonButton();
+            this.rbFile1 = new Krypton.Toolkit.KryptonRadioButton();
+            this.rbFile2 = new Krypton.Toolkit.KryptonRadioButton();
             this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
-            this.lblOutputDifferencesFor = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.lblOutputDifferencesFor = new Krypton.Toolkit.KryptonLabel();
             this.SuspendLayout();
             // 
             // lblFile1

@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
 {
@@ -30,12 +30,12 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUrl = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txtUrl = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtAlt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblAlt = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lblUrl = new Krypton.Toolkit.KryptonLabel();
+            this.txtUrl = new Krypton.Toolkit.KryptonTextBox();
+            this.txtAlt = new Krypton.Toolkit.KryptonTextBox();
+            this.lblAlt = new Krypton.Toolkit.KryptonLabel();
+            this.btnOK = new Krypton.Toolkit.KryptonButton();
+            this.btnCancel = new Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // lblUrl

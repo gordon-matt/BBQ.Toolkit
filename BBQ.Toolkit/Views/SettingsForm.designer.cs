@@ -1,5 +1,5 @@
 ﻿using BBQ.Toolkit.Controls;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Views
 {
@@ -35,10 +35,10 @@ namespace BBQ.Toolkit.Views
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.pluginTreeView = new BBQ.Toolkit.Controls.PluginTreeView();
-            this.contentPanel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.panel = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.contentPanel = new Krypton.Toolkit.KryptonPanel();
+            this.panel = new Krypton.Toolkit.KryptonPanel();
+            this.btnOK = new Krypton.Toolkit.KryptonButton();
+            this.btnCancel = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();

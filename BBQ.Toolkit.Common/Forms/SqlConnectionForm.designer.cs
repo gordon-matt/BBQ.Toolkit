@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Common.Forms
 {
@@ -30,24 +30,24 @@ namespace BBQ.Toolkit.Common.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblServerName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txtUserName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.btnRefreshServers = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.cmbServerName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.lblServerName = new Krypton.Toolkit.KryptonLabel();
+            this.txtUserName = new Krypton.Toolkit.KryptonTextBox();
+            this.btnRefreshServers = new Krypton.Toolkit.KryptonButton();
+            this.cmbServerName = new Krypton.Toolkit.KryptonComboBox();
             this.grpLogOnServer = new System.Windows.Forms.GroupBox();
-            this.lblPassword = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txtPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblUserName = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.rbUseSqlServerAuthentication = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.rbUseWindowsAuthentication = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.lblPassword = new Krypton.Toolkit.KryptonLabel();
+            this.txtPassword = new Krypton.Toolkit.KryptonTextBox();
+            this.lblUserName = new Krypton.Toolkit.KryptonLabel();
+            this.rbUseSqlServerAuthentication = new Krypton.Toolkit.KryptonRadioButton();
+            this.rbUseWindowsAuthentication = new Krypton.Toolkit.KryptonRadioButton();
             this.grpConnectDatabase = new System.Windows.Forms.GroupBox();
-            this.lblTable = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.cmbTable = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.lblDatabase = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.cmbDatabase = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnTestConnection = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lblTable = new Krypton.Toolkit.KryptonLabel();
+            this.cmbTable = new Krypton.Toolkit.KryptonComboBox();
+            this.lblDatabase = new Krypton.Toolkit.KryptonLabel();
+            this.cmbDatabase = new Krypton.Toolkit.KryptonComboBox();
+            this.btnCancel = new Krypton.Toolkit.KryptonButton();
+            this.btnOK = new Krypton.Toolkit.KryptonButton();
+            this.btnTestConnection = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.cmbServerName)).BeginInit();
             this.grpLogOnServer.SuspendLayout();
             this.grpConnectDatabase.SuspendLayout();

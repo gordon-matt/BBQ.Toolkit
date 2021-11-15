@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.XmlValidator
 {
@@ -30,10 +30,10 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelTop = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.btnValidate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnXSD = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnXML = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.panelTop = new Krypton.Toolkit.KryptonPanel();
+            this.btnValidate = new Krypton.Toolkit.KryptonButton();
+            this.btnXSD = new Krypton.Toolkit.KryptonButton();
+            this.btnXML = new Krypton.Toolkit.KryptonButton();
             this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.panelTop)).BeginInit();
             this.panelTop.SuspendLayout();

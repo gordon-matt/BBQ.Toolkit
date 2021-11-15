@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30204.135
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBQ.Toolkit", "BBQ.Toolkit\BBQ.Toolkit.csproj", "{57A12DDF-07C8-4908-9087-17701C415FB0}"
 EndProject
@@ -22,16 +22,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBQ.Toolkit.Plugins.ImageMapEditor", "Plugins\BBQ.Toolkit.Plugins.ImageMapEditor\BBQ.Toolkit.Plugins.ImageMapEditor.csproj", "{F430DE71-941B-4C93-951E-9C6F5FF447E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{B3CA5EF0-20F3-49BC-8C29-7ACC7F46001D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{D173D14E-73EC-42EC-87BC-BBF3918AB72C}"
-	ProjectSection(SolutionItems) = preProject
-		Lib\ComponentFactory.Krypton.Design.dll = Lib\ComponentFactory.Krypton.Design.dll
-		Lib\ComponentFactory.Krypton.Docking.dll = Lib\ComponentFactory.Krypton.Docking.dll
-		Lib\ComponentFactory.Krypton.Navigator.dll = Lib\ComponentFactory.Krypton.Navigator.dll
-		Lib\ComponentFactory.Krypton.Ribbon.dll = Lib\ComponentFactory.Krypton.Ribbon.dll
-		Lib\ComponentFactory.Krypton.Toolkit.dll = Lib\ComponentFactory.Krypton.Toolkit.dll
-		Lib\ComponentFactory.Krypton.Workspace.dll = Lib\ComponentFactory.Krypton.Workspace.dll
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBQ.Toolkit.Plugins.XsdGenerator", "Plugins\BBQ.Toolkit.Plugins.XsdGenerator\BBQ.Toolkit.Plugins.XsdGenerator.csproj", "{E58F4D30-ACDA-4432-8EF4-FC6F6089013C}"
 EndProject

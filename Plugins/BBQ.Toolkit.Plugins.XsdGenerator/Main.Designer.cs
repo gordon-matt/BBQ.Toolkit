@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.XsdGenerator
 {
@@ -30,10 +30,10 @@ namespace BBQ.Toolkit.Plugins.XsdGenerator
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelTop = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnLoad = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtXml = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.panelTop = new Krypton.Toolkit.KryptonPanel();
+            this.btnSave = new Krypton.Toolkit.KryptonButton();
+            this.btnLoad = new Krypton.Toolkit.KryptonButton();
+            this.txtXml = new Krypton.Toolkit.KryptonTextBox();
             this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.panelTop)).BeginInit();

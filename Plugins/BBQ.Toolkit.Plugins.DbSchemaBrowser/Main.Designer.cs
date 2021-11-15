@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
 {
@@ -30,13 +30,13 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblConnectionString = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.txtConnectionString = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.bnConnect = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.lblTable = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.cmbTable = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.btnConnectionStringBuilder = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.dataGridView = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.lblConnectionString = new Krypton.Toolkit.KryptonLabel();
+            this.txtConnectionString = new Krypton.Toolkit.KryptonTextBox();
+            this.bnConnect = new Krypton.Toolkit.KryptonButton();
+            this.lblTable = new Krypton.Toolkit.KryptonLabel();
+            this.cmbTable = new Krypton.Toolkit.KryptonComboBox();
+            this.btnConnectionStringBuilder = new Krypton.Toolkit.KryptonButton();
+            this.dataGridView = new Krypton.Toolkit.KryptonDataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();

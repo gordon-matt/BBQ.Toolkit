@@ -2,7 +2,7 @@
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 using Kore.Collections;
 using Kore.Data.Common;
 using Kore.Data.Sql;

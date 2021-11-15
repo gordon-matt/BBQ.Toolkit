@@ -1,5 +1,5 @@
 ﻿using BBQ.Toolkit.Controls;
-using ComponentFactory.Krypton.Toolkit;
+using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Views
 {
@@ -38,7 +38,7 @@ namespace BBQ.Toolkit.Views
             this.mnuToolPluginSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.pluginTreeView = new BBQ.Toolkit.Controls.PluginTreeView();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.kryptonManager = new ComponentFactory.Krypton.Toolkit.KryptonManager(this.components);
+            this.kryptonManager = new Krypton.Toolkit.KryptonManager(this.components);
             this.pluginMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -106,7 +106,7 @@ namespace BBQ.Toolkit.Views
             // 
             // kryptonManager
             // 
-            this.kryptonManager.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.Office2010Black;
+            this.kryptonManager.GlobalPaletteMode = Krypton.Toolkit.PaletteModeManager.Office365Silver;
             // 
             // HostForm
             // 

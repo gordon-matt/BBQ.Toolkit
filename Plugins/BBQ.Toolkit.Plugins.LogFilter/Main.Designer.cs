@@ -1,4 +1,4 @@
-﻿using ComponentFactory.Krypton.Toolkit;
+﻿using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.LogFilter
 {
@@ -30,16 +30,16 @@ namespace BBQ.Toolkit.Plugins.LogFilter
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRun = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnBrowseOutput = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtOutput = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblOutput = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.btnBrowseInput = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtInput = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblInput = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.rbOutputDistinct = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.rbOutputMatching = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.txtMatching = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.btnRun = new Krypton.Toolkit.KryptonButton();
+            this.btnBrowseOutput = new Krypton.Toolkit.KryptonButton();
+            this.txtOutput = new Krypton.Toolkit.KryptonTextBox();
+            this.lblOutput = new Krypton.Toolkit.KryptonLabel();
+            this.btnBrowseInput = new Krypton.Toolkit.KryptonButton();
+            this.txtInput = new Krypton.Toolkit.KryptonTextBox();
+            this.lblInput = new Krypton.Toolkit.KryptonLabel();
+            this.rbOutputDistinct = new Krypton.Toolkit.KryptonRadioButton();
+            this.rbOutputMatching = new Krypton.Toolkit.KryptonRadioButton();
+            this.txtMatching = new Krypton.Toolkit.KryptonTextBox();
             this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
             this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
