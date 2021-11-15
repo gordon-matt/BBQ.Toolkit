@@ -32,11 +32,11 @@ namespace BBQ.Toolkit.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pluginMenuStrip = new PluginMenuStrip();
+            this.pluginMenuStrip = new BBQ.Toolkit.Controls.PluginMenuStrip();
             this.mnuTools = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuToolsChoosePlugins = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuToolPluginSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.pluginTreeView = new PluginTreeView();
+            this.pluginTreeView = new BBQ.Toolkit.Controls.PluginTreeView();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.kryptonManager = new ComponentFactory.Krypton.Toolkit.KryptonManager(this.components);
             this.pluginMenuStrip.SuspendLayout();
@@ -47,11 +47,12 @@ namespace BBQ.Toolkit.Views
             // 
             // pluginMenuStrip
             // 
+            this.pluginMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pluginMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuTools});
             this.pluginMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.pluginMenuStrip.Name = "pluginMenuStrip";
-            this.pluginMenuStrip.Size = new System.Drawing.Size(806, 24);
+            this.pluginMenuStrip.Size = new System.Drawing.Size(1264, 24);
             this.pluginMenuStrip.TabIndex = 0;
             this.pluginMenuStrip.Text = "pluginMenuStrip1";
             // 
@@ -61,7 +62,7 @@ namespace BBQ.Toolkit.Views
             this.mnuToolsChoosePlugins,
             this.mnuToolPluginSettings});
             this.mnuTools.Name = "mnuTools";
-            this.mnuTools.Size = new System.Drawing.Size(48, 20);
+            this.mnuTools.Size = new System.Drawing.Size(46, 20);
             this.mnuTools.Text = "Tools";
             // 
             // mnuToolsChoosePlugins
@@ -86,7 +87,7 @@ namespace BBQ.Toolkit.Views
             this.pluginTreeView.Location = new System.Drawing.Point(0, 0);
             this.pluginTreeView.Name = "pluginTreeView";
             this.pluginTreeView.SelectedImageIndex = 0;
-            this.pluginTreeView.Size = new System.Drawing.Size(218, 427);
+            this.pluginTreeView.Size = new System.Drawing.Size(341, 657);
             this.pluginTreeView.TabIndex = 1;
             this.pluginTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pluginTreeView_AfterSelect);
             // 
@@ -99,8 +100,8 @@ namespace BBQ.Toolkit.Views
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.Controls.Add(this.pluginTreeView);
-            this.splitContainer.Size = new System.Drawing.Size(806, 427);
-            this.splitContainer.SplitterDistance = 218;
+            this.splitContainer.Size = new System.Drawing.Size(1264, 657);
+            this.splitContainer.SplitterDistance = 341;
             this.splitContainer.TabIndex = 2;
             // 
             // kryptonManager
@@ -111,7 +112,7 @@ namespace BBQ.Toolkit.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 451);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.pluginMenuStrip);
             this.MainMenuStrip = this.pluginMenuStrip;
