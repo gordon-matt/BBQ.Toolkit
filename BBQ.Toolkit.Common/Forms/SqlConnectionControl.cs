@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common.Diagnostics;
 using BBQ.Toolkit.Common.Extensions;
-using Kore.Collections;
-using Kore.Data.Sql;
-using Kore.Data.SqlClient;
+using Extenso.Collections;
+using Extenso.Data.SqlClient;
 
 namespace BBQ.Toolkit.Common.Forms
 {
@@ -188,14 +186,14 @@ namespace BBQ.Toolkit.Common.Forms
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             cmbServer.Items.Clear();
-            SqlDataSourceEnumerator.Instance.GetAvailableSqlServers().ForEach(x => cmbServer.Items.Add(x));
+            //SqlDataSourceEnumerator.Instance.GetAvailableSqlServers().ForEach(x => cmbServer.Items.Add(x));
         }
 
         private void cmbServer_DropDown(object sender, EventArgs e)
         {
             if (cmbServer.Items.Count == 0)
             {
-                SqlDataSourceEnumerator.Instance.GetAvailableSqlServers().ForEach(x => cmbServer.Items.Add(x));
+                //SqlDataSourceEnumerator.Instance.GetAvailableSqlServers().ForEach(x => cmbServer.Items.Add(x));
                 //cmbServer.SelectedIndex = 0;
             }
         }

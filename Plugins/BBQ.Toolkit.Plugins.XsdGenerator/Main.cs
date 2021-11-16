@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Schema;
-using Kore;
+using Extenso;
 
 namespace BBQ.Toolkit.Plugins.XsdGenerator
 {

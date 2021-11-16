@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Extenso.Collections;
+using Extenso.Data.Common;
+using Extenso.Data.SqlClient;
 using Krypton.Toolkit;
-using Kore.Collections;
-using Kore.Data.Common;
-using Kore.Data.Sql;
-using Kore.Data.SqlClient;
 
 namespace BBQ.Toolkit.Common.Forms
 {
@@ -148,7 +146,7 @@ namespace BBQ.Toolkit.Common.Forms
 
         private void btnRefreshServers_Click(object sender, EventArgs e)
         {
-            SqlDataSourceEnumerator.Instance.GetAvailableSqlServers().ForEach(x => cmbServerName.Items.Add(x));
+            //SqlDataSourceEnumerator.Instance.GetAvailableSqlServers().ForEach(x => cmbServerName.Items.Add(x));
         }
 
         private void btnTestConnection_Click(object sender, EventArgs e)
@@ -197,7 +195,7 @@ namespace BBQ.Toolkit.Common.Forms
         {
             if (cmbServerName.Items.Count == 0)
             {
-                SqlDataSourceEnumerator.Instance.GetAvailableSqlServers().ForEach(x => cmbServerName.Items.Add(x));
+                //SqlDataSourceEnumerator.Instance.GetAvailableSqlServers().ForEach(x => cmbServerName.Items.Add(x));
             }
         }
 

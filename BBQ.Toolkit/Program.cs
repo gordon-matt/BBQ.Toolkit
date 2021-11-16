@@ -5,7 +5,7 @@ using BBQ.Toolkit.Common;
 
 namespace BBQ.Toolkit
 {
-    internal static class Program
+    internal class Program
     {
         public static IEnumerable<IPlugin> Plugins { get; set; }
 
@@ -16,6 +16,7 @@ namespace BBQ.Toolkit
         private static void Main()
         {
             Application.EnableVisualStyles();
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Views.HostForm());
         }

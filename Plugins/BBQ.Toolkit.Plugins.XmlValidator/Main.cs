@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using Kore.IO;
+using Extenso.IO;
 
 namespace BBQ.Toolkit.Plugins.XmlValidator
 {
@@ -22,7 +22,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
         {
             if (dlgOpenFile.ShowDialog() == DialogResult.OK)
             {
-                xml = new FileInfo(dlgOpenFile.FileName).GetText();
+                xml = new FileInfo(dlgOpenFile.FileName).ReadAllText();
             }
         }
 

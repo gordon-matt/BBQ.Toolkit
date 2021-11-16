@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using Kore;
-using Kore.IO;
+using Extenso;
+using Extenso.IO;
 
 namespace BBQ.Toolkit.Plugins.XmlFormatter
 {
@@ -17,7 +17,7 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
         {
             if (dlgOpenFile.ShowDialog() == DialogResult.OK)
             {
-                txtXml.Text = new FileInfo(dlgOpenFile.FileName).GetText();
+                txtXml.Text = new FileInfo(dlgOpenFile.FileName).ReadAllText();
             }
         }
 

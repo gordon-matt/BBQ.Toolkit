@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Kore;
+using Extenso;
 
 namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
 {

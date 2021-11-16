@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Kore;
-using Kore.Collections;
-using Kore.IO;
+using Extenso;
+using Extenso.Collections;
+using Extenso.IO;
 
 namespace BBQ.Toolkit.Plugins.FileDiffOutput
 {
@@ -86,8 +86,8 @@ namespace BBQ.Toolkit.Plugins.FileDiffOutput
 
         private void OutputDifferences(string inputFile1, string inputFile2)
         {
-            var file1Lines = new FileInfo(inputFile1).GetText().ToLines();
-            var file2Lines = new FileInfo(inputFile2).GetText().ToLines();
+            var file1Lines = new FileInfo(inputFile1).ReadAllText().ToLines();
+            var file2Lines = new FileInfo(inputFile2).ReadAllText().ToLines();
 
             var newLines = new List<string>();
             foreach (string line in file1Lines)

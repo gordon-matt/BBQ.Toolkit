@@ -3,9 +3,9 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Kore;
-using Kore.Collections;
-using Kore.IO;
+using Extenso;
+using Extenso.Collections;
+using Extenso.IO;
 
 namespace BBQ.Toolkit.Plugins.LogFilter
 {
@@ -80,12 +80,12 @@ namespace BBQ.Toolkit.Plugins.LogFilter
         {
             if (OutputType == OutputType.Distinct)
             {
-                var lines = new FileInfo(InputFile).GetText().ToLines();
+                var lines = new FileInfo(InputFile).ReadAllText().ToLines();
                 lines.Distinct().Join(Environment.NewLine).ToFile(OutputFile);
             }
             else
             {
-                var lines = new FileInfo(InputFile).GetText().ToLines();
+                var lines = new FileInfo(InputFile).ReadAllText().ToLines();
                 var matching = lines.Where(x => x.Contains(Matching));//TODO: support Regex
                 matching.Join(Environment.NewLine).ToFile(OutputFile);
             }

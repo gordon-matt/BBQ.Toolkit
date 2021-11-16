@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
-using Kore;
-using Kore.IO;
+using Extenso;
+using Extenso.IO;
 
 namespace BBQ.Toolkit.Plugins.RegexStudio
 {

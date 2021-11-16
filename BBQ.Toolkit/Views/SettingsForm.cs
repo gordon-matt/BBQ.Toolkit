@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
 using Krypton.Toolkit;
-using Kore.Collections;
+using Extenso.Collections;
 
 namespace BBQ.Toolkit.Views
 {
