@@ -47,12 +47,13 @@ namespace BBQ.Toolkit.Views
             // 
             // pluginMenuStrip
             // 
-            this.pluginMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.pluginMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pluginMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuTools});
             this.pluginMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.pluginMenuStrip.Name = "pluginMenuStrip";
-            this.pluginMenuStrip.Size = new System.Drawing.Size(1264, 24);
+            this.pluginMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.pluginMenuStrip.Size = new System.Drawing.Size(1475, 24);
             this.pluginMenuStrip.TabIndex = 0;
             this.pluginMenuStrip.Text = "pluginMenuStrip1";
             // 
@@ -68,13 +69,14 @@ namespace BBQ.Toolkit.Views
             // mnuToolsChoosePlugins
             // 
             this.mnuToolsChoosePlugins.Name = "mnuToolsChoosePlugins";
-            this.mnuToolsChoosePlugins.Size = new System.Drawing.Size(156, 22);
+            this.mnuToolsChoosePlugins.Size = new System.Drawing.Size(180, 22);
             this.mnuToolsChoosePlugins.Text = "Choose Plugins";
+            this.mnuToolsChoosePlugins.Click += new System.EventHandler(this.mnuToolsChoosePlugins_Click);
             // 
             // mnuToolPluginSettings
             // 
             this.mnuToolPluginSettings.Name = "mnuToolPluginSettings";
-            this.mnuToolPluginSettings.Size = new System.Drawing.Size(156, 22);
+            this.mnuToolPluginSettings.Size = new System.Drawing.Size(180, 22);
             this.mnuToolPluginSettings.Text = "Plugin Settings";
             this.mnuToolPluginSettings.Click += new System.EventHandler(this.mnuToolsPluginSettings_Click);
             // 
@@ -85,9 +87,10 @@ namespace BBQ.Toolkit.Views
             this.pluginTreeView.ImageListImageSize = new System.Drawing.Size(24, 24);
             this.pluginTreeView.ItemHeight = 32;
             this.pluginTreeView.Location = new System.Drawing.Point(0, 0);
+            this.pluginTreeView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pluginTreeView.Name = "pluginTreeView";
             this.pluginTreeView.SelectedImageIndex = 0;
-            this.pluginTreeView.Size = new System.Drawing.Size(341, 657);
+            this.pluginTreeView.Size = new System.Drawing.Size(397, 762);
             this.pluginTreeView.TabIndex = 1;
             this.pluginTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pluginTreeView_AfterSelect);
             // 
@@ -95,13 +98,15 @@ namespace BBQ.Toolkit.Views
             // 
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.Controls.Add(this.pluginTreeView);
-            this.splitContainer.Size = new System.Drawing.Size(1264, 657);
-            this.splitContainer.SplitterDistance = 341;
+            this.splitContainer.Size = new System.Drawing.Size(1475, 762);
+            this.splitContainer.SplitterDistance = 397;
+            this.splitContainer.SplitterWidth = 5;
             this.splitContainer.TabIndex = 2;
             // 
             // kryptonManager
@@ -110,12 +115,13 @@ namespace BBQ.Toolkit.Views
             // 
             // HostForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1475, 786);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.pluginMenuStrip);
             this.MainMenuStrip = this.pluginMenuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "HostForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BBQ Toolkit";

@@ -282,3 +282,5 @@ __pycache__/
 build/
 
 ### Project Specific ###
+
+BBQ.Toolkit/Plugins

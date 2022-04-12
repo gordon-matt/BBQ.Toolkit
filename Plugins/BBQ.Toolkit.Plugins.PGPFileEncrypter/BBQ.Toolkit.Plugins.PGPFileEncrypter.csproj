@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<OutputType>Library</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="PgpCore" Version="5.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\BBQ.Toolkit.Common\BBQ.Toolkit.Common.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Main.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+	</ItemGroup>
+	<PropertyGroup>
+		<PostBuildEvent>XCOPY /Y /S "$(TargetDir)*.*" "$(SolutionDir)$(SolutionName)\$(OutDir)Plugins\*.*"</PostBuildEvent>
+	</PropertyGroup>
+
+</Project>

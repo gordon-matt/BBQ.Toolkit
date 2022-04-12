@@ -71,5 +71,10 @@ namespace BBQ.Toolkit.Views
         {
             new SettingsForm().ShowDialog();
         }
+
+        private void mnuToolsChoosePlugins_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
