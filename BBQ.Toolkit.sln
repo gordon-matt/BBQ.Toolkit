@@ -32,7 +32,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBQ.Toolkit.Plugins.PGPFileEncrypter", "Plugins\BBQ.Toolkit.Plugins.PGPFileEncrypter\BBQ.Toolkit.Plugins.PGPFileEncrypter.csproj", "{ED7D2094-D231-4885-8AD5-A02AB01008F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BBQ.Toolkit.Plugins.PGPFileEncrypter", "Plugins\BBQ.Toolkit.Plugins.PGPFileEncrypter\BBQ.Toolkit.Plugins.PGPFileEncrypter.csproj", "{ED7D2094-D231-4885-8AD5-A02AB01008F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BBQ.Toolkit.Plugins.JsonFormatter", "Plugins\BBQ.Toolkit.Plugins.JsonFormatter\BBQ.Toolkit.Plugins.JsonFormatter.csproj", "{79512251-C154-4C80-929B-5D5EB438C433}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -188,6 +190,18 @@ Global
 		{ED7D2094-D231-4885-8AD5-A02AB01008F6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{ED7D2094-D231-4885-8AD5-A02AB01008F6}.Release|x86.ActiveCfg = Release|Any CPU
 		{ED7D2094-D231-4885-8AD5-A02AB01008F6}.Release|x86.Build.0 = Release|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Debug|x86.Build.0 = Debug|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Release|x86.ActiveCfg = Release|Any CPU
+		{79512251-C154-4C80-929B-5D5EB438C433}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -203,6 +217,7 @@ Global
 		{E58F4D30-ACDA-4432-8EF4-FC6F6089013C} = {B3CA5EF0-20F3-49BC-8C29-7ACC7F46001D}
 		{E53E33F6-24CF-4B5D-903D-2A88C491A303} = {B3CA5EF0-20F3-49BC-8C29-7ACC7F46001D}
 		{ED7D2094-D231-4885-8AD5-A02AB01008F6} = {B3CA5EF0-20F3-49BC-8C29-7ACC7F46001D}
+		{79512251-C154-4C80-929B-5D5EB438C433} = {B3CA5EF0-20F3-49BC-8C29-7ACC7F46001D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CE586885-49C6-4994-A08B-1CA3A7667018}
