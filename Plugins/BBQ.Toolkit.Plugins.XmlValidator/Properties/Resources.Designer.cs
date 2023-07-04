@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BBQ.Toolkit.Plugins.XmlFormatter.Properties {
+namespace BBQ.Toolkit.Plugins.XmlValidator.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BBQ.Toolkit.Plugins.XmlFormatter.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BBQ.Toolkit.Plugins.XmlValidator.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,16 +57,6 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Icon {
-            get {
-                object obj = ResourceManager.GetObject("Icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

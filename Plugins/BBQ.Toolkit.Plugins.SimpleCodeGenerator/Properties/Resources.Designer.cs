@@ -69,5 +69,15 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wand_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Wand_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

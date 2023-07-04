@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
+using BBQ.Toolkit.Plugins.JsonFormatter;
 
 namespace BBQ.Toolkit.Plugins.XmlFormatter
 {
@@ -24,7 +25,7 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
 
         public string SubGroup => null;
 
-        public Image Icon => null;
+        public Image Icon => Resources.Icon;
 
         public ISettingsControl SettingsControl => null;
 

@@ -103,6 +103,16 @@ namespace BBQ.Toolkit.Common.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Copy_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Copy_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Info_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Info_32x32", resourceCulture);

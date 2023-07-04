@@ -42,22 +42,25 @@ namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(591, 72);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.CornerRoundingRadius = -1F;
+            this.btnSave.Location = new System.Drawing.Point(422, 164);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(154, 50);
+            this.btnSave.Size = new System.Drawing.Size(206, 50);
             this.btnSave.TabIndex = 2;
             this.btnSave.Values.Text = "Encrypt and Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBrowseFile
             // 
-            this.btnBrowseFile.Location = new System.Drawing.Point(752, 12);
+            this.btnBrowseFile.CornerRoundingRadius = -1F;
+            this.btnBrowseFile.Location = new System.Drawing.Point(116, 43);
             this.btnBrowseFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBrowseFile.Name = "btnBrowseFile";
-            this.btnBrowseFile.Size = new System.Drawing.Size(31, 25);
+            this.btnBrowseFile.Size = new System.Drawing.Size(104, 40);
             this.btnBrowseFile.TabIndex = 0;
-            this.btnBrowseFile.Values.Text = "…";
+            this.btnBrowseFile.Values.Text = "Browse";
             this.btnBrowseFile.Click += new System.EventHandler(this.btnBrowseFile_Click);
             // 
             // dlgOpenFile
@@ -74,7 +77,7 @@ namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
             // 
             // lblPublicKeyFile
             // 
-            this.lblPublicKeyFile.Location = new System.Drawing.Point(22, 46);
+            this.lblPublicKeyFile.Location = new System.Drawing.Point(22, 92);
             this.lblPublicKeyFile.Name = "lblPublicKeyFile";
             this.lblPublicKeyFile.Size = new System.Drawing.Size(88, 20);
             this.lblPublicKeyFile.TabIndex = 4;
@@ -82,26 +85,31 @@ namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
             // 
             // txtFile
             // 
+            this.txtFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFile.Location = new System.Drawing.Point(116, 14);
             this.txtFile.Name = "txtFile";
-            this.txtFile.Size = new System.Drawing.Size(629, 23);
+            this.txtFile.Size = new System.Drawing.Size(512, 23);
             this.txtFile.TabIndex = 5;
             // 
             // txtPublicKeyFile
             // 
-            this.txtPublicKeyFile.Location = new System.Drawing.Point(116, 43);
+            this.txtPublicKeyFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPublicKeyFile.Location = new System.Drawing.Point(116, 89);
             this.txtPublicKeyFile.Name = "txtPublicKeyFile";
-            this.txtPublicKeyFile.Size = new System.Drawing.Size(629, 23);
+            this.txtPublicKeyFile.Size = new System.Drawing.Size(512, 23);
             this.txtPublicKeyFile.TabIndex = 6;
             // 
             // btnBrowsePublicKeyFile
             // 
-            this.btnBrowsePublicKeyFile.Location = new System.Drawing.Point(752, 43);
+            this.btnBrowsePublicKeyFile.CornerRoundingRadius = -1F;
+            this.btnBrowsePublicKeyFile.Location = new System.Drawing.Point(116, 118);
             this.btnBrowsePublicKeyFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBrowsePublicKeyFile.Name = "btnBrowsePublicKeyFile";
-            this.btnBrowsePublicKeyFile.Size = new System.Drawing.Size(31, 25);
+            this.btnBrowsePublicKeyFile.Size = new System.Drawing.Size(104, 40);
             this.btnBrowsePublicKeyFile.TabIndex = 7;
-            this.btnBrowsePublicKeyFile.Values.Text = "…";
+            this.btnBrowsePublicKeyFile.Values.Text = "Browse";
             this.btnBrowsePublicKeyFile.Click += new System.EventHandler(this.btnBrowsePublicKeyFile_Click);
             // 
             // Main
@@ -118,7 +126,7 @@ namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
             this.Controls.Add(this.btnBrowseFile);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Main";
-            this.Size = new System.Drawing.Size(798, 568);
+            this.Size = new System.Drawing.Size(642, 299);
             this.ResumeLayout(false);
             this.PerformLayout();
 

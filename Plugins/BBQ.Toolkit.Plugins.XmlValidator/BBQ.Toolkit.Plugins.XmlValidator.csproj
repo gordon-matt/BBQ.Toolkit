@@ -2,8 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
-    <RootNamespace>BBQ.Toolkit.Plugins.XmlFormatter</RootNamespace>
-    <AssemblyName>BBQ.Toolkit.Plugins.XmlFormatter</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
