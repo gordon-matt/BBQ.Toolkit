@@ -20,7 +20,7 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
 
         public string Description => string.Empty;
 
-        public string Group => "Text";
+        public string Group => CommonConstants.PluginCategories.Text;
 
         public string SubGroup => null;
 

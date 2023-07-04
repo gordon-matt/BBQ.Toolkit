@@ -1,20 +1,25 @@
 ﻿namespace BBQ.Toolkit.Controls;
 
-public class PluginTreeView : TreeView
+public class PluginTreeView : KryptonTreeView
 {
     //TODO: Check same image not being added multiple times
     private readonly ImageList imageList = new ImageList();
+
+    public PluginTreeView()
+    {
+        ImageList = imageList;
+        imageList.Images.Add(Resources.Plugin);
+        imageList.Images.Add(Resources.Data);
+        imageList.Images.Add(Resources.Text);
+        imageList.Images.Add(Resources.Image);
+        imageList.Images.Add(Resources.Security);
+        imageList.Images.Add(Resources.Code);
+    }
 
     public Size ImageListImageSize
     {
         get { return imageList.ImageSize; }
         set { imageList.ImageSize = value; }
-    }
-
-    public PluginTreeView()
-    {
-        ImageList = imageList;
-        imageList.Images.Add(Resources.TreeImage);
     }
 
     public void AddPlugin(IPlugin plugin)
@@ -61,6 +66,15 @@ public class PluginTreeView : TreeView
             if (!string.IsNullOrEmpty(plugin.Group))
             {
                 group = new TreeNode(plugin.Group);
+
+                switch (plugin.Group)
+                {
+                    case CommonConstants.PluginCategories.Data: group.ImageIndex = 1; break;
+                    case CommonConstants.PluginCategories.Text: group.ImageIndex = 2; break;
+                    case CommonConstants.PluginCategories.Images: group.ImageIndex = 3; break;
+                    case CommonConstants.PluginCategories.Security: group.ImageIndex = 4; break;
+                    case CommonConstants.PluginCategories.Code: group.ImageIndex = 5; break;
+                }
 
                 if (subGroup != null)
                 {
@@ -132,6 +146,15 @@ public class PluginTreeView : TreeView
             {
                 group = new TreeNode(plugin.Group);
 
+                switch (plugin.Group)
+                {
+                    case CommonConstants.PluginCategories.Data: group.ImageIndex = 1; break;
+                    case CommonConstants.PluginCategories.Text: group.ImageIndex = 2; break;
+                    case CommonConstants.PluginCategories.Images: group.ImageIndex = 3; break;
+                    case CommonConstants.PluginCategories.Security: group.ImageIndex = 4; break;
+                    case CommonConstants.PluginCategories.Code: group.ImageIndex = 5; break;
+                }
+
                 if (subGroup != null)
                 {
                     group.Nodes.Add(subGroup);
@@ -177,5 +200,11 @@ public class PluginTreeView : TreeView
 
             return node;
         }
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        imageList?.Dispose();
     }
 }

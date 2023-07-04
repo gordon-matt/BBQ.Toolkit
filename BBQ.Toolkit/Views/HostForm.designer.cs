@@ -32,6 +32,7 @@ namespace BBQ.Toolkit.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HostForm));
             this.pluginMenuStrip = new BBQ.Toolkit.Controls.PluginMenuStrip();
             this.mnuTools = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuToolsChoosePlugins = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,14 +70,14 @@ namespace BBQ.Toolkit.Views
             // mnuToolsChoosePlugins
             // 
             this.mnuToolsChoosePlugins.Name = "mnuToolsChoosePlugins";
-            this.mnuToolsChoosePlugins.Size = new System.Drawing.Size(180, 22);
+            this.mnuToolsChoosePlugins.Size = new System.Drawing.Size(156, 22);
             this.mnuToolsChoosePlugins.Text = "Choose Plugins";
             this.mnuToolsChoosePlugins.Click += new System.EventHandler(this.mnuToolsChoosePlugins_Click);
             // 
             // mnuToolPluginSettings
             // 
             this.mnuToolPluginSettings.Name = "mnuToolPluginSettings";
-            this.mnuToolPluginSettings.Size = new System.Drawing.Size(180, 22);
+            this.mnuToolPluginSettings.Size = new System.Drawing.Size(156, 22);
             this.mnuToolPluginSettings.Text = "Plugin Settings";
             this.mnuToolPluginSettings.Click += new System.EventHandler(this.mnuToolsPluginSettings_Click);
             // 
@@ -84,7 +85,7 @@ namespace BBQ.Toolkit.Views
             // 
             this.pluginTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pluginTreeView.ImageIndex = 0;
-            this.pluginTreeView.ImageListImageSize = new System.Drawing.Size(24, 24);
+            this.pluginTreeView.ImageListImageSize = new System.Drawing.Size(32, 32);
             this.pluginTreeView.ItemHeight = 32;
             this.pluginTreeView.Location = new System.Drawing.Point(0, 0);
             this.pluginTreeView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -120,6 +121,7 @@ namespace BBQ.Toolkit.Views
             this.ClientSize = new System.Drawing.Size(1475, 786);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.pluginMenuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.pluginMenuStrip;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "HostForm";
