@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
+using BBQ.Toolkit.Plugins.RegexStudio.Properties;
 
 namespace BBQ.Toolkit.Plugins.RegexStudio
 {
@@ -20,11 +21,11 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
 
         public string Description => string.Empty;
 
-        public string Group => "Text";
+        public string Group => CommonConstants.PluginCategories.Text;
 
         public string SubGroup => null;
 
-        public Image Icon => null;
+        public Image Icon => Resources.Icon;
 
         public ISettingsControl SettingsControl => null;
 

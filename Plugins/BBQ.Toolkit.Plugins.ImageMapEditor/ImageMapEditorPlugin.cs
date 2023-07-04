@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
+using BBQ.Toolkit.Plugins.ImageMapEditor.Properties;
 
 namespace BBQ.Toolkit.Plugins.ImageMapEditor
 {
@@ -20,11 +21,11 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
 
         public string Description => string.Empty;
 
-        public string Group => "Images";
+        public string Group => CommonConstants.PluginCategories.Images;
 
         public string SubGroup => null;
 
-        public Image Icon => Properties.Resources.Shapes;
+        public Image Icon => Resources.Icon;
 
         public ISettingsControl SettingsControl => null;
 

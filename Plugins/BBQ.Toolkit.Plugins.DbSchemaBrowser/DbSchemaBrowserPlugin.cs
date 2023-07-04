@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
+using BBQ.Toolkit.Plugins.DbSchemaBrowser.Properties;
 
 namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
 {
@@ -20,11 +21,11 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
 
         public string Description => "View Sql Metadata";
 
-        public string Group => "Database";
+        public string Group => CommonConstants.PluginCategories.Data;
 
         public string SubGroup => null;
 
-        public Image Icon => null;
+        public Image Icon => Resources.Icon;
 
         public ISettingsControl SettingsControl => null;
 

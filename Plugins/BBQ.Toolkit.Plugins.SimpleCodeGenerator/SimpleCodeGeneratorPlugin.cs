@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
+using BBQ.Toolkit.Plugins.SimpleCodeGenerator.Properties;
 
 namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
 {
@@ -20,11 +21,11 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
 
         public string Description => string.Empty;
 
-        public string Group => "CodeGen";
+        public string Group => CommonConstants.PluginCategories.Code;
 
         public string SubGroup => null;
 
-        public Image Icon => null;
+        public Image Icon => Resources.Icon;
 
         public ISettingsControl SettingsControl => null;
 

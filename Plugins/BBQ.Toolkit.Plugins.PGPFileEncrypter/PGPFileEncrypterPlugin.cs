@@ -20,11 +20,11 @@ namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
 
         public string Description => string.Empty;
 
-        public string Group => "Security";
+        public string Group => CommonConstants.PluginCategories.Security;
 
         public string SubGroup => null;
 
-        public Image Icon => null;
+        public Image Icon => Resources.Icon;
 
         public ISettingsControl SettingsControl => null;
 
