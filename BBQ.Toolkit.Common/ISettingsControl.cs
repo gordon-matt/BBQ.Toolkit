@@ -1,11 +1,8 @@
-﻿using System.Windows.Forms;
+﻿namespace BBQ.Toolkit.Common;
 
-namespace BBQ.Toolkit.Common
+public interface ISettingsControl
 {
-    public interface ISettingsControl
-    {
-        UserControl ControlContent { get; }
+    UserControl ControlContent { get; }
 
-        void Save();
-    }
+    void Save();
 }

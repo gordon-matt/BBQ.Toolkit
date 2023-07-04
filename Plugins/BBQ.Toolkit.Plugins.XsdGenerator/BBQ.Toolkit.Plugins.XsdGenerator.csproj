@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
@@ -12,14 +12,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.255803">
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BBQ.Toolkit.Common\BBQ.Toolkit.Common.csproj" />
   </ItemGroup>
-  <PropertyGroup>
-    <PostBuildEvent>XCOPY /Y /S "$(TargetDir)*.*" "$(SolutionDir)$(SolutionName)\$(OutDir)Plugins\*.*"</PostBuildEvent>
-  </PropertyGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="XCOPY /Y /S &quot;$(TargetDir)*.*&quot; &quot;$(SolutionDir)$(SolutionName)\$(OutDir)Plugins\*.*&quot;" />
+	</Target>
 </Project>

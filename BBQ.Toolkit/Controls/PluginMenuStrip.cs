@@ -1,133 +1,126 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using BBQ.Toolkit.Common;
+﻿namespace BBQ.Toolkit.Controls;
 
-namespace BBQ.Toolkit.Controls
+public class PluginMenuStrip : MenuStrip
 {
-    public class PluginMenuStrip : MenuStrip
+    private List<string> pluginItems = new List<string>();
+
+    public void AddPlugin(IPlugin plugin)
     {
-        private List<string> pluginItems = new List<string>();
+        #region Main Plugin Node
 
-        public void AddPlugin(IPlugin plugin)
+        var pluginItem = new ToolStripMenuItem(plugin.Title);
+        pluginItem.Tag = plugin;
+
+        try
         {
-            #region Main Plugin Node
-
-            var pluginItem = new ToolStripMenuItem(plugin.Title);
-            pluginItem.Tag = plugin;
-
-            try
+            if (plugin.Icon != null)
             {
-                if (plugin.Icon != null)
-                {
-                    pluginItem.Image = plugin.Icon;
-                }
+                pluginItem.Image = plugin.Icon;
             }
-            catch (NotImplementedException) { } // No icon
+        }
+        catch (NotImplementedException) { } // No icon
 
-            if (plugin is IFormPlugin)
+        if (plugin is IFormPlugin)
+        {
+            pluginItem.Click += new EventHandler(pluginItem_Click);
+        }
+
+        #endregion Main Plugin Node
+
+        ToolStripMenuItem subGroup = null;
+        try
+        {
+            if (!string.IsNullOrEmpty(plugin.SubGroup))
             {
-                pluginItem.Click += new EventHandler(pluginItem_Click);
+                subGroup = new ToolStripMenuItem(plugin.SubGroup);
+                subGroup.DropDownItems.Add(pluginItem);
             }
+        }
+        catch (NotImplementedException)
+        {
+            // Do nothing (check for main group next)
+        }
 
-            #endregion Main Plugin Node
-
-            ToolStripMenuItem subGroup = null;
-            try
+        ToolStripMenuItem group = null;
+        try
+        {
+            if (!string.IsNullOrEmpty(plugin.Group))
             {
-                if (!string.IsNullOrEmpty(plugin.SubGroup))
-                {
-                    subGroup = new ToolStripMenuItem(plugin.SubGroup);
-                    subGroup.DropDownItems.Add(pluginItem);
-                }
-            }
-            catch (NotImplementedException)
-            {
-                // Do nothing (check for main group next)
-            }
+                group = new ToolStripMenuItem(plugin.Group);
 
-            ToolStripMenuItem group = null;
-            try
-            {
-                if (!string.IsNullOrEmpty(plugin.Group))
-                {
-                    group = new ToolStripMenuItem(plugin.Group);
-
-                    if (subGroup != null)
-                    {
-                        group.DropDownItems.Add(subGroup);
-                    }
-                    else { group.DropDownItems.Add(pluginItem); }
-
-                    EnsureItem(group);
-                    pluginItems.Add(plugin.Group);
-                }
-            }
-            catch (NotImplementedException)
-            {
                 if (subGroup != null)
                 {
-                    Items.Add(subGroup);
-                    pluginItems.Add(plugin.SubGroup);
+                    group.DropDownItems.Add(subGroup);
                 }
-                else
-                {
-                    Items.Add(pluginItem);
-                    pluginItems.Add(plugin.Title);
-                }
-                return;
-            }
+                else { group.DropDownItems.Add(pluginItem); }
 
-            if (group == null && subGroup == null)
+                EnsureItem(group);
+                pluginItems.Add(plugin.Group);
+            }
+        }
+        catch (NotImplementedException)
+        {
+            if (subGroup != null)
+            {
+                Items.Add(subGroup);
+                pluginItems.Add(plugin.SubGroup);
+            }
+            else
             {
                 Items.Add(pluginItem);
                 pluginItems.Add(plugin.Title);
             }
+            return;
         }
 
-        private ToolStripMenuItem EnsureItem(ToolStripMenuItem menuItem)
+        if (group == null && subGroup == null)
         {
-            var item = this.Items.Cast<ToolStripMenuItem>().SingleOrDefault(x => x.Text == menuItem.Text);
-
-            if (item == null)
-            {
-                Items.Add(menuItem);
-                return menuItem;
-            }
-            else
-            {
-                foreach (ToolStripMenuItem subItem in menuItem.DropDownItems)
-                {
-                    item.DropDownItems.Add(subItem);
-                }
-
-                return item;
-            }
+            Items.Add(pluginItem);
+            pluginItems.Add(plugin.Title);
         }
+    }
 
-        public void RemovePlugins()
+    private ToolStripMenuItem EnsureItem(ToolStripMenuItem menuItem)
+    {
+        var item = this.Items.Cast<ToolStripMenuItem>().SingleOrDefault(x => x.Text == menuItem.Text);
+
+        if (item == null)
         {
-            foreach (string item in pluginItems)
-            {
-                Items.RemoveByKey(item);
-            }
+            Items.Add(menuItem);
+            return menuItem;
         }
-
-        private void pluginItem_Click(object sender, EventArgs e)
+        else
         {
-            var menuItem = sender as ToolStripMenuItem;
-            var plugin = menuItem.Tag as IFormPlugin;
-            var form = plugin.Content;
+            foreach (ToolStripMenuItem subItem in menuItem.DropDownItems)
+            {
+                item.DropDownItems.Add(subItem);
+            }
 
-            if (plugin.ShowAs == ShowAs.Dialog)
-            {
-                form.ShowDialog();
-            }
-            else
-            {
-                form.Show();
-            }
+            return item;
+        }
+    }
+
+    public void RemovePlugins()
+    {
+        foreach (string item in pluginItems)
+        {
+            Items.RemoveByKey(item);
+        }
+    }
+
+    private void pluginItem_Click(object sender, EventArgs e)
+    {
+        var menuItem = sender as ToolStripMenuItem;
+        var plugin = menuItem.Tag as IFormPlugin;
+        var form = plugin.Content;
+
+        if (plugin.ShowAs == ShowAs.Dialog)
+        {
+            form.ShowDialog();
+        }
+        else
+        {
+            form.Show();
         }
     }
 }

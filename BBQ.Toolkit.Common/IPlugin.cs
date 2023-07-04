@@ -1,19 +1,16 @@
-﻿using System.Drawing;
+﻿namespace BBQ.Toolkit.Common;
 
-namespace BBQ.Toolkit.Common
+public interface IPlugin
 {
-    public interface IPlugin
-    {
-        string Title { get; }
+    string Title { get; }
 
-        string Description { get; }
+    string Description { get; }
 
-        string Group { get; }
+    string Group { get; }
 
-        string SubGroup { get; }
+    string SubGroup { get; }
 
-        Image Icon { get; }
+    Image Icon { get; }
 
-        ISettingsControl SettingsControl { get; }
-    }
+    ISettingsControl SettingsControl { get; }
 }

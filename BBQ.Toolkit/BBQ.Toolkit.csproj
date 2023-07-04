@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -8,6 +8,11 @@
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <StartupObject>BBQ.Toolkit.Program</StartupObject>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Plugins\**" />
+    <EmbeddedResource Remove="Plugins\**" />
+    <None Remove="Plugins\**" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Update="Controls\PluginMenuStrip.cs">
       <SubType>Component</SubType>
@@ -24,8 +29,8 @@
     <Content Include="Resources\Images\TreeImage.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Krypton.Workspace" Version="6.2111.312" />
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.255803">
+    <PackageReference Include="Krypton.Workspace" Version="70.22.11.312" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
