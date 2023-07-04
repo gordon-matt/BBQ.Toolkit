@@ -1,39 +1,42 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using BBQ.Toolkit.Common.Properties;
 using Extenso;
 using Extenso.IO;
 using Newtonsoft.Json;
 
-namespace BBQ.Toolkit.Plugins.XmlFormatter
+namespace BBQ.Toolkit.Plugins.XmlFormatter;
+
+public partial class Main : UserControl
 {
-    public partial class Main : UserControl
+    public Main()
     {
-        public Main()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+        btnLoad.Image = CommonImages.OpenFolder_32x32;
+        btnFormat.Image = CommonImages.Clean_32x32;
+        btnSave.Image = CommonImages.Save_32x32;
+    }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+    private void btnLoad_Click(object sender, EventArgs e)
+    {
+        if (dlgOpenFile.ShowDialog() == DialogResult.OK)
         {
-            if (dlgOpenFile.ShowDialog() == DialogResult.OK)
-            {
-                txtJson.Text = new FileInfo(dlgOpenFile.FileName).ReadAllText();
-            }
+            txtJson.Text = new FileInfo(dlgOpenFile.FileName).ReadAllText();
         }
+    }
 
-        private void btnFormat_Click(object sender, EventArgs e)
-        {
-            var obj = JsonConvert.DeserializeObject(txtJson.Text);
-            txtJson.Text = JsonConvert.SerializeObject(obj, Formatting.Indented);
-        }
+    private void btnFormat_Click(object sender, EventArgs e)
+    {
+        var obj = JsonConvert.DeserializeObject(txtJson.Text);
+        txtJson.Text = JsonConvert.SerializeObject(obj, Formatting.Indented);
+    }
 
-        private void btnSave_Click(object sender, EventArgs e)
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+        if (dlgSaveFile.ShowDialog() == DialogResult.OK)
         {
-            if (dlgSaveFile.ShowDialog() == DialogResult.OK)
-            {
-                txtJson.Text.ToFile(dlgSaveFile.FileName);
-            }
+            txtJson.Text.ToFile(dlgSaveFile.FileName);
         }
     }
 }

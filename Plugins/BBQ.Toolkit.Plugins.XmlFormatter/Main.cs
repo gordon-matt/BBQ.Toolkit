@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using BBQ.Toolkit.Common.Properties;
 using Extenso;
 using Extenso.IO;
 
@@ -11,6 +12,9 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
         public Main()
         {
             InitializeComponent();
+            btnLoad.Image = CommonImages.OpenFolder_32x32;
+            btnFormat.Image = CommonImages.Clean_32x32;
+            btnSave.Image = CommonImages.Save_32x32;
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
