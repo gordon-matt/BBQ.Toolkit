@@ -17,7 +17,7 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
 
         #region IPlugin Members
 
-        public string Title => "Xml Formatter";
+        public string Title => "XML Formatter";
 
         public string Description => string.Empty;
 

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using BBQ.Toolkit.Common.Properties;
 using Extenso;
 
 namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
@@ -18,6 +19,7 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
         public Main()
         {
             InitializeComponent();
+            btnCopy.Values.Image = CommonImages.Copy_32x32;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)

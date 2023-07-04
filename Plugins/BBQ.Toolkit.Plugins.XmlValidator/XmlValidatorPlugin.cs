@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
-using BBQ.Toolkit.Plugins.XmlFormatter.Properties;
+using BBQ.Toolkit.Plugins.XmlValidator.Properties;
 
 namespace BBQ.Toolkit.Plugins.XmlValidator
 {
@@ -17,7 +17,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
 
         #region IPlugin Members
 
-        public string Title => "Xml Validator";
+        public string Title => "XML Validator";
 
         public string Description => string.Empty;
 
@@ -25,7 +25,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
 
         public string SubGroup => null;
 
-        public Image Icon => Resources.Icon;
+        public Image Icon => Resources.Validate;
 
         public ISettingsControl SettingsControl => null;
 

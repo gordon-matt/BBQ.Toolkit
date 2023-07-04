@@ -54,7 +54,7 @@ namespace BBQ.Toolkit.Views
             this.pluginMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.pluginMenuStrip.Name = "pluginMenuStrip";
             this.pluginMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.pluginMenuStrip.Size = new System.Drawing.Size(1475, 24);
+            this.pluginMenuStrip.Size = new System.Drawing.Size(969, 24);
             this.pluginMenuStrip.TabIndex = 0;
             this.pluginMenuStrip.Text = "pluginMenuStrip1";
             // 
@@ -91,7 +91,7 @@ namespace BBQ.Toolkit.Views
             this.pluginTreeView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pluginTreeView.Name = "pluginTreeView";
             this.pluginTreeView.SelectedImageIndex = 0;
-            this.pluginTreeView.Size = new System.Drawing.Size(397, 762);
+            this.pluginTreeView.Size = new System.Drawing.Size(260, 594);
             this.pluginTreeView.TabIndex = 1;
             this.pluginTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pluginTreeView_AfterSelect);
             // 
@@ -105,8 +105,8 @@ namespace BBQ.Toolkit.Views
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.Controls.Add(this.pluginTreeView);
-            this.splitContainer.Size = new System.Drawing.Size(1475, 762);
-            this.splitContainer.SplitterDistance = 397;
+            this.splitContainer.Size = new System.Drawing.Size(969, 594);
+            this.splitContainer.SplitterDistance = 260;
             this.splitContainer.SplitterWidth = 5;
             this.splitContainer.TabIndex = 2;
             // 
@@ -118,7 +118,7 @@ namespace BBQ.Toolkit.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1475, 786);
+            this.ClientSize = new System.Drawing.Size(969, 618);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.pluginMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

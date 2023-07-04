@@ -36,13 +36,13 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
             this.btnLoadXsd = new System.Windows.Forms.ToolStripButton();
             this.btnValidate = new System.Windows.Forms.ToolStripButton();
             this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.txtXsd = new Krypton.Toolkit.KryptonTextBox();
             this.txtXml = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelTop)).BeginInit();
             this.panelTop.SuspendLayout();
             this.toolStrip.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -72,7 +72,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
             // btnLoadXml
             // 
             this.btnLoadXml.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLoadXml.Image = global::BBQ.Toolkit.Plugins.XmlFormatter.Properties.Resources.Xml;
+            this.btnLoadXml.Image = global::BBQ.Toolkit.Plugins.XmlValidator.Properties.Resources.Xml;
             this.btnLoadXml.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLoadXml.Name = "btnLoadXml";
             this.btnLoadXml.Size = new System.Drawing.Size(36, 36);
@@ -82,7 +82,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
             // btnLoadXsd
             // 
             this.btnLoadXsd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLoadXsd.Image = global::BBQ.Toolkit.Plugins.XmlFormatter.Properties.Resources.Xsd;
+            this.btnLoadXsd.Image = global::BBQ.Toolkit.Plugins.XmlValidator.Properties.Resources.Xsd;
             this.btnLoadXsd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLoadXsd.Name = "btnLoadXsd";
             this.btnLoadXsd.Size = new System.Drawing.Size(36, 36);
@@ -92,7 +92,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
             // btnValidate
             // 
             this.btnValidate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnValidate.Image = global::BBQ.Toolkit.Plugins.XmlFormatter.Properties.Resources.Validate;
+            this.btnValidate.Image = global::BBQ.Toolkit.Plugins.XmlValidator.Properties.Resources.Validate;
             this.btnValidate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnValidate.Name = "btnValidate";
             this.btnValidate.Size = new System.Drawing.Size(36, 36);
@@ -103,20 +103,20 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
             // 
             this.dlgOpenFile.Filter = "XML Files|*.xml|XSD Files|*.xsd|All Files|*.*";
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.txtXsd, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtXml, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 40);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(798, 528);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel.ColumnCount = 2;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel.Controls.Add(this.txtXsd, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.txtXml, 0, 0);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 40);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 1;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(798, 528);
+            this.tableLayoutPanel.TabIndex = 1;
             // 
             // txtXsd
             // 
@@ -141,7 +141,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.panelTop);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Main";
@@ -151,8 +151,8 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
             this.panelTop.PerformLayout();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.tableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -161,7 +161,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
 
         private KryptonPanel panelTop;
         private System.Windows.Forms.OpenFileDialog dlgOpenFile;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private KryptonTextBox txtXsd;
         private KryptonTextBox txtXml;
         private KryptonToolStrip toolStrip;

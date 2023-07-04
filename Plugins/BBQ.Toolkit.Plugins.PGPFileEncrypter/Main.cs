@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using BBQ.Toolkit.Common.Properties;
 using PgpCore;
 
 namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
@@ -11,6 +11,9 @@ namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
         public Main()
         {
             InitializeComponent();
+            btnBrowseFile.Values.Image = CommonImages.Browse_32x32;
+            btnBrowsePublicKeyFile.Values.Image = CommonImages.Browse_32x32;
+            btnSave.Values.Image = CommonImages.Save_32x32;
         }
 
         private string FilePath
