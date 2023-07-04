@@ -35,7 +35,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
         {
             this.tsBtnRectangle = new System.Windows.Forms.ToolStripButton();
             this.tsBtnCircle = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStrip = new KryptonToolStrip();
             this.tsBtnPolygon = new System.Windows.Forms.ToolStripButton();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.txtHtml = new Krypton.Toolkit.KryptonTextBox();
@@ -128,7 +128,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
 
         private System.Windows.Forms.ToolStripButton tsBtnRectangle;
         private System.Windows.Forms.ToolStripButton tsBtnCircle;
-        private System.Windows.Forms.ToolStrip toolStrip;
+        private KryptonToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton tsBtnPolygon;
         private System.Windows.Forms.PictureBox pictureBox;
         private KryptonTextBox txtHtml;

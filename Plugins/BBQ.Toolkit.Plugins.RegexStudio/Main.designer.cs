@@ -85,11 +85,12 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             this.txtPattern.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPattern.Location = new System.Drawing.Point(7, 19);
+            this.txtPattern.Location = new System.Drawing.Point(8, 22);
+            this.txtPattern.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPattern.Multiline = true;
             this.txtPattern.Name = "txtPattern";
             this.txtPattern.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtPattern.Size = new System.Drawing.Size(465, 55);
+            this.txtPattern.Size = new System.Drawing.Size(536, 63);
             this.txtPattern.TabIndex = 0;
             this.txtPattern.Text = "Project(?<value>(?:(?!Project).)*)EndProject";
             // 
@@ -98,9 +99,11 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             this.grpPattern.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpPattern.Controls.Add(this.txtPattern);
-            this.grpPattern.Location = new System.Drawing.Point(3, 3);
+            this.grpPattern.Location = new System.Drawing.Point(4, 3);
+            this.grpPattern.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grpPattern.Name = "grpPattern";
-            this.grpPattern.Size = new System.Drawing.Size(478, 85);
+            this.grpPattern.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.grpPattern.Size = new System.Drawing.Size(555, 98);
             this.grpPattern.TabIndex = 0;
             this.grpPattern.TabStop = false;
             this.grpPattern.Text = "Pattern";
@@ -116,9 +119,11 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             this.grpOptions.Controls.Add(this.cbSingleline);
             this.grpOptions.Controls.Add(this.cbMultiline);
             this.grpOptions.Controls.Add(this.cbIgnoreCase);
-            this.grpOptions.Location = new System.Drawing.Point(487, 3);
+            this.grpOptions.Location = new System.Drawing.Point(565, 3);
+            this.grpOptions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grpOptions.Name = "grpOptions";
-            this.grpOptions.Size = new System.Drawing.Size(241, 140);
+            this.grpOptions.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.grpOptions.Size = new System.Drawing.Size(281, 162);
             this.grpOptions.TabIndex = 2;
             this.grpOptions.TabStop = false;
             this.grpOptions.Text = "Options";
@@ -127,7 +132,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             this.cbCompiled.Checked = true;
             this.cbCompiled.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbCompiled.Location = new System.Drawing.Point(121, 108);
+            this.cbCompiled.Location = new System.Drawing.Point(141, 125);
+            this.cbCompiled.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbCompiled.Name = "cbCompiled";
             this.cbCompiled.Size = new System.Drawing.Size(76, 20);
             this.cbCompiled.TabIndex = 7;
@@ -135,7 +141,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             // cbIgnorePatternWS
             // 
-            this.cbIgnorePatternWS.Location = new System.Drawing.Point(121, 79);
+            this.cbIgnorePatternWS.Location = new System.Drawing.Point(141, 91);
+            this.cbIgnorePatternWS.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbIgnorePatternWS.Name = "cbIgnorePatternWS";
             this.cbIgnorePatternWS.Size = new System.Drawing.Size(123, 20);
             this.cbIgnorePatternWS.TabIndex = 5;
@@ -144,7 +151,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             // cbRightToLeft
             // 
-            this.cbRightToLeft.Location = new System.Drawing.Point(121, 50);
+            this.cbRightToLeft.Location = new System.Drawing.Point(141, 58);
+            this.cbRightToLeft.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbRightToLeft.Name = "cbRightToLeft";
             this.cbRightToLeft.Size = new System.Drawing.Size(93, 20);
             this.cbRightToLeft.TabIndex = 3;
@@ -153,7 +161,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             // cbECMAScript
             // 
-            this.cbECMAScript.Location = new System.Drawing.Point(121, 21);
+            this.cbECMAScript.Location = new System.Drawing.Point(141, 24);
+            this.cbECMAScript.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbECMAScript.Name = "cbECMAScript";
             this.cbECMAScript.Size = new System.Drawing.Size(91, 20);
             this.cbECMAScript.TabIndex = 1;
@@ -162,7 +171,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             // cbExplicitCapture
             // 
-            this.cbExplicitCapture.Location = new System.Drawing.Point(6, 108);
+            this.cbExplicitCapture.Location = new System.Drawing.Point(7, 125);
+            this.cbExplicitCapture.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbExplicitCapture.Name = "cbExplicitCapture";
             this.cbExplicitCapture.Size = new System.Drawing.Size(108, 20);
             this.cbExplicitCapture.TabIndex = 6;
@@ -171,7 +181,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             // cbSingleline
             // 
-            this.cbSingleline.Location = new System.Drawing.Point(6, 79);
+            this.cbSingleline.Location = new System.Drawing.Point(7, 91);
+            this.cbSingleline.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbSingleline.Name = "cbSingleline";
             this.cbSingleline.Size = new System.Drawing.Size(76, 20);
             this.cbSingleline.TabIndex = 4;
@@ -182,7 +193,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             this.cbMultiline.Checked = true;
             this.cbMultiline.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbMultiline.Location = new System.Drawing.Point(6, 50);
+            this.cbMultiline.Location = new System.Drawing.Point(7, 58);
+            this.cbMultiline.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbMultiline.Name = "cbMultiline";
             this.cbMultiline.Size = new System.Drawing.Size(71, 20);
             this.cbMultiline.TabIndex = 2;
@@ -192,7 +204,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             this.cbIgnoreCase.Checked = true;
             this.cbIgnoreCase.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbIgnoreCase.Location = new System.Drawing.Point(6, 21);
+            this.cbIgnoreCase.Location = new System.Drawing.Point(7, 24);
+            this.cbIgnoreCase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbIgnoreCase.Name = "cbIgnoreCase";
             this.cbIgnoreCase.Size = new System.Drawing.Size(88, 20);
             this.cbIgnoreCase.TabIndex = 0;
@@ -200,10 +213,13 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             // btnFindMatches
             // 
-            this.btnFindMatches.Location = new System.Drawing.Point(10, 149);
+            this.btnFindMatches.CornerRoundingRadius = -1F;
+            this.btnFindMatches.Location = new System.Drawing.Point(12, 172);
+            this.btnFindMatches.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFindMatches.Name = "btnFindMatches";
-            this.btnFindMatches.Size = new System.Drawing.Size(115, 32);
+            this.btnFindMatches.Size = new System.Drawing.Size(167, 50);
             this.btnFindMatches.TabIndex = 3;
+            this.btnFindMatches.Values.Image = global::BBQ.Toolkit.Plugins.RegexStudio.Properties.Resources.Search;
             this.btnFindMatches.Values.Text = "Find Matches";
             this.btnFindMatches.Click += new System.EventHandler(this.btnFindMatches_Click);
             // 
@@ -212,9 +228,11 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             this.grpReplacementString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpReplacementString.Controls.Add(this.txtReplacementString);
-            this.grpReplacementString.Location = new System.Drawing.Point(3, 94);
+            this.grpReplacementString.Location = new System.Drawing.Point(4, 108);
+            this.grpReplacementString.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grpReplacementString.Name = "grpReplacementString";
-            this.grpReplacementString.Size = new System.Drawing.Size(478, 49);
+            this.grpReplacementString.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.grpReplacementString.Size = new System.Drawing.Size(555, 57);
             this.grpReplacementString.TabIndex = 1;
             this.grpReplacementString.TabStop = false;
             this.grpReplacementString.Text = "Replacement String";
@@ -223,17 +241,21 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             this.txtReplacementString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReplacementString.Location = new System.Drawing.Point(7, 19);
+            this.txtReplacementString.Location = new System.Drawing.Point(8, 22);
+            this.txtReplacementString.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtReplacementString.Name = "txtReplacementString";
-            this.txtReplacementString.Size = new System.Drawing.Size(465, 23);
+            this.txtReplacementString.Size = new System.Drawing.Size(536, 23);
             this.txtReplacementString.TabIndex = 0;
             // 
             // btnReplace
             // 
-            this.btnReplace.Location = new System.Drawing.Point(131, 149);
+            this.btnReplace.CornerRoundingRadius = -1F;
+            this.btnReplace.Location = new System.Drawing.Point(187, 171);
+            this.btnReplace.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnReplace.Name = "btnReplace";
-            this.btnReplace.Size = new System.Drawing.Size(115, 32);
+            this.btnReplace.Size = new System.Drawing.Size(167, 50);
             this.btnReplace.TabIndex = 4;
+            this.btnReplace.Values.Image = global::BBQ.Toolkit.Plugins.RegexStudio.Properties.Resources.Replace;
             this.btnReplace.Values.Text = "Replace";
             this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
             // 
@@ -247,16 +269,20 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             this.pnlTop.Controls.Add(this.btnFindMatches);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 24);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(749, 190);
+            this.pnlTop.Size = new System.Drawing.Size(874, 229);
             this.pnlTop.TabIndex = 0;
             // 
             // btnShowCSharpCode
             // 
-            this.btnShowCSharpCode.Location = new System.Drawing.Point(252, 149);
+            this.btnShowCSharpCode.CornerRoundingRadius = -1F;
+            this.btnShowCSharpCode.Location = new System.Drawing.Point(362, 171);
+            this.btnShowCSharpCode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnShowCSharpCode.Name = "btnShowCSharpCode";
-            this.btnShowCSharpCode.Size = new System.Drawing.Size(115, 32);
+            this.btnShowCSharpCode.Size = new System.Drawing.Size(167, 50);
             this.btnShowCSharpCode.TabIndex = 5;
+            this.btnShowCSharpCode.Values.Image = global::BBQ.Toolkit.Plugins.RegexStudio.Properties.Resources.CS_Script;
             this.btnShowCSharpCode.Values.Text = "Show C# Code";
             this.btnShowCSharpCode.Click += new System.EventHandler(this.btnShowCSharpCode_Click);
             // 
@@ -265,11 +291,12 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             this.txtOutput.BackColor = System.Drawing.Color.LemonChiffon;
             this.txtOutput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOutput.Location = new System.Drawing.Point(0, 0);
+            this.txtOutput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOutput.Size = new System.Drawing.Size(428, 122);
+            this.txtOutput.Size = new System.Drawing.Size(500, 144);
             this.txtOutput.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtOutput.TabIndex = 0;
             // 
@@ -277,6 +304,7 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             this.splitContainerOutput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerOutput.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerOutput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainerOutput.Name = "splitContainerOutput";
             this.splitContainerOutput.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -287,16 +315,18 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // splitContainerOutput.Panel2
             // 
             this.splitContainerOutput.Panel2.Controls.Add(this.txtOutput);
-            this.splitContainerOutput.Size = new System.Drawing.Size(428, 376);
-            this.splitContainerOutput.SplitterDistance = 250;
+            this.splitContainerOutput.Size = new System.Drawing.Size(500, 428);
+            this.splitContainerOutput.SplitterDistance = 279;
+            this.splitContainerOutput.SplitterWidth = 5;
             this.splitContainerOutput.TabIndex = 6;
             // 
             // tvOutput
             // 
             this.tvOutput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvOutput.Location = new System.Drawing.Point(0, 0);
+            this.tvOutput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tvOutput.Name = "tvOutput";
-            this.tvOutput.Size = new System.Drawing.Size(428, 250);
+            this.tvOutput.Size = new System.Drawing.Size(500, 279);
             this.tvOutput.TabIndex = 0;
             this.tvOutput.GroupChanged += new BBQ.Toolkit.Plugins.RegexStudio.Controls.MatchTreeView.GroupChangedEventHandler(this.tvOutput_GroupChanged);
             this.tvOutput.MatchChanged += new BBQ.Toolkit.Plugins.RegexStudio.Controls.MatchTreeView.MatchChangedEventHandler(this.tvOutput_MatchChanged);
@@ -304,7 +334,8 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // splitContainerMain
             // 
             this.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerMain.Location = new System.Drawing.Point(0, 214);
+            this.splitContainerMain.Location = new System.Drawing.Point(0, 253);
+            this.splitContainerMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.splitContainerMain.Name = "splitContainerMain";
             // 
             // splitContainerMain.Panel1
@@ -314,8 +345,9 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // splitContainerMain.Panel2
             // 
             this.splitContainerMain.Panel2.Controls.Add(this.splitContainerOutput);
-            this.splitContainerMain.Size = new System.Drawing.Size(749, 376);
-            this.splitContainerMain.SplitterDistance = 317;
+            this.splitContainerMain.Size = new System.Drawing.Size(874, 428);
+            this.splitContainerMain.SplitterDistance = 369;
+            this.splitContainerMain.SplitterWidth = 5;
             this.splitContainerMain.TabIndex = 7;
             // 
             // rTxtInput
@@ -323,21 +355,23 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             this.rTxtInput.DetectUrls = false;
             this.rTxtInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rTxtInput.Location = new System.Drawing.Point(0, 0);
+            this.rTxtInput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rTxtInput.Name = "rTxtInput";
-            this.rTxtInput.Size = new System.Drawing.Size(317, 376);
+            this.rTxtInput.Size = new System.Drawing.Size(369, 428);
             this.rTxtInput.TabIndex = 0;
             this.rTxtInput.Text = "";
             this.rTxtInput.Enter += new System.EventHandler(this.rTxtInput_Enter);
             // 
             // mnuMain
             // 
-            this.mnuMain.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mnuMain.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMainFile,
             this.mnuMainHelp});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(749, 24);
+            this.mnuMain.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.mnuMain.Size = new System.Drawing.Size(874, 24);
             this.mnuMain.TabIndex = 8;
             this.mnuMain.Text = "menuStrip1";
             // 
@@ -416,13 +450,14 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainerMain);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.mnuMain);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Main";
-            this.Size = new System.Drawing.Size(749, 590);
+            this.Size = new System.Drawing.Size(874, 681);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.grpPattern.ResumeLayout(false);
             this.grpPattern.PerformLayout();

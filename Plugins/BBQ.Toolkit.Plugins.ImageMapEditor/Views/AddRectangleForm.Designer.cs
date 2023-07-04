@@ -1,4 +1,6 @@
-﻿namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
+﻿using Krypton.Toolkit;
+
+namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
 {
     partial class AddRectangleForm
     {
@@ -29,11 +31,11 @@
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStrip = new KryptonToolStrip();
             this.tsBtnOK = new System.Windows.Forms.ToolStripButton();
             this.tsBtnCancel = new System.Windows.Forms.ToolStripButton();
             this.tsBtnRetry = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.statusStrip = new KryptonStatusStrip();
             this.lblXCoordinate = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblXCoordinateValue = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblYCoordinate = new System.Windows.Forms.ToolStripStatusLabel();
@@ -160,11 +162,11 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.ToolStrip toolStrip;
+        private KryptonToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton tsBtnOK;
         private System.Windows.Forms.ToolStripButton tsBtnCancel;
         private System.Windows.Forms.ToolStripButton tsBtnRetry;
-        private System.Windows.Forms.StatusStrip statusStrip;
+        private KryptonStatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel lblXCoordinate;
         private System.Windows.Forms.ToolStripStatusLabel lblXCoordinateValue;
         private System.Windows.Forms.ToolStripStatusLabel lblYCoordinate;

@@ -48,7 +48,7 @@ namespace BBQ.Toolkit.Views
             // 
             // pluginMenuStrip
             // 
-            this.pluginMenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pluginMenuStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.pluginMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuTools});
             this.pluginMenuStrip.Location = new System.Drawing.Point(0, 0);
@@ -112,7 +112,7 @@ namespace BBQ.Toolkit.Views
             // 
             // kryptonManager
             // 
-            this.kryptonManager.GlobalPaletteMode = Krypton.Toolkit.PaletteModeManager.Office365Silver;
+            this.kryptonManager.GlobalPaletteMode = Krypton.Toolkit.PaletteModeManager.ProfessionalSystem;
             // 
             // HostForm
             // 

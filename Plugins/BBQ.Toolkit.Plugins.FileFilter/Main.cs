@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using BBQ.Toolkit.Common.Properties;
 using Extenso;
 using Extenso.Collections;
 using Extenso.IO;
@@ -58,6 +59,10 @@ namespace BBQ.Toolkit.Plugins.FileDiffOutput
         public Main()
         {
             InitializeComponent();
+            btnRun.Values.Image = CommonImages.Play_32x32;
+            btnBrowseFile1.Values.Image = CommonImages.Browse_32x32;
+            btnBrowseFile2.Values.Image = CommonImages.Browse_32x32;
+            btnBrowseOutput.Values.Image = CommonImages.Browse_32x32;
         }
 
         private void btnBrowseFile1_Click(object sender, EventArgs e)
