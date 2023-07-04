@@ -1,80 +1,75 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.IO;
-using System.Windows.Forms;
-using BBQ.Toolkit.Common;
-using Krypton.Toolkit;
 
-namespace BBQ.Toolkit.Views
+namespace BBQ.Toolkit.Views;
+
+public partial class HostForm : KryptonForm
 {
-    public partial class HostForm : KryptonForm
+    [ImportMany(typeof(IPlugin))]
+    private readonly ICollection<IPlugin> plugins = new List<IPlugin>();
+
+    public HostForm()
     {
-        [ImportMany(typeof(IPlugin))]
-        private IEnumerable<IPlugin> plugins = null;
+        InitializeComponent();
 
-        public HostForm()
+        string pluginsPath = Path.Combine(Application.StartupPath, "Plugins");
+        if (!Directory.Exists(pluginsPath))
         {
-            InitializeComponent();
-
-            using (var aggregateCatalog = new AggregateCatalog(
-                new AssemblyCatalog(typeof(Program).Assembly),
-                new DirectoryCatalog(Path.Combine(Application.StartupPath, "Plugins"))))
-            {
-                using (var container = new CompositionContainer(aggregateCatalog))
-                {
-                    container.ComposeParts(this);
-                }
-            }
-
-            Program.Plugins = plugins;
-            plugins = null;
-
-            foreach (var plugin in Program.Plugins)
-            {
-                pluginTreeView.AddPlugin(plugin);
-            }
+            Directory.CreateDirectory(pluginsPath);
         }
 
-        private void pluginTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        using var mainAssemblyCatalog = new AssemblyCatalog(typeof(Program).Assembly);
+        using var pluginsDirectoryCatalog = new DirectoryCatalog(pluginsPath);
+        using var aggregateCatalog = new AggregateCatalog(mainAssemblyCatalog, pluginsDirectoryCatalog);
+        using var container = new CompositionContainer(aggregateCatalog);
+        container.ComposeParts(this);
+
+        Program.Plugins = plugins;
+        plugins = null;
+
+        foreach (var plugin in Program.Plugins)
         {
-            if (e.Node.Tag == null)
-            { return; }
+            pluginTreeView.AddPlugin(plugin);
+        }
+    }
 
-            var plugin = e.Node.Tag as IPlugin;
+    private void pluginTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+    {
+        if (e.Node.Tag == null)
+        { return; }
 
-            if (plugin is IUserControlPlugin)
+        var plugin = e.Node.Tag as IPlugin;
+
+        if (plugin is IUserControlPlugin)
+        {
+            var control = ((IUserControlPlugin)plugin).Content;
+            splitContainer.Panel2.Controls.Clear();
+            splitContainer.Panel2.Controls.Add(control);
+            control.Dock = DockStyle.Fill;
+        }
+        else if (plugin is IFormPlugin)
+        {
+            var formPlugin = (IFormPlugin)plugin;
+            var form = formPlugin.Content;
+
+            if (formPlugin.ShowAs == ShowAs.Dialog)
             {
-                var control = ((IUserControlPlugin)plugin).Content;
-                splitContainer.Panel2.Controls.Clear();
-                splitContainer.Panel2.Controls.Add(control);
-                control.Dock = DockStyle.Fill;
+                form.ShowDialog();
             }
-            else if (plugin is IFormPlugin)
+            else
             {
-                var formPlugin = (IFormPlugin)plugin;
-                var form = formPlugin.Content;
-
-                if (formPlugin.ShowAs == ShowAs.Dialog)
-                {
-                    form.ShowDialog();
-                }
-                else
-                {
-                    form.Show();
-                }
+                form.Show();
             }
         }
+    }
 
-        private void mnuToolsPluginSettings_Click(object sender, EventArgs e)
-        {
-            new SettingsForm().ShowDialog();
-        }
+    private void mnuToolsPluginSettings_Click(object sender, EventArgs e)
+    {
+        new SettingsForm().ShowDialog();
+    }
 
-        private void mnuToolsChoosePlugins_Click(object sender, EventArgs e)
-        {
-
-        }
+    private void mnuToolsChoosePlugins_Click(object sender, EventArgs e)
+    {
     }
 }

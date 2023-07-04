@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0-windows</TargetFramework>
+		<TargetFramework>net7.0-windows</TargetFramework>
 		<OutputType>Library</OutputType>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<UseWindowsForms>true</UseWindowsForms>
@@ -10,7 +10,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="PgpCore" Version="5.5.0" />
+	  <PackageReference Include="PgpCore" Version="5.10.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -22,8 +22,9 @@
 			<SubType>UserControl</SubType>
 		</Compile>
 	</ItemGroup>
-	<PropertyGroup>
-		<PostBuildEvent>XCOPY /Y /S "$(TargetDir)*.*" "$(SolutionDir)$(SolutionName)\$(OutDir)Plugins\*.*"</PostBuildEvent>
-	</PropertyGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="XCOPY /Y /S &quot;$(TargetDir)*.*&quot; &quot;$(SolutionDir)$(SolutionName)\$(OutDir)Plugins\*.*&quot;" />
+	</Target>
 
 </Project>

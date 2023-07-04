@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
@@ -15,16 +15,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Extenso.Core" Version="5.0.1" />
-    <PackageReference Include="Extenso.Data" Version="5.0.0" />
+    <PackageReference Include="Extenso.Core" Version="7.1.1" />
+    <PackageReference Include="Extenso.Data" Version="7.1.2" />
+    <PackageReference Include="Extenso.Windows.Forms" Version="7.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.255803">
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="7.0.4" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Krypton.Toolkit" Version="6.2111.312" />
+    <PackageReference Include="Krypton.Toolkit" Version="70.22.11.312" />
   </ItemGroup>
 </Project>

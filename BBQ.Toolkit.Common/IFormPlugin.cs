@@ -1,17 +1,14 @@
-﻿using System.Windows.Forms;
+﻿namespace BBQ.Toolkit.Common;
 
-namespace BBQ.Toolkit.Common
+public enum ShowAs
 {
-    public enum ShowAs
-    {
-        Normal,
-        Dialog
-    }
+    Normal,
+    Dialog
+}
 
-    public interface IFormPlugin : IPlugin
-    {
-        Form Content { get; }
+public interface IFormPlugin : IPlugin
+{
+    Form Content { get; }
 
-        ShowAs ShowAs { get; }
-    }
+    ShowAs ShowAs { get; }
 }

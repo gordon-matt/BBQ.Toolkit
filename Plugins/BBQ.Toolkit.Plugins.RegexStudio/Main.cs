@@ -20,11 +20,22 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private string InputText
         {
-            rTxtInput.Text = "This is a test: Project test EndProject";
-            txtOutput.Text = "This is for the output";
-            studioFile = new RegexStudioFile();
+            get { return rTxtInput.Text.Trim(); }
+            set { rTxtInput.Text = value; }
+        }
+
+        private string Pattern
+        {
+            get { return txtPattern.Text.Trim(); }
+            set { txtPattern.Text = value; }
+        }
+
+        private string ReplacementString
+        {
+            get { return txtReplacementString.Text; }
+            set { txtReplacementString.Text = value; }
         }
 
         private void btnFindMatches_Click(object sender, EventArgs e)
@@ -164,45 +175,14 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
         {
             var none = RegexOptions.None;
 
-            if (cbCompiled.Checked)
-            {
-                none |= RegexOptions.Compiled;
-            }
-
-            if (cbECMAScript.Checked)
-            {
-                none |= RegexOptions.ECMAScript;
-            }
-
-            if (cbExplicitCapture.Checked)
-            {
-                none |= RegexOptions.ExplicitCapture;
-            }
-
-            if (cbIgnoreCase.Checked)
-            {
-                none |= RegexOptions.IgnoreCase;
-            }
-
-            if (cbIgnorePatternWS.Checked)
-            {
-                none |= RegexOptions.IgnorePatternWhitespace;
-            }
-
-            if (cbMultiline.Checked)
-            {
-                none |= RegexOptions.Multiline;
-            }
-
-            if (cbRightToLeft.Checked)
-            {
-                none |= RegexOptions.RightToLeft;
-            }
-
-            if (cbSingleline.Checked)
-            {
-                none |= RegexOptions.Singleline;
-            }
+            if (cbCompiled.Checked) { none |= RegexOptions.Compiled; }
+            if (cbECMAScript.Checked) { none |= RegexOptions.ECMAScript; }
+            if (cbExplicitCapture.Checked) { none |= RegexOptions.ExplicitCapture; }
+            if (cbIgnoreCase.Checked) { none |= RegexOptions.IgnoreCase; }
+            if (cbIgnorePatternWS.Checked) { none |= RegexOptions.IgnorePatternWhitespace; }
+            if (cbMultiline.Checked) { none |= RegexOptions.Multiline; }
+            if (cbRightToLeft.Checked) { none |= RegexOptions.RightToLeft; }
+            if (cbSingleline.Checked) { none |= RegexOptions.Singleline; }
 
             try
             {
@@ -274,10 +254,14 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             ReplacementString = studioFile.ReplacementString;
         }
 
-        private void mnuMainFileNew_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            Clear();
+            rTxtInput.Text = "This is a test: Project test EndProject";
+            txtOutput.Text = "This is for the output";
+            studioFile = new RegexStudioFile();
         }
+
+        private void mnuMainFileNew_Click(object sender, EventArgs e) => Clear();
 
         private void mnuMainFileOpen_Click(object sender, EventArgs e)
         {
@@ -351,24 +335,6 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             rTxtInput.Select(e.Match.Index, e.Match.Length);
             rTxtInput.SelectionBackColor = Color.Yellow;
             rTxtInput.ScrollToCaret();
-        }
-
-        private string InputText
-        {
-            get { return rTxtInput.Text.Trim(); }
-            set { rTxtInput.Text = value; }
-        }
-
-        private string Pattern
-        {
-            get { return txtPattern.Text.Trim(); }
-            set { txtPattern.Text = value; }
-        }
-
-        private string ReplacementString
-        {
-            get { return txtReplacementString.Text; }
-            set { txtReplacementString.Text = value; }
         }
     }
 }
