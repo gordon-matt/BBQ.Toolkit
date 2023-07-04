@@ -27,8 +27,6 @@
     <Content Include="Images\Rectangle.png" />
     <Content Include="Images\Refresh.png" />
     <Content Include="Images\Retry.png" />
-    <Content Include="Images\Shapes.png" />
-    <Content Include="Images\ShapesIcon.ico" />
     <Content Include="Images\Start.png" />
     <Content Include="Images\Stop.png" />
   </ItemGroup>
