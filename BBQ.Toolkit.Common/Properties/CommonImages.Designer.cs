@@ -123,6 +123,16 @@ namespace BBQ.Toolkit.Common.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap OK_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("OK_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap OpenFolder_32x32 {
             get {
                 object obj = ResourceManager.GetObject("OpenFolder_32x32", resourceCulture);

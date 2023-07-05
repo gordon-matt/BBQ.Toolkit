@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common.Forms;
 using Microsoft.Data.SqlClient;
@@ -9,19 +10,15 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
 {
     public partial class Main : UserControl
     {
-        private string ConnectionString
-        {
-            get { return txtConnectionString.Text; }
-            set { txtConnectionString.Text = value; }
-        }
+        private string connectionString;
 
         private string Table
         {
             get
             {
-                if (cmbTable.SelectedIndex != -1)
+                if (lbTables.SelectedIndex != -1)
                 {
-                    return cmbTable.SelectedItem.ToString();
+                    return lbTables.SelectedItem.ToString();
                 }
                 return string.Empty;
             }
@@ -32,24 +29,44 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             InitializeComponent();
         }
 
-        private void btnConnectionStringBuilder_Click(object sender, EventArgs e)
+        private void lbTables_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using var connection = new SqlConnection(connectionString);
+            connection.Open();
+            var schema = connection.GetSchema(Table);
+            connection.Close();
+            dataGridView.DataSource = schema;
+        }
+
+        private void btnWizard_Click(object sender, EventArgs e)
         {
             using var form = new SqlConnectionForm();
             if (form.ShowDialog() == DialogResult.OK)
             {
-                ConnectionString = form.ConnectionString;
+                connectionString = form.ConnectionString;
+                Connect();
             }
         }
 
-        private void bnConnect_Click(object sender, EventArgs e)
+        private void btnConnectionString_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(ConnectionString))
+            using var form = new ConnectionStringDialog();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                connectionString = form.ConnectionString;
+                Connect();
+            }
+        }
+
+        private void Connect()
+        {
+            if (string.IsNullOrEmpty(connectionString))
             {
                 MessageBox.Show("Connection string has not been set!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            using var connection = new SqlConnection(ConnectionString);
+            using var connection = new SqlConnection(connectionString);
             connection.Open();
             var schema = connection.GetSchema();
             connection.Close();
@@ -60,17 +77,7 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             {
                 metaTables.Add(row.Field<string>("CollectionName"));
             }
-            cmbTable.Items.Clear();
-            metaTables.ForEach(x => cmbTable.Items.Add(x));
-        }
-
-        private void cmbTable_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            using var connection = new SqlConnection(ConnectionString);
-            connection.Open();
-            var schema = connection.GetSchema(Table);
-            connection.Close();
-            dataGridView.DataSource = schema;
+            lbTables.DataSource = metaTables.OrderBy(x => x).ToList();
         }
     }
 }
