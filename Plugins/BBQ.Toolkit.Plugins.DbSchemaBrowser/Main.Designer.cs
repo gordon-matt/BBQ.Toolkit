@@ -30,124 +30,131 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblConnectionString = new Krypton.Toolkit.KryptonLabel();
-            this.txtConnectionString = new Krypton.Toolkit.KryptonTextBox();
-            this.bnConnect = new Krypton.Toolkit.KryptonButton();
-            this.lblTable = new Krypton.Toolkit.KryptonLabel();
-            this.cmbTable = new Krypton.Toolkit.KryptonComboBox();
-            this.btnConnectionStringBuilder = new Krypton.Toolkit.KryptonButton();
             this.dataGridView = new Krypton.Toolkit.KryptonDataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTable)).BeginInit();
+            this.toolStrip = new Krypton.Toolkit.KryptonToolStrip();
+            this.btnWizard = new System.Windows.Forms.ToolStripButton();
+            this.btnConnectionString = new System.Windows.Forms.ToolStripButton();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lbTables = new Krypton.Toolkit.KryptonListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            this.toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblConnectionString
-            // 
-            this.lblConnectionString.Location = new System.Drawing.Point(12, 10);
-            this.lblConnectionString.Name = "lblConnectionString";
-            this.lblConnectionString.Size = new System.Drawing.Size(111, 20);
-            this.lblConnectionString.TabIndex = 0;
-            this.lblConnectionString.Values.Text = "Connection String:";
-            // 
-            // txtConnectionString
-            // 
-            this.txtConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConnectionString.Location = new System.Drawing.Point(129, 10);
-            this.txtConnectionString.Name = "txtConnectionString";
-            this.txtConnectionString.Size = new System.Drawing.Size(339, 23);
-            this.txtConnectionString.TabIndex = 1;
-            // 
-            // bnConnect
-            // 
-            this.bnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bnConnect.Location = new System.Drawing.Point(513, 7);
-            this.bnConnect.Name = "bnConnect";
-            this.bnConnect.Size = new System.Drawing.Size(62, 28);
-            this.bnConnect.TabIndex = 7;
-            this.bnConnect.Values.Text = "Connect";
-            this.bnConnect.Click += new System.EventHandler(this.bnConnect_Click);
-            // 
-            // lblTable
-            // 
-            this.lblTable.Location = new System.Drawing.Point(12, 39);
-            this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(43, 20);
-            this.lblTable.TabIndex = 6;
-            this.lblTable.Values.Text = "Table:";
-            // 
-            // cmbTable
-            // 
-            this.cmbTable.DropDownWidth = 218;
-            this.cmbTable.FormattingEnabled = true;
-            this.cmbTable.Location = new System.Drawing.Point(129, 39);
-            this.cmbTable.Name = "cmbTable";
-            this.cmbTable.Size = new System.Drawing.Size(218, 21);
-            this.cmbTable.Sorted = true;
-            this.cmbTable.TabIndex = 5;
-            this.cmbTable.SelectedIndexChanged += new System.EventHandler(this.cmbTable_SelectedIndexChanged);
-            // 
-            // btnConnectionStringBuilder
-            // 
-            this.btnConnectionStringBuilder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConnectionStringBuilder.Location = new System.Drawing.Point(474, 7);
-            this.btnConnectionStringBuilder.Name = "btnConnectionStringBuilder";
-            this.btnConnectionStringBuilder.Size = new System.Drawing.Size(33, 28);
-            this.btnConnectionStringBuilder.TabIndex = 4;
-            this.btnConnectionStringBuilder.Values.Text = "...";
-            this.btnConnectionStringBuilder.Click += new System.EventHandler(this.btnConnectionStringBuilder_Click);
             // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 77);
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(589, 340);
+            this.dataGridView.Size = new System.Drawing.Size(454, 441);
             this.dataGridView.TabIndex = 3;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.bnConnect);
-            this.panel1.Controls.Add(this.lblTable);
-            this.panel1.Controls.Add(this.txtConnectionString);
-            this.panel1.Controls.Add(this.cmbTable);
-            this.panel1.Controls.Add(this.lblConnectionString);
-            this.panel1.Controls.Add(this.btnConnectionStringBuilder);
+            this.panel1.Controls.Add(this.toolStrip);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(589, 77);
+            this.panel1.Size = new System.Drawing.Size(687, 40);
             this.panel1.TabIndex = 4;
+            // 
+            // toolStrip
+            // 
+            this.toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnWizard,
+            this.btnConnectionString});
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(687, 39);
+            this.toolStrip.TabIndex = 2;
+            this.toolStrip.Text = "kryptonToolStrip1";
+            // 
+            // btnWizard
+            // 
+            this.btnWizard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnWizard.Image = global::BBQ.Toolkit.Plugins.DbSchemaBrowser.Properties.Resources.Wizard_32x32;
+            this.btnWizard.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnWizard.Name = "btnWizard";
+            this.btnWizard.Size = new System.Drawing.Size(36, 36);
+            this.btnWizard.Text = "Wizard Connect";
+            this.btnWizard.Click += new System.EventHandler(this.btnWizard_Click);
+            // 
+            // btnConnectionString
+            // 
+            this.btnConnectionString.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnConnectionString.Image = global::BBQ.Toolkit.Plugins.DbSchemaBrowser.Properties.Resources.TextInput_32x32;
+            this.btnConnectionString.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnConnectionString.Name = "btnConnectionString";
+            this.btnConnectionString.Size = new System.Drawing.Size(36, 36);
+            this.btnConnectionString.Text = "Paste Connection String";
+            this.btnConnectionString.Click += new System.EventHandler(this.btnConnectionString_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 40);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.lbTables);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView);
+            this.splitContainer1.Size = new System.Drawing.Size(687, 441);
+            this.splitContainer1.SplitterDistance = 229;
+            this.splitContainer1.TabIndex = 5;
+            // 
+            // lbTables
+            // 
+            this.lbTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTables.Location = new System.Drawing.Point(0, 0);
+            this.lbTables.Name = "lbTables";
+            this.lbTables.Size = new System.Drawing.Size(229, 441);
+            this.lbTables.TabIndex = 0;
+            this.lbTables.SelectedIndexChanged += new System.EventHandler(this.lbTables_SelectedIndexChanged);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Main";
-            this.Size = new System.Drawing.Size(589, 417);
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTable)).EndInit();
+            this.Size = new System.Drawing.Size(687, 481);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private KryptonLabel lblConnectionString;
-        private KryptonTextBox txtConnectionString;
-        private KryptonButton btnConnectionStringBuilder;
-        private KryptonLabel lblTable;
-        private KryptonComboBox cmbTable;
         private KryptonDataGridView dataGridView;
-        private KryptonButton bnConnect;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private KryptonListBox lbTables;
+        private KryptonToolStrip toolStrip;
+        private System.Windows.Forms.ToolStripButton btnWizard;
+        private System.Windows.Forms.ToolStripButton btnConnectionString;
     }
 }

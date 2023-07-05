@@ -1,6 +1,4 @@
-﻿using Krypton.Toolkit;
-
-namespace BBQ.Toolkit.Common.Forms
+﻿namespace BBQ.Toolkit.Common.Forms
 {
     partial class SqlConnectionForm
     {
@@ -30,237 +28,221 @@ namespace BBQ.Toolkit.Common.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblServerName = new Krypton.Toolkit.KryptonLabel();
+            this.txtPassword = new Krypton.Toolkit.KryptonTextBox();
             this.txtUserName = new Krypton.Toolkit.KryptonTextBox();
-            this.btnRefreshServers = new Krypton.Toolkit.KryptonButton();
-            this.cmbServerName = new Krypton.Toolkit.KryptonComboBox();
+            this.grpConnectDatabase = new System.Windows.Forms.GroupBox();
+            this.lblDatabase = new Krypton.Toolkit.KryptonLabel();
+            this.cmbDatabase = new Krypton.Toolkit.KryptonComboBox();
+            this.txtServer = new Krypton.Toolkit.KryptonTextBox();
+            this.lblServer = new Krypton.Toolkit.KryptonLabel();
             this.grpLogOnServer = new System.Windows.Forms.GroupBox();
             this.lblPassword = new Krypton.Toolkit.KryptonLabel();
-            this.txtPassword = new Krypton.Toolkit.KryptonTextBox();
             this.lblUserName = new Krypton.Toolkit.KryptonLabel();
             this.rbUseSqlServerAuthentication = new Krypton.Toolkit.KryptonRadioButton();
             this.rbUseWindowsAuthentication = new Krypton.Toolkit.KryptonRadioButton();
-            this.grpConnectDatabase = new System.Windows.Forms.GroupBox();
-            this.lblTable = new Krypton.Toolkit.KryptonLabel();
-            this.cmbTable = new Krypton.Toolkit.KryptonComboBox();
-            this.lblDatabase = new Krypton.Toolkit.KryptonLabel();
-            this.cmbDatabase = new Krypton.Toolkit.KryptonComboBox();
-            this.btnCancel = new Krypton.Toolkit.KryptonButton();
             this.btnOK = new Krypton.Toolkit.KryptonButton();
-            this.btnTestConnection = new Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbServerName)).BeginInit();
-            this.grpLogOnServer.SuspendLayout();
+            this.btnCancel = new Krypton.Toolkit.KryptonButton();
             this.grpConnectDatabase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDatabase)).BeginInit();
+            this.grpLogOnServer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblServerName
+            // txtPassword
             // 
-            this.lblServerName.Location = new System.Drawing.Point(12, 9);
-            this.lblServerName.Name = "lblServerName";
-            this.lblServerName.Size = new System.Drawing.Size(78, 20);
-            this.lblServerName.TabIndex = 4;
-            this.lblServerName.Values.Text = "Server name";
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPassword.Enabled = false;
+            this.txtPassword.Location = new System.Drawing.Point(115, 113);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(346, 23);
+            this.txtPassword.TabIndex = 5;
             // 
             // txtUserName
             // 
+            this.txtUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUserName.Enabled = false;
-            this.txtUserName.Location = new System.Drawing.Point(109, 77);
+            this.txtUserName.Location = new System.Drawing.Point(115, 84);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(248, 23);
-            this.txtUserName.TabIndex = 5;
+            this.txtUserName.Size = new System.Drawing.Size(346, 23);
+            this.txtUserName.TabIndex = 3;
             // 
-            // btnRefreshServers
+            // grpConnectDatabase
             // 
-            this.btnRefreshServers.Location = new System.Drawing.Point(309, 33);
-            this.btnRefreshServers.Name = "btnRefreshServers";
-            this.btnRefreshServers.Size = new System.Drawing.Size(75, 28);
-            this.btnRefreshServers.TabIndex = 6;
-            this.btnRefreshServers.Values.Text = "Refresh";
-            this.btnRefreshServers.Click += new System.EventHandler(this.btnRefreshServers_Click);
+            this.grpConnectDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpConnectDatabase.Controls.Add(this.lblDatabase);
+            this.grpConnectDatabase.Controls.Add(this.cmbDatabase);
+            this.grpConnectDatabase.Location = new System.Drawing.Point(13, 227);
+            this.grpConnectDatabase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.grpConnectDatabase.Name = "grpConnectDatabase";
+            this.grpConnectDatabase.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.grpConnectDatabase.Size = new System.Drawing.Size(469, 71);
+            this.grpConnectDatabase.TabIndex = 7;
+            this.grpConnectDatabase.TabStop = false;
+            this.grpConnectDatabase.Text = "Connect to a database";
             // 
-            // cmbServerName
+            // lblDatabase
             // 
-            this.cmbServerName.DropDownWidth = 291;
-            this.cmbServerName.FormattingEnabled = true;
-            this.cmbServerName.Location = new System.Drawing.Point(12, 35);
-            this.cmbServerName.Name = "cmbServerName";
-            this.cmbServerName.Size = new System.Drawing.Size(291, 21);
-            this.cmbServerName.Sorted = true;
-            this.cmbServerName.TabIndex = 7;
-            this.cmbServerName.DropDown += new System.EventHandler(this.cmbServerName_DropDown);
+            this.lblDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDatabase.Location = new System.Drawing.Point(15, 31);
+            this.lblDatabase.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDatabase.Name = "lblDatabase";
+            this.lblDatabase.Size = new System.Drawing.Size(61, 20);
+            this.lblDatabase.TabIndex = 0;
+            this.lblDatabase.Values.Text = "Database";
+            // 
+            // cmbDatabase
+            // 
+            this.cmbDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbDatabase.CornerRoundingRadius = -1F;
+            this.cmbDatabase.DropDownWidth = 334;
+            this.cmbDatabase.FormattingEnabled = true;
+            this.cmbDatabase.IntegralHeight = false;
+            this.cmbDatabase.Location = new System.Drawing.Point(83, 28);
+            this.cmbDatabase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbDatabase.Name = "cmbDatabase";
+            this.cmbDatabase.Size = new System.Drawing.Size(378, 21);
+            this.cmbDatabase.Sorted = true;
+            this.cmbDatabase.TabIndex = 1;
+            this.cmbDatabase.DropDown += new System.EventHandler(this.cmbDatabase_DropDown);
+            // 
+            // txtServer
+            // 
+            this.txtServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtServer.Location = new System.Drawing.Point(13, 38);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(470, 23);
+            this.txtServer.TabIndex = 5;
+            // 
+            // lblServer
+            // 
+            this.lblServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblServer.Location = new System.Drawing.Point(13, 12);
+            this.lblServer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblServer.Name = "lblServer";
+            this.lblServer.Size = new System.Drawing.Size(47, 20);
+            this.lblServer.TabIndex = 4;
+            this.lblServer.Values.Text = "Server:";
             // 
             // grpLogOnServer
             // 
+            this.grpLogOnServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpLogOnServer.Controls.Add(this.lblPassword);
-            this.grpLogOnServer.Controls.Add(this.txtPassword);
             this.grpLogOnServer.Controls.Add(this.lblUserName);
             this.grpLogOnServer.Controls.Add(this.rbUseSqlServerAuthentication);
+            this.grpLogOnServer.Controls.Add(this.txtPassword);
             this.grpLogOnServer.Controls.Add(this.rbUseWindowsAuthentication);
             this.grpLogOnServer.Controls.Add(this.txtUserName);
-            this.grpLogOnServer.Location = new System.Drawing.Point(12, 62);
+            this.grpLogOnServer.Location = new System.Drawing.Point(13, 67);
+            this.grpLogOnServer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grpLogOnServer.Name = "grpLogOnServer";
-            this.grpLogOnServer.Size = new System.Drawing.Size(372, 141);
-            this.grpLogOnServer.TabIndex = 8;
+            this.grpLogOnServer.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.grpLogOnServer.Size = new System.Drawing.Size(469, 153);
+            this.grpLogOnServer.TabIndex = 6;
             this.grpLogOnServer.TabStop = false;
             this.grpLogOnServer.Text = "Log on to the server";
             // 
             // lblPassword
             // 
+            this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPassword.Enabled = false;
-            this.lblPassword.Location = new System.Drawing.Point(32, 106);
+            this.lblPassword.Location = new System.Drawing.Point(39, 119);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(62, 20);
-            this.lblPassword.TabIndex = 8;
+            this.lblPassword.TabIndex = 4;
             this.lblPassword.Values.Text = "Password";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Enabled = false;
-            this.txtPassword.Location = new System.Drawing.Point(109, 106);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(248, 23);
-            this.txtPassword.TabIndex = 7;
             // 
             // lblUserName
             // 
+            this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUserName.Enabled = false;
-            this.lblUserName.Location = new System.Drawing.Point(32, 77);
+            this.lblUserName.Location = new System.Drawing.Point(39, 89);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(71, 20);
-            this.lblUserName.TabIndex = 6;
+            this.lblUserName.TabIndex = 2;
             this.lblUserName.Values.Text = "User Name";
             // 
             // rbUseSqlServerAuthentication
             // 
-            this.rbUseSqlServerAuthentication.Location = new System.Drawing.Point(14, 51);
+            this.rbUseSqlServerAuthentication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbUseSqlServerAuthentication.Location = new System.Drawing.Point(18, 59);
+            this.rbUseSqlServerAuthentication.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbUseSqlServerAuthentication.Name = "rbUseSqlServerAuthentication";
             this.rbUseSqlServerAuthentication.Size = new System.Drawing.Size(189, 20);
             this.rbUseSqlServerAuthentication.TabIndex = 1;
             this.rbUseSqlServerAuthentication.Values.Text = "Use SQL Server Authentication";
+            this.rbUseSqlServerAuthentication.CheckedChanged += new System.EventHandler(this.rbIntegratedSecurity_CheckedChanged);
             // 
             // rbUseWindowsAuthentication
             // 
+            this.rbUseWindowsAuthentication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rbUseWindowsAuthentication.Checked = true;
-            this.rbUseWindowsAuthentication.Location = new System.Drawing.Point(14, 25);
+            this.rbUseWindowsAuthentication.Location = new System.Drawing.Point(18, 32);
+            this.rbUseWindowsAuthentication.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbUseWindowsAuthentication.Name = "rbUseWindowsAuthentication";
             this.rbUseWindowsAuthentication.Size = new System.Drawing.Size(180, 20);
             this.rbUseWindowsAuthentication.TabIndex = 0;
             this.rbUseWindowsAuthentication.Values.Text = "Use Windows Authentication";
-            this.rbUseWindowsAuthentication.CheckedChanged += new System.EventHandler(this.rbUseWindowsAuthentication_CheckedChanged);
-            // 
-            // grpConnectDatabase
-            // 
-            this.grpConnectDatabase.Controls.Add(this.lblTable);
-            this.grpConnectDatabase.Controls.Add(this.cmbTable);
-            this.grpConnectDatabase.Controls.Add(this.lblDatabase);
-            this.grpConnectDatabase.Controls.Add(this.cmbDatabase);
-            this.grpConnectDatabase.Location = new System.Drawing.Point(12, 221);
-            this.grpConnectDatabase.Name = "grpConnectDatabase";
-            this.grpConnectDatabase.Size = new System.Drawing.Size(372, 108);
-            this.grpConnectDatabase.TabIndex = 9;
-            this.grpConnectDatabase.TabStop = false;
-            this.grpConnectDatabase.Text = "Connect to a database";
-            // 
-            // lblTable
-            // 
-            this.lblTable.Location = new System.Drawing.Point(32, 51);
-            this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(40, 20);
-            this.lblTable.TabIndex = 11;
-            this.lblTable.Values.Text = "Table";
-            this.lblTable.Visible = false;
-            // 
-            // cmbTable
-            // 
-            this.cmbTable.DropDownWidth = 248;
-            this.cmbTable.FormattingEnabled = true;
-            this.cmbTable.Location = new System.Drawing.Point(109, 51);
-            this.cmbTable.Name = "cmbTable";
-            this.cmbTable.Size = new System.Drawing.Size(248, 21);
-            this.cmbTable.Sorted = true;
-            this.cmbTable.TabIndex = 10;
-            this.cmbTable.Visible = false;
-            // 
-            // lblDatabase
-            // 
-            this.lblDatabase.Location = new System.Drawing.Point(32, 24);
-            this.lblDatabase.Name = "lblDatabase";
-            this.lblDatabase.Size = new System.Drawing.Size(61, 20);
-            this.lblDatabase.TabIndex = 9;
-            this.lblDatabase.Values.Text = "Database";
-            // 
-            // cmbDatabase
-            // 
-            this.cmbDatabase.DropDownWidth = 248;
-            this.cmbDatabase.FormattingEnabled = true;
-            this.cmbDatabase.Location = new System.Drawing.Point(109, 24);
-            this.cmbDatabase.Name = "cmbDatabase";
-            this.cmbDatabase.Size = new System.Drawing.Size(248, 21);
-            this.cmbDatabase.Sorted = true;
-            this.cmbDatabase.TabIndex = 0;
-            this.cmbDatabase.DropDown += new System.EventHandler(this.cmbDatabase_DropDown);
-            this.cmbDatabase.SelectedIndexChanged += new System.EventHandler(this.cmbDatabase_SelectedIndexChanged);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(283, 335);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 30);
-            this.btnCancel.TabIndex = 10;
-            this.btnCancel.Values.Text = "Cancel";
+            this.rbUseWindowsAuthentication.CheckedChanged += new System.EventHandler(this.rbIntegratedSecurity_CheckedChanged);
             // 
             // btnOK
             // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK.CornerRoundingRadius = -1F;
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(177, 335);
+            this.btnOK.Location = new System.Drawing.Point(291, 304);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(100, 30);
-            this.btnOK.TabIndex = 11;
+            this.btnOK.Size = new System.Drawing.Size(88, 39);
+            this.btnOK.TabIndex = 8;
+            this.btnOK.Values.Image = global::BBQ.Toolkit.Common.Properties.CommonImages.OK_32x32;
             this.btnOK.Values.Text = "OK";
             // 
-            // btnTestConnection
+            // btnCancel
             // 
-            this.btnTestConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTestConnection.Location = new System.Drawing.Point(11, 335);
-            this.btnTestConnection.Name = "btnTestConnection";
-            this.btnTestConnection.Size = new System.Drawing.Size(100, 30);
-            this.btnTestConnection.TabIndex = 12;
-            this.btnTestConnection.Values.Text = "Test Connection";
-            this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
+            this.btnCancel.CornerRoundingRadius = -1F;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(387, 304);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(96, 39);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Values.Image = global::BBQ.Toolkit.Common.Properties.CommonImages.Cancel_32x32;
+            this.btnCancel.Values.Text = "Cancel";
             // 
             // SqlConnectionForm
             // 
-            this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(395, 377);
-            this.Controls.Add(this.btnTestConnection);
+            this.ClientSize = new System.Drawing.Size(495, 352);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.grpConnectDatabase);
+            this.Controls.Add(this.txtServer);
+            this.Controls.Add(this.lblServer);
             this.Controls.Add(this.grpLogOnServer);
-            this.Controls.Add(this.cmbServerName);
-            this.Controls.Add(this.btnRefreshServers);
-            this.Controls.Add(this.lblServerName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SqlConnectionForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Connection";
-            ((System.ComponentModel.ISupportInitialize)(this.cmbServerName)).EndInit();
-            this.grpLogOnServer.ResumeLayout(false);
-            this.grpLogOnServer.PerformLayout();
+            this.Text = "Connection";
             this.grpConnectDatabase.ResumeLayout(false);
             this.grpConnectDatabase.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDatabase)).EndInit();
+            this.grpLogOnServer.ResumeLayout(false);
+            this.grpLogOnServer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,23 +250,19 @@ namespace BBQ.Toolkit.Common.Forms
 
         #endregion
 
-        private KryptonLabel lblServerName;
+        private KryptonTextBox txtPassword;
         private KryptonTextBox txtUserName;
-        private KryptonButton btnRefreshServers;
-        private KryptonComboBox cmbServerName;
-        private System.Windows.Forms.GroupBox grpLogOnServer;
+        private GroupBox grpConnectDatabase;
+        private KryptonLabel lblDatabase;
+        private KryptonComboBox cmbDatabase;
+        private KryptonTextBox txtServer;
+        private KryptonLabel lblServer;
+        private GroupBox grpLogOnServer;
+        private KryptonLabel lblPassword;
+        private KryptonLabel lblUserName;
         private KryptonRadioButton rbUseSqlServerAuthentication;
         private KryptonRadioButton rbUseWindowsAuthentication;
-        private KryptonLabel lblPassword;
-        private KryptonTextBox txtPassword;
-        private KryptonLabel lblUserName;
-        private System.Windows.Forms.GroupBox grpConnectDatabase;
-        private KryptonButton btnCancel;
         private KryptonButton btnOK;
-        private KryptonComboBox cmbDatabase;
-        private KryptonButton btnTestConnection;
-        private KryptonLabel lblTable;
-        private KryptonComboBox cmbTable;
-        private KryptonLabel lblDatabase;
+        private KryptonButton btnCancel;
     }
 }

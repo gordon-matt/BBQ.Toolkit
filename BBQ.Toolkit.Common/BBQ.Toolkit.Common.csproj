@@ -10,9 +10,6 @@
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Forms\SqlConnectionControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Properties\CommonImages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
