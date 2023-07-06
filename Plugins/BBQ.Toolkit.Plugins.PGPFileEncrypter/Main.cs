@@ -28,6 +28,7 @@ namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
             set => txtPublicKeyFile.Text = value;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnBrowseFile_Click(object sender, EventArgs e)
         {
             if (dlgOpenFile.ShowDialog() == DialogResult.OK)
@@ -36,6 +37,7 @@ namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnBrowsePublicKeyFile_Click(object sender, EventArgs e)
         {
             if (dlgOpenFile.ShowDialog() == DialogResult.OK)
@@ -44,15 +46,14 @@ namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            using (var inputStream = File.OpenRead(FilePath))
-            using (var outputStream = File.Create($"{FilePath}.pgp"))
-            using (var pgp = new PGP())
-            using (var publicKeyStream = new FileStream(PublicKeyFilePath, FileMode.Open))
-            {
-                await pgp.EncryptStreamAsync(inputStream, outputStream, publicKeyStream, true, true);
-            }
+            using var inputStream = File.OpenRead(FilePath);
+            using var outputStream = File.Create($"{FilePath}.pgp");
+            using var pgp = new PGP();
+            using var publicKeyStream = new FileStream(PublicKeyFilePath, FileMode.Open);
+            await pgp.EncryptStreamAsync(inputStream, outputStream, publicKeyStream, true, true);
         }
     }
 }

@@ -31,6 +31,7 @@ public partial class Main : UserControl
         set { txtXsd.Text = value; }
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
     private void btnLoad_Click(object sender, EventArgs e)
     {
         if (dlgOpenFile.ShowDialog() == DialogResult.OK)
@@ -47,6 +48,7 @@ public partial class Main : UserControl
         }
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
     private void btnSave_Click(object sender, EventArgs e)
     {
         if (dlgSaveFile.ShowDialog() == DialogResult.OK)

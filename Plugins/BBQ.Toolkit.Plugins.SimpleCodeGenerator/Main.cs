@@ -11,10 +11,10 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
     [ToolboxItem(false)]
     public partial class Main : UserControl
     {
-        private Regex rgxToLower = new Regex(@"\[\[ToLower:(?<value>(?:(?!\[\[).)*)\]\]", RegexOptions.Compiled);
-        private Regex rgxToUpper = new Regex(@"\[\[ToUpper:(?<value>(?:(?!\[\[).)*)\]\]", RegexOptions.Compiled);
-        private Regex rgxToPascal = new Regex(@"\[\[ToPascal:(?<value>(?:(?!\[\[).)*)\]\]", RegexOptions.Compiled);
-        private Regex rgxToCamel = new Regex(@"\[\[ToCamel:(?<value>(?:(?!\[\[).)*)\]\]", RegexOptions.Compiled);
+        private readonly Regex rgxToLower = new(@"\[\[ToLower:(?<value>(?:(?!\[\[).)*)\]\]", RegexOptions.Compiled);
+        private readonly Regex rgxToUpper = new(@"\[\[ToUpper:(?<value>(?:(?!\[\[).)*)\]\]", RegexOptions.Compiled);
+        private readonly Regex rgxToPascal = new(@"\[\[ToPascal:(?<value>(?:(?!\[\[).)*)\]\]", RegexOptions.Compiled);
+        private readonly Regex rgxToCamel = new(@"\[\[ToCamel:(?<value>(?:(?!\[\[).)*)\]\]", RegexOptions.Compiled);
 
         public Main()
         {
@@ -22,6 +22,7 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
             btnCopy.Values.Image = CommonImages.Copy_32x32;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnCreate_Click(object sender, EventArgs e)
         {
             var sb = new StringBuilder();
@@ -67,6 +68,7 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
             txtOutput.Text = newText;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetData("Text", txtOutput.Text);

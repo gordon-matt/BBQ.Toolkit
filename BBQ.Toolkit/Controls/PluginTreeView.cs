@@ -1,9 +1,11 @@
-﻿namespace BBQ.Toolkit.Controls;
+﻿using BBQ.Toolkit.Common.Plugins;
+
+namespace BBQ.Toolkit.Controls;
 
 public class PluginTreeView : KryptonTreeView
 {
     //TODO: Check same image not being added multiple times
-    private readonly ImageList imageList = new ImageList();
+    private readonly ImageList imageList = new();
 
     public PluginTreeView()
     {
@@ -107,8 +109,10 @@ public class PluginTreeView : KryptonTreeView
     {
         #region Main Plugin Node
 
-        var pluginItem = new TreeNode(plugin.Title);
-        pluginItem.Tag = plugin.SettingsControl;
+        var pluginItem = new TreeNode(plugin.Title)
+        {
+            Tag = plugin.SettingsControl
+        };
 
         if (plugin.Icon != null)
         {
@@ -204,7 +208,28 @@ public class PluginTreeView : KryptonTreeView
 
     protected override void Dispose(bool disposing)
     {
+        if (disposing)
+        {
+            imageList?.Dispose();
+            //foreach (TreeNode node in Nodes)
+            //{
+            //    DisposeChildNodes(node);
+            //}
+        }
+
         base.Dispose(disposing);
-        imageList?.Dispose();
     }
+
+    //private void DisposeChildNodes(TreeNode node)
+    //{
+    //    foreach (TreeNode subNode in node.Nodes)
+    //    {
+    //        DisposeChildNodes(subNode);
+    //    }
+
+    //    if (node.Tag is not null && node.Tag is IUserControlPlugin)
+    //    {
+    //        (node.Tag as IUserControlPlugin).Dispose();
+    //    }
+    //}
 }

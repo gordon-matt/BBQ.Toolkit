@@ -2,32 +2,25 @@
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
+using BBQ.Toolkit.Common.Forms;
+using BBQ.Toolkit.Common.Plugins;
 
-namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
+namespace BBQ.Toolkit.Plugins.PGPFileEncrypter;
+
+[Export(typeof(IPlugin))]
+public class PGPFileEncrypterPlugin : IUserControlPlugin
 {
-    [Export(typeof(IPlugin))]
-    public class PGPFileEncrypterPlugin : IUserControlPlugin
-    {
-        #region IUserControlPlugin Members
+    public string Title => "PGP File Encrypter";
 
-        public UserControl Content => new Main();
+    public string Description => string.Empty;
 
-        #endregion IUserControlPlugin Members
+    public string Group => CommonConstants.PluginCategories.Security;
 
-        #region IPlugin Members
+    public string SubGroup => null;
 
-        public string Title => "PGP File Encrypter";
+    public Image Icon => Resources.Icon;
 
-        public string Description => string.Empty;
+    public ISettingsControl SettingsControl => null;
 
-        public string Group => CommonConstants.PluginCategories.Security;
-
-        public string SubGroup => null;
-
-        public Image Icon => Resources.Icon;
-
-        public ISettingsControl SettingsControl => null;
-
-        #endregion IPlugin Members
-    }
+    public UserControl GetContent() => new Main();
 }

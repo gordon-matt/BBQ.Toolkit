@@ -50,10 +50,11 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
             try
             {
                 //point the xmlTextWriter at the StringWriter
-                xmlTextWriter = new XmlTextWriter(stringWriter);
-
-                //we want the output formatted
-                xmlTextWriter.Formatting = Formatting.Indented;
+                xmlTextWriter = new XmlTextWriter(stringWriter)
+                {
+                    //we want the output formatted
+                    Formatting = Formatting.Indented
+                };
 
                 //get the dom to dump its contents into the xmlTextWriter
                 document.WriteTo(xmlTextWriter);
@@ -64,6 +65,7 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
                 if (xmlTextWriter != null)
                 {
                     xmlTextWriter.Close();
+                    xmlTextWriter.Dispose();
                 }
             }
 

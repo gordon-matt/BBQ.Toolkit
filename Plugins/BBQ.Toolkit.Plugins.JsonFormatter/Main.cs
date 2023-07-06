@@ -18,6 +18,7 @@ public partial class Main : UserControl
         btnSave.Image = CommonImages.Save_32x32;
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
     private void btnLoad_Click(object sender, EventArgs e)
     {
         if (dlgOpenFile.ShowDialog() == DialogResult.OK)
@@ -26,12 +27,14 @@ public partial class Main : UserControl
         }
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
     private void btnFormat_Click(object sender, EventArgs e)
     {
         var obj = JsonConvert.DeserializeObject(txtJson.Text);
         txtJson.Text = JsonConvert.SerializeObject(obj, Formatting.Indented);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
     private void btnSave_Click(object sender, EventArgs e)
     {
         if (dlgSaveFile.ShowDialog() == DialogResult.OK)

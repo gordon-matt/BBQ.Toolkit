@@ -65,30 +65,6 @@ namespace BBQ.Toolkit.Plugins.FileDiffOutput
             btnBrowseOutput.Values.Image = CommonImages.Browse_32x32;
         }
 
-        private void btnBrowseFile1_Click(object sender, EventArgs e)
-        {
-            if (dlgOpenFile.ShowDialog() == DialogResult.OK)
-            {
-                File1 = dlgOpenFile.FileName;
-            }
-        }
-
-        private void btnBrowseFile2_Click(object sender, EventArgs e)
-        {
-            if (dlgOpenFile.ShowDialog() == DialogResult.OK)
-            {
-                File2 = dlgOpenFile.FileName;
-            }
-        }
-
-        private void btnBrowseOutput_Click(object sender, EventArgs e)
-        {
-            if (dlgSaveFile.ShowDialog() == DialogResult.OK)
-            {
-                OutputFile = dlgSaveFile.FileName;
-            }
-        }
-
         private void OutputDifferences(string inputFile1, string inputFile2)
         {
             var file1Lines = new FileInfo(inputFile1).ReadAllText().ToLines();
@@ -105,6 +81,34 @@ namespace BBQ.Toolkit.Plugins.FileDiffOutput
             newLines.Join(Environment.NewLine).ToFile(OutputFile);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void btnBrowseFile1_Click(object sender, EventArgs e)
+        {
+            if (dlgOpenFile.ShowDialog() == DialogResult.OK)
+            {
+                File1 = dlgOpenFile.FileName;
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void btnBrowseFile2_Click(object sender, EventArgs e)
+        {
+            if (dlgOpenFile.ShowDialog() == DialogResult.OK)
+            {
+                File2 = dlgOpenFile.FileName;
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void btnBrowseOutput_Click(object sender, EventArgs e)
+        {
+            if (dlgSaveFile.ShowDialog() == DialogResult.OK)
+            {
+                OutputFile = dlgSaveFile.FileName;
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnRun_Click(object sender, EventArgs e)
         {
             switch (OutputType)

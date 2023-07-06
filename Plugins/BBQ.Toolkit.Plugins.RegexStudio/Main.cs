@@ -12,13 +12,21 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
     [ToolboxItem(false)]
     public partial class Main : UserControl
     {
-        private const string INITIAL_INPUT_TEXT = "This is a test: Project test EndProject";
-        private const string INITIAL_OUTPUT_TEXT = "This is for the output";
+        #region Constructor and UserControl Event Handlers
 
         public Main()
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            rTxtInput.Text = "This is a test: Project test EndProject";
+            txtOutput.Text = "This is for the output";
+            studioFile = new RegexStudioFile();
+        }
+
+        #endregion Constructor and UserControl Event Handlers
 
         private string InputText
         {
@@ -36,29 +44,6 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
         {
             get { return txtReplacementString.Text; }
             set { txtReplacementString.Text = value; }
-        }
-
-        private void btnFindMatches_Click(object sender, EventArgs e)
-        {
-            var regex = BuildRegex();
-            if (regex != null)
-            {
-                ClearMatches();
-                foreach (Match match in regex.Matches(InputText))
-                {
-                    tvOutput.AddMatch(regex, match);
-                }
-            }
-        }
-
-        private void btnReplace_Click(object sender, EventArgs e)
-        {
-            txtOutput.Text = BuildRegex().Replace(InputText, ReplacementString);
-        }
-
-        private void btnShowCSharpCode_Click(object sender, EventArgs e)
-        {
-            txtOutput.Text = BuildCSharpCode();
         }
 
         private string BuildCSharpCode()
@@ -195,26 +180,6 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             }
         }
 
-        private void cbECMAScript_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbECMAScript.Checked)
-            {
-                cbSingleline.Checked = false;
-                cbExplicitCapture.Checked = false;
-                cbRightToLeft.Checked = false;
-                cbIgnorePatternWS.Checked = false;
-            }
-        }
-
-        private void cbNonECMAOptions_CheckedChanged(object sender, EventArgs e)
-        {
-            var box = sender as KryptonCheckBox;
-            if (box.Checked)
-            {
-                cbECMAScript.Checked = false;
-            }
-        }
-
         private void Clear()
         {
             ClearMatches();
@@ -254,53 +219,6 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             ReplacementString = studioFile.ReplacementString;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            rTxtInput.Text = "This is a test: Project test EndProject";
-            txtOutput.Text = "This is for the output";
-            studioFile = new RegexStudioFile();
-        }
-
-        private void mnuMainFileNew_Click(object sender, EventArgs e) => Clear();
-
-        private void mnuMainFileOpen_Click(object sender, EventArgs e)
-        {
-            if (dlgOpenFile.ShowDialog() == DialogResult.OK)
-            {
-                studioFile = RegexStudioFile.Load(dlgOpenFile.FileName);
-                Clear();
-                LoadStudioFile();
-            }
-        }
-
-        private void mnuMainFileSave_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(studioFile.FilePath))
-            {
-                SaveStudioFile(studioFile.FilePath);
-            }
-            else if (dlgSaveFile.ShowDialog() == DialogResult.OK)
-            {
-                SaveStudioFile(dlgSaveFile.FileName);
-            }
-        }
-
-        private void mnuMainFileSaveAs_Click(object sender, EventArgs e)
-        {
-            if (dlgSaveFile.ShowDialog() == DialogResult.OK)
-            {
-                SaveStudioFile(dlgSaveFile.FileName);
-            }
-        }
-
-        private void rTxtInput_Enter(object sender, EventArgs e)
-        {
-            if (rTxtInput.Text.Equals("This is a test: Project test EndProject", StringComparison.OrdinalIgnoreCase))
-            {
-                rTxtInput.Clear();
-            }
-        }
-
         private void SaveStudioFile(string filePath)
         {
             studioFile.Compiled = cbCompiled.Checked;
@@ -317,6 +235,102 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             studioFile.Save(filePath);
         }
 
+        #region Control Event Handlers
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void btnFindMatches_Click(object sender, EventArgs e)
+        {
+            var regex = BuildRegex();
+            if (regex != null)
+            {
+                ClearMatches();
+                foreach (Match match in regex.Matches(InputText))
+                {
+                    tvOutput.AddMatch(regex, match);
+                }
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void btnReplace_Click(object sender, EventArgs e)
+        {
+            txtOutput.Text = BuildRegex().Replace(InputText, ReplacementString);
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void btnShowCSharpCode_Click(object sender, EventArgs e)
+        {
+            txtOutput.Text = BuildCSharpCode();
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void cbECMAScript_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbECMAScript.Checked)
+            {
+                cbSingleline.Checked = false;
+                cbExplicitCapture.Checked = false;
+                cbRightToLeft.Checked = false;
+                cbIgnorePatternWS.Checked = false;
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void cbNonECMAOptions_CheckedChanged(object sender, EventArgs e)
+        {
+            var box = sender as KryptonCheckBox;
+            if (box.Checked)
+            {
+                cbECMAScript.Checked = false;
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void mnuMainFileNew_Click(object sender, EventArgs e) => Clear();
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void mnuMainFileOpen_Click(object sender, EventArgs e)
+        {
+            if (dlgOpenFile.ShowDialog() == DialogResult.OK)
+            {
+                studioFile = RegexStudioFile.Load(dlgOpenFile.FileName);
+                Clear();
+                LoadStudioFile();
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void mnuMainFileSave_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(studioFile.FilePath))
+            {
+                SaveStudioFile(studioFile.FilePath);
+            }
+            else if (dlgSaveFile.ShowDialog() == DialogResult.OK)
+            {
+                SaveStudioFile(dlgSaveFile.FileName);
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void mnuMainFileSaveAs_Click(object sender, EventArgs e)
+        {
+            if (dlgSaveFile.ShowDialog() == DialogResult.OK)
+            {
+                SaveStudioFile(dlgSaveFile.FileName);
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void rTxtInput_Enter(object sender, EventArgs e)
+        {
+            if (rTxtInput.Text.Equals("This is a test: Project test EndProject", StringComparison.OrdinalIgnoreCase))
+            {
+                rTxtInput.Clear();
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tvOutput_GroupChanged(GroupChangedEventArgs e)
         {
             rTxtInput.SelectAll();
@@ -327,6 +341,7 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             rTxtInput.ScrollToCaret();
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tvOutput_MatchChanged(MatchChangedEventArgs e)
         {
             rTxtInput.SelectAll();
@@ -336,5 +351,7 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
             rTxtInput.SelectionBackColor = Color.Yellow;
             rTxtInput.ScrollToCaret();
         }
+
+        #endregion Control Event Handlers
     }
 }

@@ -15,10 +15,10 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
         private bool inDrawingMode = false;
         private bool isCompleted = false;
         private bool isDragging = false;
-        private Pen pen = new Pen(Color.Blue, 2.0F);
+        private readonly Pen pen = new(Color.Blue, 2.0F);
 
-        private Point bottomRight { get; set; }
-        private Point topLeft { get; set; }
+        private Point bottomRight;
+        private Point topLeft;
 
         #endregion Private Members
 
@@ -49,6 +49,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
 
         #endregion Constructor & Form Event Handlers
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             lblXCoordinateValue.Text = e.Location.X.ToString();
@@ -61,6 +62,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDragging)
@@ -70,6 +72,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             if (inDrawingMode)
@@ -84,6 +87,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             if (isDragging || isCompleted)
@@ -92,15 +96,17 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnOK_Click(object sender, EventArgs e)
         {
-            var dialog = new HotSpotInputDialog();
+            using var dialog = new HotSpotInputDialog();
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -117,10 +123,11 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnRetry_Click(object sender, EventArgs e)
         {
-            topLeft = default(Point);
-            bottomRight = default(Point);
+            topLeft = default;
+            bottomRight = default;
             inDrawingMode = true;
             isCompleted = false;
             isDragging = false;
