@@ -29,35 +29,6 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
             InitializeComponent();
         }
 
-        private void lbTables_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            using var connection = new SqlConnection(connectionString);
-            connection.Open();
-            var schema = connection.GetSchema(Table);
-            connection.Close();
-            dataGridView.DataSource = schema;
-        }
-
-        private void btnWizard_Click(object sender, EventArgs e)
-        {
-            using var form = new SqlConnectionForm();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                connectionString = form.ConnectionString;
-                Connect();
-            }
-        }
-
-        private void btnConnectionString_Click(object sender, EventArgs e)
-        {
-            using var form = new ConnectionStringDialog();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                connectionString = form.ConnectionString;
-                Connect();
-            }
-        }
-
         private void Connect()
         {
             if (string.IsNullOrEmpty(connectionString))
@@ -78,6 +49,38 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
                 metaTables.Add(row.Field<string>("CollectionName"));
             }
             lbTables.DataSource = metaTables.OrderBy(x => x).ToList();
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void lbTables_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using var connection = new SqlConnection(connectionString);
+            connection.Open();
+            var schema = connection.GetSchema(Table);
+            connection.Close();
+            dataGridView.DataSource = schema;
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void btnWizard_Click(object sender, EventArgs e)
+        {
+            using var form = new SqlConnectionForm();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                connectionString = form.ConnectionString;
+                Connect();
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void btnConnectionString_Click(object sender, EventArgs e)
+        {
+            using var form = new ConnectionStringDialog();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                connectionString = form.ConnectionString;
+                Connect();
+            }
         }
     }
 }

@@ -12,8 +12,8 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
     {
         private Graphics g;
         private Image image;
-        private ImageMap imageMap = new ImageMap();
-        private Pen pen = new Pen(Color.Blue, 2.0F);
+        private readonly ImageMap imageMap = new();
+        private readonly Pen pen = new(Color.Blue, 2.0F);
 
         public Main()
         {
@@ -48,20 +48,23 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
 
         private void LoadImage()
         {
-            var dialog = new FileNameInputDialog();
-
+            using var dialog = new FileNameInputDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
             {
+#pragma warning disable DF0021 // This is in fact being disposed. See Dispose() in Main.Designer.cs
                 image = Image.FromFile(dialog.SelectedFileName);
+#pragma warning restore DF0021
 
                 pictureBox.Image = image;
                 pictureBox.Width = image.Width;
                 pictureBox.Height = image.Height;
+
+#pragma warning disable DF0021 // This is in fact being disposed. See Dispose() in Main.Designer.cs
                 g = pictureBox.CreateGraphics();
+#pragma warning restore DF0021
             }
             else
             {
-                dialog.Dispose();
                 LoadImage();
             }
         }
@@ -71,10 +74,10 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             LoadImage();
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnCircle_Click(object sender, EventArgs e)
         {
-            var form = new AddCircleForm(image);
-
+            using var form = new AddCircleForm(image);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 AddHotSpot(form.HotSpot);
@@ -82,10 +85,10 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnPolygon_Click(object sender, EventArgs e)
         {
-            var form = new AddPolygonForm(image);
-
+            using var form = new AddPolygonForm(image);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 AddHotSpot(form.HotSpot);
@@ -93,10 +96,10 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnRectangle_Click(object sender, EventArgs e)
         {
-            var form = new AddRectangleForm(image);
-
+            using var form = new AddRectangleForm(image);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 AddHotSpot(form.HotSpot);

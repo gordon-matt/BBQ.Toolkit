@@ -64,6 +64,7 @@ namespace BBQ.Toolkit.Plugins.LogFilter
             btnBrowseOutput.Values.Image = CommonImages.Browse_32x32;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnBrowseInput_Click(object sender, EventArgs e)
         {
             if (dlgOpenFile.ShowDialog() == DialogResult.OK)
@@ -72,6 +73,7 @@ namespace BBQ.Toolkit.Plugins.LogFilter
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnBrowseOutput_Click(object sender, EventArgs e)
         {
             if (dlgSaveFile.ShowDialog() == DialogResult.OK)
@@ -80,6 +82,7 @@ namespace BBQ.Toolkit.Plugins.LogFilter
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnRun_Click(object sender, EventArgs e)
         {
             if (OutputType == OutputType.Distinct)

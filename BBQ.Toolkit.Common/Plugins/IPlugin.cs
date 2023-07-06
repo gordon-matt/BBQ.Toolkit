@@ -1,4 +1,6 @@
-﻿namespace BBQ.Toolkit.Common;
+﻿using BBQ.Toolkit.Common.Forms;
+
+namespace BBQ.Toolkit.Common.Plugins;
 
 public interface IPlugin
 {

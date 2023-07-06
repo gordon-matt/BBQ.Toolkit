@@ -2,33 +2,26 @@
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
+using BBQ.Toolkit.Common.Forms;
+using BBQ.Toolkit.Common.Plugins;
 using BBQ.Toolkit.Plugins.SimpleCodeGenerator.Properties;
 
-namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
+namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator;
+
+[Export(typeof(IPlugin))]
+public class SimpleCodeGeneratorPlugin : IUserControlPlugin
 {
-    [Export(typeof(IPlugin))]
-    public class SimpleCodeGeneratorPlugin : IUserControlPlugin
-    {
-        #region IUserControlPlugin Members
+    public string Title => "Simple Code Generator";
 
-        public UserControl Content => new Main();
+    public string Description => string.Empty;
 
-        #endregion IUserControlPlugin Members
+    public string Group => CommonConstants.PluginCategories.Code;
 
-        #region IPlugin Members
+    public string SubGroup => null;
 
-        public string Title => "Simple Code Generator";
+    public Image Icon => Resources.Icon;
 
-        public string Description => string.Empty;
+    public ISettingsControl SettingsControl => null;
 
-        public string Group => CommonConstants.PluginCategories.Code;
-
-        public string SubGroup => null;
-
-        public Image Icon => Resources.Icon;
-
-        public ISettingsControl SettingsControl => null;
-
-        #endregion IPlugin Members
-    }
+    public UserControl GetContent() => new Main();
 }

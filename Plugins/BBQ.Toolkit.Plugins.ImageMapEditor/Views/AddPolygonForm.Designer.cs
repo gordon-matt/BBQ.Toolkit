@@ -1,4 +1,5 @@
-﻿using Krypton.Toolkit;
+﻿using System.Windows.Forms;
+using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
 {
@@ -15,9 +16,10 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                pen?.Dispose();
+                components?.Dispose();
             }
             base.Dispose(disposing);
         }

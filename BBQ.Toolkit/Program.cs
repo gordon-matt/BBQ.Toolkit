@@ -1,4 +1,6 @@
-﻿namespace BBQ.Toolkit;
+﻿using BBQ.Toolkit.Common.Plugins;
+
+namespace BBQ.Toolkit;
 
 internal class Program
 {

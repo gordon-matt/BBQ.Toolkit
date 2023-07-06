@@ -14,10 +14,10 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
         private readonly Image image;
         private bool inDrawingMode = false;
         private bool isCompleted = false;
-        private Pen pen = new Pen(Color.Blue, 2.0F);
+        private readonly Pen pen = new(Color.Blue, 2.0F);
         private int radius = 20;
 
-        private Point center { get; set; }
+        private Point center;
 
         #endregion Private Members
 
@@ -49,6 +49,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
 
         #endregion Constructor & Form Event Handlers
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             lblXCoordinateValue.Text = e.Location.X.ToString();
@@ -60,6 +61,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             if (inDrawingMode)
@@ -71,6 +73,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             if (isCompleted)
@@ -80,15 +83,17 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnOK_Click(object sender, EventArgs e)
         {
-            var dialog = new HotSpotInputDialog();
+            using var dialog = new HotSpotInputDialog();
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -105,9 +110,10 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnRadius_Click(object sender, EventArgs e)
         {
-            var dlgRadius = new RadiusInputDialog();
+            using var dlgRadius = new RadiusInputDialog();
             dlgRadius.Radius = radius;
 
             if (dlgRadius.ShowDialog() == DialogResult.OK)
@@ -117,9 +123,10 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void tsBtnRetry_Click(object sender, EventArgs e)
         {
-            center = default(Point);
+            center = default;
             inDrawingMode = true;
             isCompleted = false;
             pictureBox.Invalidate();

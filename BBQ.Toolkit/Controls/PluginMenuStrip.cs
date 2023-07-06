@@ -1,15 +1,19 @@
-﻿namespace BBQ.Toolkit.Controls;
+﻿using BBQ.Toolkit.Common.Plugins;
+
+namespace BBQ.Toolkit.Controls;
 
 public class PluginMenuStrip : MenuStrip
 {
-    private List<string> pluginItems = new List<string>();
+    private readonly List<string> pluginItems = new List<string>();
 
     public void AddPlugin(IPlugin plugin)
     {
         #region Main Plugin Node
 
-        var pluginItem = new ToolStripMenuItem(plugin.Title);
-        pluginItem.Tag = plugin;
+        var pluginItem = new ToolStripMenuItem(plugin.Title)
+        {
+            Tag = plugin
+        };
 
         try
         {
@@ -80,14 +84,13 @@ public class PluginMenuStrip : MenuStrip
         }
     }
 
-    private ToolStripMenuItem EnsureItem(ToolStripMenuItem menuItem)
+    private void EnsureItem(ToolStripMenuItem menuItem)
     {
-        var item = this.Items.Cast<ToolStripMenuItem>().SingleOrDefault(x => x.Text == menuItem.Text);
+        var item = this.Items.OfType<ToolStripMenuItem>().SingleOrDefault(x => x.Text == menuItem.Text);
 
         if (item == null)
         {
             Items.Add(menuItem);
-            return menuItem;
         }
         else
         {
@@ -95,8 +98,6 @@ public class PluginMenuStrip : MenuStrip
             {
                 item.DropDownItems.Add(subItem);
             }
-
-            return item;
         }
     }
 
@@ -108,6 +109,7 @@ public class PluginMenuStrip : MenuStrip
         }
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
     private void pluginItem_Click(object sender, EventArgs e)
     {
         var menuItem = sender as ToolStripMenuItem;

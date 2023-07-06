@@ -2,33 +2,26 @@
 using System.Drawing;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common;
+using BBQ.Toolkit.Common.Forms;
+using BBQ.Toolkit.Common.Plugins;
 using BBQ.Toolkit.Plugins.JsonFormatter;
 
-namespace BBQ.Toolkit.Plugins.XmlFormatter
+namespace BBQ.Toolkit.Plugins.XmlFormatter;
+
+[Export(typeof(IPlugin))]
+public class JsonFormatterPlugin : IUserControlPlugin
 {
-    [Export(typeof(IPlugin))]
-    public class JsonFormatterPlugin : IUserControlPlugin
-    {
-        #region IUserControlPlugin Members
+    public string Title => "JSON Formatter";
 
-        public UserControl Content => new Main();
+    public string Description => string.Empty;
 
-        #endregion IUserControlPlugin Members
+    public string Group => CommonConstants.PluginCategories.Text;
 
-        #region IPlugin Members
+    public string SubGroup => null;
 
-        public string Title => "JSON Formatter";
+    public Image Icon => Resources.Icon;
 
-        public string Description => string.Empty;
+    public ISettingsControl SettingsControl => null;
 
-        public string Group => CommonConstants.PluginCategories.Text;
-
-        public string SubGroup => null;
-
-        public Image Icon => Resources.Icon;
-
-        public ISettingsControl SettingsControl => null;
-
-        #endregion IPlugin Members
-    }
+    public UserControl GetContent() => new Main();
 }

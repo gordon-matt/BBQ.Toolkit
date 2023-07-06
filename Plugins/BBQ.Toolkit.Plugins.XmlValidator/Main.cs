@@ -80,6 +80,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
 
         private string xsdPath;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnXML_Click(object sender, EventArgs e)
         {
             if (dlgOpenFile.ShowDialog() == DialogResult.OK)
@@ -88,6 +89,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnXSD_Click(object sender, EventArgs e)
         {
             if (dlgOpenFile.ShowDialog() == DialogResult.OK)
@@ -97,6 +99,7 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
         private void btnValidate_Click(object sender, EventArgs e)
         {
             try

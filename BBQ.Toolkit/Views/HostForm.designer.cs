@@ -1,5 +1,4 @@
 ﻿using BBQ.Toolkit.Controls;
-using Krypton.Toolkit;
 
 namespace BBQ.Toolkit.Views
 {
@@ -16,10 +15,20 @@ namespace BBQ.Toolkit.Views
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                if (userControls is not null)
+                {
+                    foreach (var control in userControls)
+                    {
+                        control.Value?.Dispose();
+                    }
+                    userControls = null;
+                }
+
+                components?.Dispose();
             }
+
             base.Dispose(disposing);
         }
 

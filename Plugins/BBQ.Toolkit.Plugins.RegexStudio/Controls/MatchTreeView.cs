@@ -11,14 +11,17 @@ namespace BBQ.Toolkit.Plugins.RegexStudio.Controls
 
         public void AddMatch(Regex regex, Match match)
         {
-            var node = new TreeNode(match.Value);
-            node.Tag = match;
+            var node = new TreeNode(match.Value)
+            {
+                Tag = match
+            };
 
             for (int i = 1; i < match.Groups.Count; i++)
             {
-                var node2 = new TreeNode(regex.GroupNameFromNumber(i));
-                node2.Tag = match.Groups[i];
-                node.Nodes.Add(node2);
+                node.Nodes.Add(new TreeNode(regex.GroupNameFromNumber(i))
+                {
+                    Tag = match.Groups[i]
+                });
             }
 
             Nodes.Add(node);
@@ -28,18 +31,17 @@ namespace BBQ.Toolkit.Plugins.RegexStudio.Controls
         {
             if (e.Node.Level == 0)
             {
-                if (MatchChanged != null)
+                MatchChanged?.Invoke(new MatchChangedEventArgs
                 {
-                    var args = new MatchChangedEventArgs();
-                    args.Match = e.Node.Tag as Match;
-                    MatchChanged(args);
-                }
+                    Match = e.Node.Tag as Match
+                });
             }
-            else if ((e.Node.Level == 1) && (this.GroupChanged != null))
+            else if ((e.Node.Level == 1) && (GroupChanged != null))
             {
-                var args2 = new GroupChangedEventArgs();
-                args2.Group = e.Node.Tag as Group;
-                GroupChanged(args2);
+                GroupChanged(new GroupChangedEventArgs
+                {
+                    Group = e.Node.Tag as Group
+                });
             }
             base.OnAfterSelect(e);
         }

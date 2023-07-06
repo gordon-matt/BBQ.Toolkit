@@ -1,4 +1,4 @@
-﻿namespace BBQ.Toolkit.Common;
+﻿namespace BBQ.Toolkit.Common.Plugins;
 
 public enum ShowAs
 {
