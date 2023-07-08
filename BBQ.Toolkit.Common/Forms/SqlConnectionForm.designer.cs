@@ -1,6 +1,6 @@
 ﻿namespace BBQ.Toolkit.Common.Forms
 {
-    partial class SqlConnectionForm
+    partial class SqlConnectionForm 
     {
         /// <summary>
         /// Required designer variable.
