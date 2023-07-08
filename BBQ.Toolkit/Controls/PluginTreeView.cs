@@ -9,13 +9,13 @@ public class PluginTreeView : KryptonTreeView
 
     public PluginTreeView()
     {
-        ImageList = imageList;
         imageList.Images.Add(Resources.Plugin);
         imageList.Images.Add(Resources.Data);
         imageList.Images.Add(Resources.Text);
         imageList.Images.Add(Resources.Image);
         imageList.Images.Add(Resources.Security);
         imageList.Images.Add(Resources.Code);
+        ImageList = imageList;
     }
 
     public Size ImageListImageSize
@@ -45,17 +45,10 @@ public class PluginTreeView : KryptonTreeView
         #region SubGroup
 
         TreeNode subGroup = null;
-        try
+        if (!string.IsNullOrEmpty(plugin.SubGroup))
         {
-            if (!string.IsNullOrEmpty(plugin.SubGroup))
-            {
-                subGroup = new TreeNode(plugin.SubGroup);
-                subGroup.Nodes.Add(pluginItem);
-            }
-        }
-        catch (NotImplementedException)
-        {
-            // Do nothing (check for main group next)
+            subGroup = new TreeNode(plugin.SubGroup);
+            subGroup.Nodes.Add(pluginItem);
         }
 
         #endregion SubGroup
@@ -71,11 +64,11 @@ public class PluginTreeView : KryptonTreeView
 
                 switch (plugin.Group)
                 {
-                    case CommonConstants.PluginCategories.Data: group.ImageIndex = 1; break;
-                    case CommonConstants.PluginCategories.Text: group.ImageIndex = 2; break;
-                    case CommonConstants.PluginCategories.Images: group.ImageIndex = 3; break;
-                    case CommonConstants.PluginCategories.Security: group.ImageIndex = 4; break;
-                    case CommonConstants.PluginCategories.Code: group.ImageIndex = 5; break;
+                    case CommonConstants.PluginCategories.Data: group.ImageIndex = group.SelectedImageIndex = 1; break;
+                    case CommonConstants.PluginCategories.Text: group.ImageIndex = group.SelectedImageIndex = 2; break;
+                    case CommonConstants.PluginCategories.Images: group.ImageIndex = group.SelectedImageIndex = 3; break;
+                    case CommonConstants.PluginCategories.Security: group.ImageIndex = group.SelectedImageIndex = 4; break;
+                    case CommonConstants.PluginCategories.Code: group.ImageIndex = group.SelectedImageIndex = 5; break;
                 }
 
                 if (subGroup != null)
@@ -152,11 +145,11 @@ public class PluginTreeView : KryptonTreeView
 
                 switch (plugin.Group)
                 {
-                    case CommonConstants.PluginCategories.Data: group.ImageIndex = 1; break;
-                    case CommonConstants.PluginCategories.Text: group.ImageIndex = 2; break;
-                    case CommonConstants.PluginCategories.Images: group.ImageIndex = 3; break;
-                    case CommonConstants.PluginCategories.Security: group.ImageIndex = 4; break;
-                    case CommonConstants.PluginCategories.Code: group.ImageIndex = 5; break;
+                    case CommonConstants.PluginCategories.Data: group.ImageIndex = group.SelectedImageIndex = 1; break;
+                    case CommonConstants.PluginCategories.Text: group.ImageIndex = group.SelectedImageIndex = 2; break;
+                    case CommonConstants.PluginCategories.Images: group.ImageIndex = group.SelectedImageIndex = 3; break;
+                    case CommonConstants.PluginCategories.Security: group.ImageIndex = group.SelectedImageIndex = 4; break;
+                    case CommonConstants.PluginCategories.Code: group.ImageIndex = group.SelectedImageIndex = 5; break;
                 }
 
                 if (subGroup != null)

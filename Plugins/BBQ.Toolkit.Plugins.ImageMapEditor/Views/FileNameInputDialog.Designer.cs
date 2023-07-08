@@ -30,77 +30,85 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtFileName = new Krypton.Toolkit.KryptonTextBox();
-            this.lblFileName = new Krypton.Toolkit.KryptonLabel();
-            this.btnBrowse = new Krypton.Toolkit.KryptonButton();
-            this.btnOK = new Krypton.Toolkit.KryptonButton();
-            this.btnCancel = new Krypton.Toolkit.KryptonButton();
-            this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
-            this.SuspendLayout();
+            txtFileName = new KryptonTextBox();
+            lblFileName = new KryptonLabel();
+            btnBrowse = new KryptonButton();
+            btnOK = new KryptonButton();
+            btnCancel = new KryptonButton();
+            dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
+            SuspendLayout();
             // 
             // txtFileName
             // 
-            this.txtFileName.Location = new System.Drawing.Point(81, 12);
-            this.txtFileName.Name = "txtFileName";
-            this.txtFileName.Size = new System.Drawing.Size(334, 23);
-            this.txtFileName.TabIndex = 3;
+            txtFileName.Location = new System.Drawing.Point(94, 15);
+            txtFileName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtFileName.Name = "txtFileName";
+            txtFileName.Size = new System.Drawing.Size(484, 23);
+            txtFileName.TabIndex = 3;
             // 
             // lblFileName
             // 
-            this.lblFileName.Location = new System.Drawing.Point(9, 15);
-            this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(65, 20);
-            this.lblFileName.TabIndex = 2;
-            this.lblFileName.Values.Text = "File Name";
+            lblFileName.Location = new System.Drawing.Point(10, 17);
+            lblFileName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            lblFileName.Name = "lblFileName";
+            lblFileName.Size = new System.Drawing.Size(65, 20);
+            lblFileName.TabIndex = 2;
+            lblFileName.Values.Text = "File Name";
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(421, 10);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(75, 28);
-            this.btnBrowse.TabIndex = 4;
-            this.btnBrowse.Values.Text = "Browse";
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            btnBrowse.CornerRoundingRadius = -1F;
+            btnBrowse.Location = new System.Drawing.Point(586, 7);
+            btnBrowse.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnBrowse.Name = "btnBrowse";
+            btnBrowse.Size = new System.Drawing.Size(88, 39);
+            btnBrowse.TabIndex = 4;
+            btnBrowse.Values.Text = "Browse";
+            btnBrowse.Click += btnBrowse_Click;
             // 
             // btnOK
             // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(273, 38);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(62, 30);
-            this.btnOK.TabIndex = 5;
-            this.btnOK.Values.Text = "OK";
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            btnOK.CornerRoundingRadius = -1F;
+            btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            btnOK.Location = new System.Drawing.Point(94, 44);
+            btnOK.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new System.Drawing.Size(88, 39);
+            btnOK.TabIndex = 5;
+            btnOK.Values.Text = "OK";
+            btnOK.Click += btnOK_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(353, 38);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(62, 30);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Values.Text = "Cancel";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.CornerRoundingRadius = -1F;
+            btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            btnCancel.Location = new System.Drawing.Point(188, 44);
+            btnCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(88, 39);
+            btnCancel.TabIndex = 6;
+            btnCancel.Values.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // FileNameInputDialog
             // 
-            this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(505, 84);
-            this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.txtFileName);
-            this.Controls.Add(this.lblFileName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FileNameInputDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Please enter file name";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btnOK;
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            CancelButton = btnCancel;
+            ClientSize = new System.Drawing.Size(687, 95);
+            Controls.Add(btnOK);
+            Controls.Add(btnCancel);
+            Controls.Add(btnBrowse);
+            Controls.Add(txtFileName);
+            Controls.Add(lblFileName);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "FileNameInputDialog";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Please enter file name";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

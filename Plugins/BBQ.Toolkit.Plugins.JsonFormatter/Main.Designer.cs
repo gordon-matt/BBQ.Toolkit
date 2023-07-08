@@ -30,114 +30,129 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.txtJson = new Krypton.Toolkit.KryptonTextBox();
-            this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
-            this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
-            this.panelTop = new Krypton.Toolkit.KryptonPanel();
-            this.toolStrip = new Krypton.Toolkit.KryptonToolStrip();
-            this.btnLoad = new System.Windows.Forms.ToolStripButton();
-            this.btnFormat = new System.Windows.Forms.ToolStripButton();
-            this.btnSave = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.panelTop)).BeginInit();
-            this.panelTop.SuspendLayout();
-            this.toolStrip.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // txtJson
-            // 
-            this.txtJson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtJson.Location = new System.Drawing.Point(0, 39);
-            this.txtJson.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtJson.Multiline = true;
-            this.txtJson.Name = "txtJson";
-            this.txtJson.Size = new System.Drawing.Size(798, 529);
-            this.txtJson.TabIndex = 1;
+            components = new System.ComponentModel.Container();
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
+            dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
+            panelTop = new KryptonPanel();
+            toolStrip = new KryptonToolStrip();
+            btnLoad = new System.Windows.Forms.ToolStripButton();
+            btnFormat = new System.Windows.Forms.ToolStripButton();
+            btnSave = new System.Windows.Forms.ToolStripButton();
+            txtJson = new FastColoredTextBoxNS.FastColoredTextBox();
+            ((System.ComponentModel.ISupportInitialize)panelTop).BeginInit();
+            panelTop.SuspendLayout();
+            toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtJson).BeginInit();
+            SuspendLayout();
             // 
             // dlgOpenFile
             // 
-            this.dlgOpenFile.Filter = "JSON Files|*.json";
+            dlgOpenFile.Filter = "JSON Files|*.json";
             // 
             // dlgSaveFile
             // 
-            this.dlgSaveFile.Filter = "JSON Files|*.json";
+            dlgSaveFile.Filter = "JSON Files|*.json";
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.toolStrip);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(798, 39);
-            this.panelTop.TabIndex = 0;
+            panelTop.Controls.Add(toolStrip);
+            panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            panelTop.Location = new System.Drawing.Point(0, 0);
+            panelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelTop.Name = "panelTop";
+            panelTop.Size = new System.Drawing.Size(798, 39);
+            panelTop.TabIndex = 0;
             // 
             // toolStrip
             // 
-            this.toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnLoad,
-            this.btnFormat,
-            this.btnSave});
-            this.toolStrip.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(798, 39);
-            this.toolStrip.TabIndex = 0;
-            this.toolStrip.Text = "kryptonToolStrip1";
+            toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { btnLoad, btnFormat, btnSave });
+            toolStrip.Location = new System.Drawing.Point(0, 0);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new System.Drawing.Size(798, 39);
+            toolStrip.TabIndex = 0;
+            toolStrip.Text = "kryptonToolStrip1";
             // 
             // btnLoad
             // 
-            this.btnLoad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.Image")));
-            this.btnLoad.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(36, 36);
-            this.btnLoad.Text = "Load";
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            btnLoad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            btnLoad.Image = (System.Drawing.Image)resources.GetObject("btnLoad.Image");
+            btnLoad.ImageTransparentColor = System.Drawing.Color.Magenta;
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new System.Drawing.Size(36, 36);
+            btnLoad.Text = "Load";
+            btnLoad.Click += btnLoad_Click;
             // 
             // btnFormat
             // 
-            this.btnFormat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFormat.Image = ((System.Drawing.Image)(resources.GetObject("btnFormat.Image")));
-            this.btnFormat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFormat.Name = "btnFormat";
-            this.btnFormat.Size = new System.Drawing.Size(36, 36);
-            this.btnFormat.Text = "Format";
-            this.btnFormat.Click += new System.EventHandler(this.btnFormat_Click);
+            btnFormat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            btnFormat.Image = (System.Drawing.Image)resources.GetObject("btnFormat.Image");
+            btnFormat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            btnFormat.Name = "btnFormat";
+            btnFormat.Size = new System.Drawing.Size(36, 36);
+            btnFormat.Text = "Format";
+            btnFormat.Click += btnFormat_Click;
             // 
             // btnSave
             // 
-            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(36, 36);
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            btnSave.Image = (System.Drawing.Image)resources.GetObject("btnSave.Image");
+            btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            btnSave.Name = "btnSave";
+            btnSave.Size = new System.Drawing.Size(36, 36);
+            btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
+            // 
+            // txtJson
+            // 
+            txtJson.AutoCompleteBracketsList = new char[] { '(', ')', '{', '}', '[', ']', '"', '"', '\'', '\'' };
+            txtJson.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;]+);\r\n";
+            txtJson.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            txtJson.BackBrush = null;
+            txtJson.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            txtJson.CharHeight = 14;
+            txtJson.CharWidth = 8;
+            txtJson.DefaultMarkerSize = 8;
+            txtJson.DisabledColor = System.Drawing.Color.FromArgb(100, 180, 180, 180);
+            txtJson.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtJson.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtJson.IsReplaceMode = false;
+            txtJson.Language = FastColoredTextBoxNS.Language.JSON;
+            txtJson.LeftBracket = '[';
+            txtJson.LeftBracket2 = '{';
+            txtJson.Location = new System.Drawing.Point(0, 39);
+            txtJson.Name = "txtJson";
+            txtJson.Paddings = new System.Windows.Forms.Padding(0);
+            txtJson.RightBracket = ']';
+            txtJson.RightBracket2 = '}';
+            txtJson.SelectionColor = System.Drawing.Color.FromArgb(60, 0, 0, 255);
+            txtJson.ServiceColors = (FastColoredTextBoxNS.ServiceColors)resources.GetObject("txtJson.ServiceColors");
+            txtJson.Size = new System.Drawing.Size(798, 529);
+            txtJson.TabIndex = 1;
+            txtJson.Zoom = 100;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.txtJson);
-            this.Controls.Add(this.panelTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Main";
-            this.Size = new System.Drawing.Size(798, 568);
-            ((System.ComponentModel.ISupportInitialize)(this.panelTop)).EndInit();
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            Controls.Add(txtJson);
+            Controls.Add(panelTop);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "Main";
+            Size = new System.Drawing.Size(798, 568);
+            ((System.ComponentModel.ISupportInitialize)panelTop).EndInit();
+            panelTop.ResumeLayout(false);
+            panelTop.PerformLayout();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)txtJson).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
-        private KryptonTextBox txtJson;
         private System.Windows.Forms.OpenFileDialog dlgOpenFile;
         private System.Windows.Forms.SaveFileDialog dlgSaveFile;
         private KryptonPanel panelTop;
@@ -145,5 +160,6 @@ namespace BBQ.Toolkit.Plugins.XmlFormatter
         private System.Windows.Forms.ToolStripButton btnLoad;
         private System.Windows.Forms.ToolStripButton btnFormat;
         private System.Windows.Forms.ToolStripButton btnSave;
+        private FastColoredTextBoxNS.FastColoredTextBox txtJson;
     }
 }

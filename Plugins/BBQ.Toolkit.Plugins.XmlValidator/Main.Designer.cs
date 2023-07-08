@@ -30,131 +30,165 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelTop = new Krypton.Toolkit.KryptonPanel();
-            this.toolStrip = new Krypton.Toolkit.KryptonToolStrip();
-            this.btnLoadXml = new System.Windows.Forms.ToolStripButton();
-            this.btnLoadXsd = new System.Windows.Forms.ToolStripButton();
-            this.btnValidate = new System.Windows.Forms.ToolStripButton();
-            this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.txtXsd = new Krypton.Toolkit.KryptonTextBox();
-            this.txtXml = new Krypton.Toolkit.KryptonTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.panelTop)).BeginInit();
-            this.panelTop.SuspendLayout();
-            this.toolStrip.SuspendLayout();
-            this.tableLayoutPanel.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            panelTop = new KryptonPanel();
+            toolStrip = new KryptonToolStrip();
+            btnLoadXml = new System.Windows.Forms.ToolStripButton();
+            btnLoadXsd = new System.Windows.Forms.ToolStripButton();
+            btnValidate = new System.Windows.Forms.ToolStripButton();
+            dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
+            tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            txtXml = new FastColoredTextBoxNS.FastColoredTextBox();
+            txtXsd = new FastColoredTextBoxNS.FastColoredTextBox();
+            ((System.ComponentModel.ISupportInitialize)panelTop).BeginInit();
+            panelTop.SuspendLayout();
+            toolStrip.SuspendLayout();
+            tableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtXml).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtXsd).BeginInit();
+            SuspendLayout();
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.toolStrip);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(798, 40);
-            this.panelTop.TabIndex = 0;
+            panelTop.Controls.Add(toolStrip);
+            panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            panelTop.Location = new System.Drawing.Point(0, 0);
+            panelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelTop.Name = "panelTop";
+            panelTop.Size = new System.Drawing.Size(798, 40);
+            panelTop.TabIndex = 0;
             // 
             // toolStrip
             // 
-            this.toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnLoadXml,
-            this.btnLoadXsd,
-            this.btnValidate});
-            this.toolStrip.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(798, 39);
-            this.toolStrip.TabIndex = 2;
-            this.toolStrip.Text = "kryptonToolStrip1";
+            toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { btnLoadXml, btnLoadXsd, btnValidate });
+            toolStrip.Location = new System.Drawing.Point(0, 0);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new System.Drawing.Size(798, 39);
+            toolStrip.TabIndex = 2;
+            toolStrip.Text = "kryptonToolStrip1";
             // 
             // btnLoadXml
             // 
-            this.btnLoadXml.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLoadXml.Image = global::BBQ.Toolkit.Plugins.XmlValidator.Properties.Resources.Xml;
-            this.btnLoadXml.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLoadXml.Name = "btnLoadXml";
-            this.btnLoadXml.Size = new System.Drawing.Size(36, 36);
-            this.btnLoadXml.Text = "Load XML";
-            this.btnLoadXml.Click += new System.EventHandler(this.btnXML_Click);
+            btnLoadXml.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            btnLoadXml.Image = Properties.Resources.Xml;
+            btnLoadXml.ImageTransparentColor = System.Drawing.Color.Magenta;
+            btnLoadXml.Name = "btnLoadXml";
+            btnLoadXml.Size = new System.Drawing.Size(36, 36);
+            btnLoadXml.Text = "Load XML";
+            btnLoadXml.Click += btnXML_Click;
             // 
             // btnLoadXsd
             // 
-            this.btnLoadXsd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLoadXsd.Image = global::BBQ.Toolkit.Plugins.XmlValidator.Properties.Resources.Xsd;
-            this.btnLoadXsd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLoadXsd.Name = "btnLoadXsd";
-            this.btnLoadXsd.Size = new System.Drawing.Size(36, 36);
-            this.btnLoadXsd.Text = "Load XSD";
-            this.btnLoadXsd.Click += new System.EventHandler(this.btnXSD_Click);
+            btnLoadXsd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            btnLoadXsd.Image = Properties.Resources.Xsd;
+            btnLoadXsd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            btnLoadXsd.Name = "btnLoadXsd";
+            btnLoadXsd.Size = new System.Drawing.Size(36, 36);
+            btnLoadXsd.Text = "Load XSD";
+            btnLoadXsd.Click += btnXSD_Click;
             // 
             // btnValidate
             // 
-            this.btnValidate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnValidate.Image = global::BBQ.Toolkit.Plugins.XmlValidator.Properties.Resources.Validate;
-            this.btnValidate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnValidate.Name = "btnValidate";
-            this.btnValidate.Size = new System.Drawing.Size(36, 36);
-            this.btnValidate.Text = "Validate";
-            this.btnValidate.Click += new System.EventHandler(this.btnValidate_Click);
+            btnValidate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            btnValidate.Image = Properties.Resources.Validate;
+            btnValidate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            btnValidate.Name = "btnValidate";
+            btnValidate.Size = new System.Drawing.Size(36, 36);
+            btnValidate.Text = "Validate";
+            btnValidate.Click += btnValidate_Click;
             // 
             // dlgOpenFile
             // 
-            this.dlgOpenFile.Filter = "XML Files|*.xml|XSD Files|*.xsd|All Files|*.*";
+            dlgOpenFile.Filter = "XML Files|*.xml|XSD Files|*.xsd|All Files|*.*";
             // 
             // tableLayoutPanel
             // 
-            this.tableLayoutPanel.ColumnCount = 2;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.Controls.Add(this.txtXsd, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.txtXml, 0, 0);
-            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 40);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 1;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(798, 528);
-            this.tableLayoutPanel.TabIndex = 1;
-            // 
-            // txtXsd
-            // 
-            this.txtXsd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtXsd.Location = new System.Drawing.Point(402, 3);
-            this.txtXsd.Multiline = true;
-            this.txtXsd.Name = "txtXsd";
-            this.txtXsd.Size = new System.Drawing.Size(393, 522);
-            this.txtXsd.TabIndex = 1;
+            tableLayoutPanel.ColumnCount = 2;
+            tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel.Controls.Add(txtXml, 0, 0);
+            tableLayoutPanel.Controls.Add(txtXsd, 1, 0);
+            tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel.Location = new System.Drawing.Point(0, 40);
+            tableLayoutPanel.Name = "tableLayoutPanel";
+            tableLayoutPanel.RowCount = 1;
+            tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel.Size = new System.Drawing.Size(798, 528);
+            tableLayoutPanel.TabIndex = 1;
             // 
             // txtXml
             // 
-            this.txtXml.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtXml.Location = new System.Drawing.Point(3, 3);
-            this.txtXml.Multiline = true;
-            this.txtXml.Name = "txtXml";
-            this.txtXml.Size = new System.Drawing.Size(393, 522);
-            this.txtXml.TabIndex = 0;
+            txtXml.AutoCompleteBracketsList = new char[] { '(', ')', '{', '}', '[', ']', '"', '"', '\'', '\'' };
+            txtXml.AutoIndentCharsPatterns = "";
+            txtXml.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            txtXml.BackBrush = null;
+            txtXml.CharHeight = 14;
+            txtXml.CharWidth = 8;
+            txtXml.CommentPrefix = null;
+            txtXml.DefaultMarkerSize = 8;
+            txtXml.DisabledColor = System.Drawing.Color.FromArgb(100, 180, 180, 180);
+            txtXml.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtXml.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtXml.IsReplaceMode = false;
+            txtXml.Language = FastColoredTextBoxNS.Language.XML;
+            txtXml.LeftBracket = '<';
+            txtXml.LeftBracket2 = '(';
+            txtXml.Location = new System.Drawing.Point(3, 3);
+            txtXml.Name = "txtXml";
+            txtXml.Paddings = new System.Windows.Forms.Padding(0);
+            txtXml.RightBracket = '>';
+            txtXml.RightBracket2 = ')';
+            txtXml.SelectionColor = System.Drawing.Color.FromArgb(60, 0, 0, 255);
+            txtXml.ServiceColors = (FastColoredTextBoxNS.ServiceColors)resources.GetObject("txtXml.ServiceColors");
+            txtXml.Size = new System.Drawing.Size(393, 522);
+            txtXml.TabIndex = 2;
+            txtXml.Zoom = 100;
+            // 
+            // txtXsd
+            // 
+            txtXsd.AutoCompleteBracketsList = new char[] { '(', ')', '{', '}', '[', ']', '"', '"', '\'', '\'' };
+            txtXsd.AutoIndentCharsPatterns = "^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;=]+);\r\n^\\s*(case|default)\\s*[^:]*(?<range>:)\\s*(?<range>[^;]+);";
+            txtXsd.AutoScrollMinSize = new System.Drawing.Size(27, 14);
+            txtXsd.BackBrush = null;
+            txtXsd.CharHeight = 14;
+            txtXsd.CharWidth = 8;
+            txtXsd.DefaultMarkerSize = 8;
+            txtXsd.DisabledColor = System.Drawing.Color.FromArgb(100, 180, 180, 180);
+            txtXsd.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtXsd.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtXsd.IsReplaceMode = false;
+            txtXsd.Language = FastColoredTextBoxNS.Language.XML;
+            txtXsd.Location = new System.Drawing.Point(402, 3);
+            txtXsd.Name = "txtXsd";
+            txtXsd.Paddings = new System.Windows.Forms.Padding(0);
+            txtXsd.SelectionColor = System.Drawing.Color.FromArgb(60, 0, 0, 255);
+            txtXsd.ServiceColors = (FastColoredTextBoxNS.ServiceColors)resources.GetObject("txtXsd.ServiceColors");
+            txtXsd.Size = new System.Drawing.Size(393, 522);
+            txtXsd.TabIndex = 3;
+            txtXsd.Zoom = 100;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.tableLayoutPanel);
-            this.Controls.Add(this.panelTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Main";
-            this.Size = new System.Drawing.Size(798, 568);
-            ((System.ComponentModel.ISupportInitialize)(this.panelTop)).EndInit();
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.tableLayoutPanel.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            Controls.Add(tableLayoutPanel);
+            Controls.Add(panelTop);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "Main";
+            Size = new System.Drawing.Size(798, 568);
+            ((System.ComponentModel.ISupportInitialize)panelTop).EndInit();
+            panelTop.ResumeLayout(false);
+            panelTop.PerformLayout();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
+            tableLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)txtXml).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtXsd).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -162,11 +196,11 @@ namespace BBQ.Toolkit.Plugins.XmlValidator
         private KryptonPanel panelTop;
         private System.Windows.Forms.OpenFileDialog dlgOpenFile;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private KryptonTextBox txtXsd;
-        private KryptonTextBox txtXml;
         private KryptonToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton btnLoadXml;
         private System.Windows.Forms.ToolStripButton btnLoadXsd;
         private System.Windows.Forms.ToolStripButton btnValidate;
+        private FastColoredTextBoxNS.FastColoredTextBox txtXml;
+        private FastColoredTextBoxNS.FastColoredTextBox txtXsd;
     }
 }
