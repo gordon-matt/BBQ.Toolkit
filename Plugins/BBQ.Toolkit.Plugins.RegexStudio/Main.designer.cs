@@ -32,455 +32,442 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtPattern = new Krypton.Toolkit.KryptonTextBox();
-            this.grpPattern = new System.Windows.Forms.GroupBox();
-            this.grpOptions = new System.Windows.Forms.GroupBox();
-            this.cbCompiled = new Krypton.Toolkit.KryptonCheckBox();
-            this.cbIgnorePatternWS = new Krypton.Toolkit.KryptonCheckBox();
-            this.cbRightToLeft = new Krypton.Toolkit.KryptonCheckBox();
-            this.cbECMAScript = new Krypton.Toolkit.KryptonCheckBox();
-            this.cbExplicitCapture = new Krypton.Toolkit.KryptonCheckBox();
-            this.cbSingleline = new Krypton.Toolkit.KryptonCheckBox();
-            this.cbMultiline = new Krypton.Toolkit.KryptonCheckBox();
-            this.cbIgnoreCase = new Krypton.Toolkit.KryptonCheckBox();
-            this.btnFindMatches = new Krypton.Toolkit.KryptonButton();
-            this.grpReplacementString = new System.Windows.Forms.GroupBox();
-            this.txtReplacementString = new Krypton.Toolkit.KryptonTextBox();
-            this.btnReplace = new Krypton.Toolkit.KryptonButton();
-            this.pnlTop = new Krypton.Toolkit.KryptonPanel();
-            this.btnShowCSharpCode = new Krypton.Toolkit.KryptonButton();
-            this.txtOutput = new Krypton.Toolkit.KryptonTextBox();
-            this.splitContainerOutput = new System.Windows.Forms.SplitContainer();
-            this.tvOutput = new BBQ.Toolkit.Plugins.RegexStudio.Controls.MatchTreeView();
-            this.splitContainerMain = new System.Windows.Forms.SplitContainer();
-            this.rTxtInput = new Krypton.Toolkit.KryptonRichTextBox();
-            this.mnuMain = new System.Windows.Forms.MenuStrip();
-            this.mnuMainFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMainFileNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMainFileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMainFileSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuMainFileSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMainFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMainHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMainHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.dlgSaveFile = new System.Windows.Forms.SaveFileDialog();
-            this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
-            this.grpPattern.SuspendLayout();
-            this.grpOptions.SuspendLayout();
-            this.grpReplacementString.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnlTop)).BeginInit();
-            this.pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerOutput)).BeginInit();
-            this.splitContainerOutput.Panel1.SuspendLayout();
-            this.splitContainerOutput.Panel2.SuspendLayout();
-            this.splitContainerOutput.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
-            this.splitContainerMain.Panel1.SuspendLayout();
-            this.splitContainerMain.Panel2.SuspendLayout();
-            this.splitContainerMain.SuspendLayout();
-            this.mnuMain.SuspendLayout();
-            this.SuspendLayout();
+            txtPattern = new KryptonTextBox();
+            grpPattern = new GroupBox();
+            grpOptions = new GroupBox();
+            cbCompiled = new KryptonCheckBox();
+            cbIgnorePatternWS = new KryptonCheckBox();
+            cbRightToLeft = new KryptonCheckBox();
+            cbECMAScript = new KryptonCheckBox();
+            cbExplicitCapture = new KryptonCheckBox();
+            cbSingleline = new KryptonCheckBox();
+            cbMultiline = new KryptonCheckBox();
+            cbIgnoreCase = new KryptonCheckBox();
+            btnFindMatches = new KryptonButton();
+            grpReplacementString = new GroupBox();
+            txtReplacementString = new KryptonTextBox();
+            btnReplace = new KryptonButton();
+            pnlTop = new KryptonPanel();
+            btnShowCSharpCode = new KryptonButton();
+            txtOutput = new KryptonTextBox();
+            splitContainerOutput = new SplitContainer();
+            tvOutput = new MatchTreeView();
+            splitContainerMain = new SplitContainer();
+            rTxtInput = new KryptonRichTextBox();
+            mnuMain = new MenuStrip();
+            mnuMainFile = new ToolStripMenuItem();
+            mnuMainFileNew = new ToolStripMenuItem();
+            mnuMainFileOpen = new ToolStripMenuItem();
+            mnuMainFileSeparator1 = new ToolStripSeparator();
+            mnuMainFileSave = new ToolStripMenuItem();
+            mnuMainFileSaveAs = new ToolStripMenuItem();
+            mnuMainHelp = new ToolStripMenuItem();
+            mnuMainHelpAbout = new ToolStripMenuItem();
+            dlgSaveFile = new SaveFileDialog();
+            dlgOpenFile = new OpenFileDialog();
+            grpPattern.SuspendLayout();
+            grpOptions.SuspendLayout();
+            grpReplacementString.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pnlTop).BeginInit();
+            pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainerOutput).BeginInit();
+            splitContainerOutput.Panel1.SuspendLayout();
+            splitContainerOutput.Panel2.SuspendLayout();
+            splitContainerOutput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainerMain).BeginInit();
+            splitContainerMain.Panel1.SuspendLayout();
+            splitContainerMain.Panel2.SuspendLayout();
+            splitContainerMain.SuspendLayout();
+            mnuMain.SuspendLayout();
+            SuspendLayout();
             // 
             // txtPattern
             // 
-            this.txtPattern.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPattern.Location = new System.Drawing.Point(8, 22);
-            this.txtPattern.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtPattern.Multiline = true;
-            this.txtPattern.Name = "txtPattern";
-            this.txtPattern.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtPattern.Size = new System.Drawing.Size(536, 63);
-            this.txtPattern.TabIndex = 0;
-            this.txtPattern.Text = "Project(?<value>(?:(?!Project).)*)EndProject";
+            txtPattern.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPattern.Location = new System.Drawing.Point(8, 22);
+            txtPattern.Margin = new Padding(4, 3, 4, 3);
+            txtPattern.Multiline = true;
+            txtPattern.Name = "txtPattern";
+            txtPattern.ScrollBars = ScrollBars.Vertical;
+            txtPattern.Size = new System.Drawing.Size(536, 63);
+            txtPattern.TabIndex = 0;
+            txtPattern.Text = "Project(?<value>(?:(?!Project).)*)EndProject";
             // 
             // grpPattern
             // 
-            this.grpPattern.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpPattern.Controls.Add(this.txtPattern);
-            this.grpPattern.Location = new System.Drawing.Point(4, 3);
-            this.grpPattern.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grpPattern.Name = "grpPattern";
-            this.grpPattern.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grpPattern.Size = new System.Drawing.Size(555, 98);
-            this.grpPattern.TabIndex = 0;
-            this.grpPattern.TabStop = false;
-            this.grpPattern.Text = "Pattern";
+            grpPattern.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            grpPattern.Controls.Add(txtPattern);
+            grpPattern.Location = new System.Drawing.Point(4, 3);
+            grpPattern.Margin = new Padding(4, 3, 4, 3);
+            grpPattern.Name = "grpPattern";
+            grpPattern.Padding = new Padding(4, 3, 4, 3);
+            grpPattern.Size = new System.Drawing.Size(555, 98);
+            grpPattern.TabIndex = 0;
+            grpPattern.TabStop = false;
+            grpPattern.Text = "Pattern";
             // 
             // grpOptions
             // 
-            this.grpOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpOptions.Controls.Add(this.cbCompiled);
-            this.grpOptions.Controls.Add(this.cbIgnorePatternWS);
-            this.grpOptions.Controls.Add(this.cbRightToLeft);
-            this.grpOptions.Controls.Add(this.cbECMAScript);
-            this.grpOptions.Controls.Add(this.cbExplicitCapture);
-            this.grpOptions.Controls.Add(this.cbSingleline);
-            this.grpOptions.Controls.Add(this.cbMultiline);
-            this.grpOptions.Controls.Add(this.cbIgnoreCase);
-            this.grpOptions.Location = new System.Drawing.Point(565, 3);
-            this.grpOptions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grpOptions.Name = "grpOptions";
-            this.grpOptions.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grpOptions.Size = new System.Drawing.Size(281, 162);
-            this.grpOptions.TabIndex = 2;
-            this.grpOptions.TabStop = false;
-            this.grpOptions.Text = "Options";
+            grpOptions.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            grpOptions.Controls.Add(cbCompiled);
+            grpOptions.Controls.Add(cbIgnorePatternWS);
+            grpOptions.Controls.Add(cbRightToLeft);
+            grpOptions.Controls.Add(cbECMAScript);
+            grpOptions.Controls.Add(cbExplicitCapture);
+            grpOptions.Controls.Add(cbSingleline);
+            grpOptions.Controls.Add(cbMultiline);
+            grpOptions.Controls.Add(cbIgnoreCase);
+            grpOptions.Location = new System.Drawing.Point(565, 3);
+            grpOptions.Margin = new Padding(4, 3, 4, 3);
+            grpOptions.Name = "grpOptions";
+            grpOptions.Padding = new Padding(4, 3, 4, 3);
+            grpOptions.Size = new System.Drawing.Size(281, 162);
+            grpOptions.TabIndex = 2;
+            grpOptions.TabStop = false;
+            grpOptions.Text = "Options";
             // 
             // cbCompiled
             // 
-            this.cbCompiled.Checked = true;
-            this.cbCompiled.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbCompiled.Location = new System.Drawing.Point(141, 125);
-            this.cbCompiled.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbCompiled.Name = "cbCompiled";
-            this.cbCompiled.Size = new System.Drawing.Size(76, 20);
-            this.cbCompiled.TabIndex = 7;
-            this.cbCompiled.Values.Text = "Compiled";
+            cbCompiled.Checked = true;
+            cbCompiled.CheckState = CheckState.Checked;
+            cbCompiled.Location = new System.Drawing.Point(141, 125);
+            cbCompiled.Margin = new Padding(4, 3, 4, 3);
+            cbCompiled.Name = "cbCompiled";
+            cbCompiled.Size = new System.Drawing.Size(76, 20);
+            cbCompiled.TabIndex = 7;
+            cbCompiled.Values.Text = "Compiled";
             // 
             // cbIgnorePatternWS
             // 
-            this.cbIgnorePatternWS.Location = new System.Drawing.Point(141, 91);
-            this.cbIgnorePatternWS.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbIgnorePatternWS.Name = "cbIgnorePatternWS";
-            this.cbIgnorePatternWS.Size = new System.Drawing.Size(123, 20);
-            this.cbIgnorePatternWS.TabIndex = 5;
-            this.cbIgnorePatternWS.Values.Text = "Ignore Pattern WS";
-            this.cbIgnorePatternWS.CheckedChanged += new System.EventHandler(this.cbNonECMAOptions_CheckedChanged);
+            cbIgnorePatternWS.Location = new System.Drawing.Point(141, 91);
+            cbIgnorePatternWS.Margin = new Padding(4, 3, 4, 3);
+            cbIgnorePatternWS.Name = "cbIgnorePatternWS";
+            cbIgnorePatternWS.Size = new System.Drawing.Size(123, 20);
+            cbIgnorePatternWS.TabIndex = 5;
+            cbIgnorePatternWS.Values.Text = "Ignore Pattern WS";
+            cbIgnorePatternWS.CheckedChanged += cbNonECMAOptions_CheckedChanged;
             // 
             // cbRightToLeft
             // 
-            this.cbRightToLeft.Location = new System.Drawing.Point(141, 58);
-            this.cbRightToLeft.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbRightToLeft.Name = "cbRightToLeft";
-            this.cbRightToLeft.Size = new System.Drawing.Size(93, 20);
-            this.cbRightToLeft.TabIndex = 3;
-            this.cbRightToLeft.Values.Text = "Right To Left";
-            this.cbRightToLeft.CheckedChanged += new System.EventHandler(this.cbNonECMAOptions_CheckedChanged);
+            cbRightToLeft.Location = new System.Drawing.Point(141, 58);
+            cbRightToLeft.Margin = new Padding(4, 3, 4, 3);
+            cbRightToLeft.Name = "cbRightToLeft";
+            cbRightToLeft.Size = new System.Drawing.Size(93, 20);
+            cbRightToLeft.TabIndex = 3;
+            cbRightToLeft.Values.Text = "Right To Left";
+            cbRightToLeft.CheckedChanged += cbNonECMAOptions_CheckedChanged;
             // 
             // cbECMAScript
             // 
-            this.cbECMAScript.Location = new System.Drawing.Point(141, 24);
-            this.cbECMAScript.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbECMAScript.Name = "cbECMAScript";
-            this.cbECMAScript.Size = new System.Drawing.Size(91, 20);
-            this.cbECMAScript.TabIndex = 1;
-            this.cbECMAScript.Values.Text = "ECMA Script";
-            this.cbECMAScript.CheckedChanged += new System.EventHandler(this.cbECMAScript_CheckedChanged);
+            cbECMAScript.Location = new System.Drawing.Point(141, 24);
+            cbECMAScript.Margin = new Padding(4, 3, 4, 3);
+            cbECMAScript.Name = "cbECMAScript";
+            cbECMAScript.Size = new System.Drawing.Size(91, 20);
+            cbECMAScript.TabIndex = 1;
+            cbECMAScript.Values.Text = "ECMA Script";
+            cbECMAScript.CheckedChanged += cbECMAScript_CheckedChanged;
             // 
             // cbExplicitCapture
             // 
-            this.cbExplicitCapture.Location = new System.Drawing.Point(7, 125);
-            this.cbExplicitCapture.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbExplicitCapture.Name = "cbExplicitCapture";
-            this.cbExplicitCapture.Size = new System.Drawing.Size(108, 20);
-            this.cbExplicitCapture.TabIndex = 6;
-            this.cbExplicitCapture.Values.Text = "Explicit Capture";
-            this.cbExplicitCapture.CheckedChanged += new System.EventHandler(this.cbNonECMAOptions_CheckedChanged);
+            cbExplicitCapture.Location = new System.Drawing.Point(7, 125);
+            cbExplicitCapture.Margin = new Padding(4, 3, 4, 3);
+            cbExplicitCapture.Name = "cbExplicitCapture";
+            cbExplicitCapture.Size = new System.Drawing.Size(108, 20);
+            cbExplicitCapture.TabIndex = 6;
+            cbExplicitCapture.Values.Text = "Explicit Capture";
+            cbExplicitCapture.CheckedChanged += cbNonECMAOptions_CheckedChanged;
             // 
             // cbSingleline
             // 
-            this.cbSingleline.Location = new System.Drawing.Point(7, 91);
-            this.cbSingleline.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbSingleline.Name = "cbSingleline";
-            this.cbSingleline.Size = new System.Drawing.Size(76, 20);
-            this.cbSingleline.TabIndex = 4;
-            this.cbSingleline.Values.Text = "Singleline";
-            this.cbSingleline.CheckedChanged += new System.EventHandler(this.cbNonECMAOptions_CheckedChanged);
+            cbSingleline.Location = new System.Drawing.Point(7, 91);
+            cbSingleline.Margin = new Padding(4, 3, 4, 3);
+            cbSingleline.Name = "cbSingleline";
+            cbSingleline.Size = new System.Drawing.Size(76, 20);
+            cbSingleline.TabIndex = 4;
+            cbSingleline.Values.Text = "Singleline";
+            cbSingleline.CheckedChanged += cbNonECMAOptions_CheckedChanged;
             // 
             // cbMultiline
             // 
-            this.cbMultiline.Checked = true;
-            this.cbMultiline.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbMultiline.Location = new System.Drawing.Point(7, 58);
-            this.cbMultiline.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbMultiline.Name = "cbMultiline";
-            this.cbMultiline.Size = new System.Drawing.Size(71, 20);
-            this.cbMultiline.TabIndex = 2;
-            this.cbMultiline.Values.Text = "Multiline";
+            cbMultiline.Checked = true;
+            cbMultiline.CheckState = CheckState.Checked;
+            cbMultiline.Location = new System.Drawing.Point(7, 58);
+            cbMultiline.Margin = new Padding(4, 3, 4, 3);
+            cbMultiline.Name = "cbMultiline";
+            cbMultiline.Size = new System.Drawing.Size(71, 20);
+            cbMultiline.TabIndex = 2;
+            cbMultiline.Values.Text = "Multiline";
             // 
             // cbIgnoreCase
             // 
-            this.cbIgnoreCase.Checked = true;
-            this.cbIgnoreCase.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbIgnoreCase.Location = new System.Drawing.Point(7, 24);
-            this.cbIgnoreCase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbIgnoreCase.Name = "cbIgnoreCase";
-            this.cbIgnoreCase.Size = new System.Drawing.Size(88, 20);
-            this.cbIgnoreCase.TabIndex = 0;
-            this.cbIgnoreCase.Values.Text = "Ignore Case";
+            cbIgnoreCase.Checked = true;
+            cbIgnoreCase.CheckState = CheckState.Checked;
+            cbIgnoreCase.Location = new System.Drawing.Point(7, 24);
+            cbIgnoreCase.Margin = new Padding(4, 3, 4, 3);
+            cbIgnoreCase.Name = "cbIgnoreCase";
+            cbIgnoreCase.Size = new System.Drawing.Size(88, 20);
+            cbIgnoreCase.TabIndex = 0;
+            cbIgnoreCase.Values.Text = "Ignore Case";
             // 
             // btnFindMatches
             // 
-            this.btnFindMatches.CornerRoundingRadius = -1F;
-            this.btnFindMatches.Location = new System.Drawing.Point(12, 172);
-            this.btnFindMatches.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnFindMatches.Name = "btnFindMatches";
-            this.btnFindMatches.Size = new System.Drawing.Size(167, 50);
-            this.btnFindMatches.TabIndex = 3;
-            this.btnFindMatches.Values.Image = global::BBQ.Toolkit.Plugins.RegexStudio.Properties.Resources.Search;
-            this.btnFindMatches.Values.Text = "Find Matches";
-            this.btnFindMatches.Click += new System.EventHandler(this.btnFindMatches_Click);
+            btnFindMatches.CornerRoundingRadius = -1F;
+            btnFindMatches.Location = new System.Drawing.Point(4, 173);
+            btnFindMatches.Margin = new Padding(4, 3, 4, 3);
+            btnFindMatches.Name = "btnFindMatches";
+            btnFindMatches.Size = new System.Drawing.Size(167, 50);
+            btnFindMatches.TabIndex = 3;
+            btnFindMatches.Values.Image = Properties.Resources.Search;
+            btnFindMatches.Values.Text = "Find Matches";
+            btnFindMatches.Click += btnFindMatches_Click;
             // 
             // grpReplacementString
             // 
-            this.grpReplacementString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpReplacementString.Controls.Add(this.txtReplacementString);
-            this.grpReplacementString.Location = new System.Drawing.Point(4, 108);
-            this.grpReplacementString.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grpReplacementString.Name = "grpReplacementString";
-            this.grpReplacementString.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grpReplacementString.Size = new System.Drawing.Size(555, 57);
-            this.grpReplacementString.TabIndex = 1;
-            this.grpReplacementString.TabStop = false;
-            this.grpReplacementString.Text = "Replacement String";
+            grpReplacementString.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            grpReplacementString.Controls.Add(txtReplacementString);
+            grpReplacementString.Location = new System.Drawing.Point(4, 108);
+            grpReplacementString.Margin = new Padding(4, 3, 4, 3);
+            grpReplacementString.Name = "grpReplacementString";
+            grpReplacementString.Padding = new Padding(4, 3, 4, 3);
+            grpReplacementString.Size = new System.Drawing.Size(555, 57);
+            grpReplacementString.TabIndex = 1;
+            grpReplacementString.TabStop = false;
+            grpReplacementString.Text = "Replacement String";
             // 
             // txtReplacementString
             // 
-            this.txtReplacementString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReplacementString.Location = new System.Drawing.Point(8, 22);
-            this.txtReplacementString.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtReplacementString.Name = "txtReplacementString";
-            this.txtReplacementString.Size = new System.Drawing.Size(536, 23);
-            this.txtReplacementString.TabIndex = 0;
+            txtReplacementString.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtReplacementString.Location = new System.Drawing.Point(8, 22);
+            txtReplacementString.Margin = new Padding(4, 3, 4, 3);
+            txtReplacementString.Name = "txtReplacementString";
+            txtReplacementString.Size = new System.Drawing.Size(536, 23);
+            txtReplacementString.TabIndex = 0;
             // 
             // btnReplace
             // 
-            this.btnReplace.CornerRoundingRadius = -1F;
-            this.btnReplace.Location = new System.Drawing.Point(187, 171);
-            this.btnReplace.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnReplace.Name = "btnReplace";
-            this.btnReplace.Size = new System.Drawing.Size(167, 50);
-            this.btnReplace.TabIndex = 4;
-            this.btnReplace.Values.Image = global::BBQ.Toolkit.Plugins.RegexStudio.Properties.Resources.Replace;
-            this.btnReplace.Values.Text = "Replace";
-            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
+            btnReplace.CornerRoundingRadius = -1F;
+            btnReplace.Location = new System.Drawing.Point(179, 172);
+            btnReplace.Margin = new Padding(4, 3, 4, 3);
+            btnReplace.Name = "btnReplace";
+            btnReplace.Size = new System.Drawing.Size(167, 50);
+            btnReplace.TabIndex = 4;
+            btnReplace.Values.Image = Properties.Resources.Replace;
+            btnReplace.Values.Text = "Replace";
+            btnReplace.Click += btnReplace_Click;
             // 
             // pnlTop
             // 
-            this.pnlTop.Controls.Add(this.btnShowCSharpCode);
-            this.pnlTop.Controls.Add(this.grpPattern);
-            this.pnlTop.Controls.Add(this.btnReplace);
-            this.pnlTop.Controls.Add(this.grpOptions);
-            this.pnlTop.Controls.Add(this.grpReplacementString);
-            this.pnlTop.Controls.Add(this.btnFindMatches);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(0, 24);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(874, 229);
-            this.pnlTop.TabIndex = 0;
+            pnlTop.Controls.Add(btnShowCSharpCode);
+            pnlTop.Controls.Add(grpPattern);
+            pnlTop.Controls.Add(btnReplace);
+            pnlTop.Controls.Add(grpOptions);
+            pnlTop.Controls.Add(grpReplacementString);
+            pnlTop.Controls.Add(btnFindMatches);
+            pnlTop.Dock = DockStyle.Top;
+            pnlTop.Location = new System.Drawing.Point(0, 24);
+            pnlTop.Margin = new Padding(4, 3, 4, 3);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Size = new System.Drawing.Size(874, 229);
+            pnlTop.TabIndex = 0;
             // 
             // btnShowCSharpCode
             // 
-            this.btnShowCSharpCode.CornerRoundingRadius = -1F;
-            this.btnShowCSharpCode.Location = new System.Drawing.Point(362, 171);
-            this.btnShowCSharpCode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnShowCSharpCode.Name = "btnShowCSharpCode";
-            this.btnShowCSharpCode.Size = new System.Drawing.Size(167, 50);
-            this.btnShowCSharpCode.TabIndex = 5;
-            this.btnShowCSharpCode.Values.Image = global::BBQ.Toolkit.Plugins.RegexStudio.Properties.Resources.CS_Script;
-            this.btnShowCSharpCode.Values.Text = "Show C# Code";
-            this.btnShowCSharpCode.Click += new System.EventHandler(this.btnShowCSharpCode_Click);
+            btnShowCSharpCode.CornerRoundingRadius = -1F;
+            btnShowCSharpCode.Location = new System.Drawing.Point(354, 172);
+            btnShowCSharpCode.Margin = new Padding(4, 3, 4, 3);
+            btnShowCSharpCode.Name = "btnShowCSharpCode";
+            btnShowCSharpCode.Size = new System.Drawing.Size(167, 50);
+            btnShowCSharpCode.TabIndex = 5;
+            btnShowCSharpCode.Values.Image = Properties.Resources.CS_Script;
+            btnShowCSharpCode.Values.Text = "Show C# Code";
+            btnShowCSharpCode.Click += btnShowCSharpCode_Click;
             // 
             // txtOutput
             // 
-            this.txtOutput.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txtOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtOutput.Location = new System.Drawing.Point(0, 0);
-            this.txtOutput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtOutput.Multiline = true;
-            this.txtOutput.Name = "txtOutput";
-            this.txtOutput.ReadOnly = true;
-            this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOutput.Size = new System.Drawing.Size(500, 144);
-            this.txtOutput.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtOutput.TabIndex = 0;
+            txtOutput.BackColor = System.Drawing.Color.LemonChiffon;
+            txtOutput.Dock = DockStyle.Fill;
+            txtOutput.Location = new System.Drawing.Point(0, 0);
+            txtOutput.Margin = new Padding(4, 3, 4, 3);
+            txtOutput.Multiline = true;
+            txtOutput.Name = "txtOutput";
+            txtOutput.ReadOnly = true;
+            txtOutput.ScrollBars = ScrollBars.Vertical;
+            txtOutput.Size = new System.Drawing.Size(500, 144);
+            txtOutput.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(255, 255, 192);
+            txtOutput.TabIndex = 0;
             // 
             // splitContainerOutput
             // 
-            this.splitContainerOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerOutput.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerOutput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.splitContainerOutput.Name = "splitContainerOutput";
-            this.splitContainerOutput.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            splitContainerOutput.Dock = DockStyle.Fill;
+            splitContainerOutput.Location = new System.Drawing.Point(0, 0);
+            splitContainerOutput.Margin = new Padding(4, 3, 4, 3);
+            splitContainerOutput.Name = "splitContainerOutput";
+            splitContainerOutput.Orientation = Orientation.Horizontal;
             // 
             // splitContainerOutput.Panel1
             // 
-            this.splitContainerOutput.Panel1.Controls.Add(this.tvOutput);
+            splitContainerOutput.Panel1.Controls.Add(tvOutput);
             // 
             // splitContainerOutput.Panel2
             // 
-            this.splitContainerOutput.Panel2.Controls.Add(this.txtOutput);
-            this.splitContainerOutput.Size = new System.Drawing.Size(500, 428);
-            this.splitContainerOutput.SplitterDistance = 279;
-            this.splitContainerOutput.SplitterWidth = 5;
-            this.splitContainerOutput.TabIndex = 6;
+            splitContainerOutput.Panel2.Controls.Add(txtOutput);
+            splitContainerOutput.Size = new System.Drawing.Size(500, 428);
+            splitContainerOutput.SplitterDistance = 279;
+            splitContainerOutput.SplitterWidth = 5;
+            splitContainerOutput.TabIndex = 6;
             // 
             // tvOutput
             // 
-            this.tvOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvOutput.Location = new System.Drawing.Point(0, 0);
-            this.tvOutput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tvOutput.Name = "tvOutput";
-            this.tvOutput.Size = new System.Drawing.Size(500, 279);
-            this.tvOutput.TabIndex = 0;
-            this.tvOutput.GroupChanged += new BBQ.Toolkit.Plugins.RegexStudio.Controls.MatchTreeView.GroupChangedEventHandler(this.tvOutput_GroupChanged);
-            this.tvOutput.MatchChanged += new BBQ.Toolkit.Plugins.RegexStudio.Controls.MatchTreeView.MatchChangedEventHandler(this.tvOutput_MatchChanged);
+            tvOutput.Dock = DockStyle.Fill;
+            tvOutput.Location = new System.Drawing.Point(0, 0);
+            tvOutput.Margin = new Padding(4, 3, 4, 3);
+            tvOutput.Name = "tvOutput";
+            tvOutput.Size = new System.Drawing.Size(500, 279);
+            tvOutput.TabIndex = 0;
+            tvOutput.GroupChanged += tvOutput_GroupChanged;
+            tvOutput.MatchChanged += tvOutput_MatchChanged;
             // 
             // splitContainerMain
             // 
-            this.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerMain.Location = new System.Drawing.Point(0, 253);
-            this.splitContainerMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.splitContainerMain.Name = "splitContainerMain";
+            splitContainerMain.Dock = DockStyle.Fill;
+            splitContainerMain.Location = new System.Drawing.Point(0, 253);
+            splitContainerMain.Margin = new Padding(4, 3, 4, 3);
+            splitContainerMain.Name = "splitContainerMain";
             // 
             // splitContainerMain.Panel1
             // 
-            this.splitContainerMain.Panel1.Controls.Add(this.rTxtInput);
+            splitContainerMain.Panel1.Controls.Add(rTxtInput);
             // 
             // splitContainerMain.Panel2
             // 
-            this.splitContainerMain.Panel2.Controls.Add(this.splitContainerOutput);
-            this.splitContainerMain.Size = new System.Drawing.Size(874, 428);
-            this.splitContainerMain.SplitterDistance = 369;
-            this.splitContainerMain.SplitterWidth = 5;
-            this.splitContainerMain.TabIndex = 7;
+            splitContainerMain.Panel2.Controls.Add(splitContainerOutput);
+            splitContainerMain.Size = new System.Drawing.Size(874, 428);
+            splitContainerMain.SplitterDistance = 369;
+            splitContainerMain.SplitterWidth = 5;
+            splitContainerMain.TabIndex = 7;
             // 
             // rTxtInput
             // 
-            this.rTxtInput.DetectUrls = false;
-            this.rTxtInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rTxtInput.Location = new System.Drawing.Point(0, 0);
-            this.rTxtInput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.rTxtInput.Name = "rTxtInput";
-            this.rTxtInput.Size = new System.Drawing.Size(369, 428);
-            this.rTxtInput.TabIndex = 0;
-            this.rTxtInput.Text = "";
-            this.rTxtInput.Enter += new System.EventHandler(this.rTxtInput_Enter);
+            rTxtInput.DetectUrls = false;
+            rTxtInput.Dock = DockStyle.Fill;
+            rTxtInput.Location = new System.Drawing.Point(0, 0);
+            rTxtInput.Margin = new Padding(4, 3, 4, 3);
+            rTxtInput.Name = "rTxtInput";
+            rTxtInput.Size = new System.Drawing.Size(369, 428);
+            rTxtInput.TabIndex = 0;
+            rTxtInput.Text = "";
+            rTxtInput.Enter += rTxtInput_Enter;
             // 
             // mnuMain
             // 
-            this.mnuMain.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuMainFile,
-            this.mnuMainHelp});
-            this.mnuMain.Location = new System.Drawing.Point(0, 0);
-            this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.mnuMain.Size = new System.Drawing.Size(874, 24);
-            this.mnuMain.TabIndex = 8;
-            this.mnuMain.Text = "menuStrip1";
+            mnuMain.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            mnuMain.Items.AddRange(new ToolStripItem[] { mnuMainFile, mnuMainHelp });
+            mnuMain.Location = new System.Drawing.Point(0, 0);
+            mnuMain.Name = "mnuMain";
+            mnuMain.Padding = new Padding(7, 2, 0, 2);
+            mnuMain.Size = new System.Drawing.Size(874, 24);
+            mnuMain.TabIndex = 8;
+            mnuMain.Text = "menuStrip1";
             // 
             // mnuMainFile
             // 
-            this.mnuMainFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuMainFileNew,
-            this.mnuMainFileOpen,
-            this.mnuMainFileSeparator1,
-            this.mnuMainFileSave,
-            this.mnuMainFileSaveAs});
-            this.mnuMainFile.Name = "mnuMainFile";
-            this.mnuMainFile.Size = new System.Drawing.Size(37, 20);
-            this.mnuMainFile.Text = "&File";
+            mnuMainFile.DropDownItems.AddRange(new ToolStripItem[] { mnuMainFileNew, mnuMainFileOpen, mnuMainFileSeparator1, mnuMainFileSave, mnuMainFileSaveAs });
+            mnuMainFile.Name = "mnuMainFile";
+            mnuMainFile.Size = new System.Drawing.Size(37, 20);
+            mnuMainFile.Text = "&File";
             // 
             // mnuMainFileNew
             // 
-            this.mnuMainFileNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnuMainFileNew.Name = "mnuMainFileNew";
-            this.mnuMainFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.mnuMainFileNew.Size = new System.Drawing.Size(146, 22);
-            this.mnuMainFileNew.Text = "&New";
-            this.mnuMainFileNew.Click += new System.EventHandler(this.mnuMainFileNew_Click);
+            mnuMainFileNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            mnuMainFileNew.Name = "mnuMainFileNew";
+            mnuMainFileNew.ShortcutKeys = Keys.Control | Keys.N;
+            mnuMainFileNew.Size = new System.Drawing.Size(146, 22);
+            mnuMainFileNew.Text = "&New";
+            mnuMainFileNew.Click += mnuMainFileNew_Click;
             // 
             // mnuMainFileOpen
             // 
-            this.mnuMainFileOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnuMainFileOpen.Name = "mnuMainFileOpen";
-            this.mnuMainFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.mnuMainFileOpen.Size = new System.Drawing.Size(146, 22);
-            this.mnuMainFileOpen.Text = "&Open";
-            this.mnuMainFileOpen.Click += new System.EventHandler(this.mnuMainFileOpen_Click);
+            mnuMainFileOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            mnuMainFileOpen.Name = "mnuMainFileOpen";
+            mnuMainFileOpen.ShortcutKeys = Keys.Control | Keys.O;
+            mnuMainFileOpen.Size = new System.Drawing.Size(146, 22);
+            mnuMainFileOpen.Text = "&Open";
+            mnuMainFileOpen.Click += mnuMainFileOpen_Click;
             // 
             // mnuMainFileSeparator1
             // 
-            this.mnuMainFileSeparator1.Name = "mnuMainFileSeparator1";
-            this.mnuMainFileSeparator1.Size = new System.Drawing.Size(143, 6);
+            mnuMainFileSeparator1.Name = "mnuMainFileSeparator1";
+            mnuMainFileSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // mnuMainFileSave
             // 
-            this.mnuMainFileSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnuMainFileSave.Name = "mnuMainFileSave";
-            this.mnuMainFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.mnuMainFileSave.Size = new System.Drawing.Size(146, 22);
-            this.mnuMainFileSave.Text = "&Save";
-            this.mnuMainFileSave.Click += new System.EventHandler(this.mnuMainFileSave_Click);
+            mnuMainFileSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            mnuMainFileSave.Name = "mnuMainFileSave";
+            mnuMainFileSave.ShortcutKeys = Keys.Control | Keys.S;
+            mnuMainFileSave.Size = new System.Drawing.Size(146, 22);
+            mnuMainFileSave.Text = "&Save";
+            mnuMainFileSave.Click += mnuMainFileSave_Click;
             // 
             // mnuMainFileSaveAs
             // 
-            this.mnuMainFileSaveAs.Name = "mnuMainFileSaveAs";
-            this.mnuMainFileSaveAs.Size = new System.Drawing.Size(146, 22);
-            this.mnuMainFileSaveAs.Text = "Save &As";
-            this.mnuMainFileSaveAs.Click += new System.EventHandler(this.mnuMainFileSaveAs_Click);
+            mnuMainFileSaveAs.Name = "mnuMainFileSaveAs";
+            mnuMainFileSaveAs.Size = new System.Drawing.Size(146, 22);
+            mnuMainFileSaveAs.Text = "Save &As";
+            mnuMainFileSaveAs.Click += mnuMainFileSaveAs_Click;
             // 
             // mnuMainHelp
             // 
-            this.mnuMainHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuMainHelpAbout});
-            this.mnuMainHelp.Name = "mnuMainHelp";
-            this.mnuMainHelp.Size = new System.Drawing.Size(44, 20);
-            this.mnuMainHelp.Text = "&Help";
+            mnuMainHelp.DropDownItems.AddRange(new ToolStripItem[] { mnuMainHelpAbout });
+            mnuMainHelp.Name = "mnuMainHelp";
+            mnuMainHelp.Size = new System.Drawing.Size(44, 20);
+            mnuMainHelp.Text = "&Help";
             // 
             // mnuMainHelpAbout
             // 
-            this.mnuMainHelpAbout.Name = "mnuMainHelpAbout";
-            this.mnuMainHelpAbout.Size = new System.Drawing.Size(116, 22);
-            this.mnuMainHelpAbout.Text = "&About...";
+            mnuMainHelpAbout.Name = "mnuMainHelpAbout";
+            mnuMainHelpAbout.Size = new System.Drawing.Size(116, 22);
+            mnuMainHelpAbout.Text = "&About...";
             // 
             // dlgSaveFile
             // 
-            this.dlgSaveFile.Filter = "Regex Studio Files|*.rgx";
+            dlgSaveFile.Filter = "Regex Studio Files|*.rgx";
             // 
             // dlgOpenFile
             // 
-            this.dlgOpenFile.Filter = "Regex Studio Files|*.rgx";
+            dlgOpenFile.Filter = "Regex Studio Files|*.rgx";
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitContainerMain);
-            this.Controls.Add(this.pnlTop);
-            this.Controls.Add(this.mnuMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Main";
-            this.Size = new System.Drawing.Size(874, 681);
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.grpPattern.ResumeLayout(false);
-            this.grpPattern.PerformLayout();
-            this.grpOptions.ResumeLayout(false);
-            this.grpOptions.PerformLayout();
-            this.grpReplacementString.ResumeLayout(false);
-            this.grpReplacementString.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnlTop)).EndInit();
-            this.pnlTop.ResumeLayout(false);
-            this.splitContainerOutput.Panel1.ResumeLayout(false);
-            this.splitContainerOutput.Panel2.ResumeLayout(false);
-            this.splitContainerOutput.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerOutput)).EndInit();
-            this.splitContainerOutput.ResumeLayout(false);
-            this.splitContainerMain.Panel1.ResumeLayout(false);
-            this.splitContainerMain.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).EndInit();
-            this.splitContainerMain.ResumeLayout(false);
-            this.mnuMain.ResumeLayout(false);
-            this.mnuMain.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(splitContainerMain);
+            Controls.Add(pnlTop);
+            Controls.Add(mnuMain);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Main";
+            Size = new System.Drawing.Size(874, 681);
+            Load += MainForm_Load;
+            grpPattern.ResumeLayout(false);
+            grpPattern.PerformLayout();
+            grpOptions.ResumeLayout(false);
+            grpOptions.PerformLayout();
+            grpReplacementString.ResumeLayout(false);
+            grpReplacementString.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pnlTop).EndInit();
+            pnlTop.ResumeLayout(false);
+            splitContainerOutput.Panel1.ResumeLayout(false);
+            splitContainerOutput.Panel2.ResumeLayout(false);
+            splitContainerOutput.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainerOutput).EndInit();
+            splitContainerOutput.ResumeLayout(false);
+            splitContainerMain.Panel1.ResumeLayout(false);
+            splitContainerMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainerMain).EndInit();
+            splitContainerMain.ResumeLayout(false);
+            mnuMain.ResumeLayout(false);
+            mnuMain.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -496,13 +483,13 @@ namespace BBQ.Toolkit.Plugins.RegexStudio
         private KryptonCheckBox cbMultiline;
         private KryptonCheckBox cbRightToLeft;
         private KryptonCheckBox cbSingleline;
-        
+
         private OpenFileDialog dlgOpenFile;
         private SaveFileDialog dlgSaveFile;
         private GroupBox grpOptions;
         private GroupBox grpPattern;
         private GroupBox grpReplacementString;
-        
+
         private MenuStrip mnuMain;
         private ToolStripMenuItem mnuMainFile;
         private ToolStripMenuItem mnuMainFileNew;

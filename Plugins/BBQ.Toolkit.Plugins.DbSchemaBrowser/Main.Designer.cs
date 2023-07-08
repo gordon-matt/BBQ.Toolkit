@@ -30,122 +30,123 @@ namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new Krypton.Toolkit.KryptonDataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.toolStrip = new Krypton.Toolkit.KryptonToolStrip();
-            this.btnWizard = new System.Windows.Forms.ToolStripButton();
-            this.btnConnectionString = new System.Windows.Forms.ToolStripButton();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lbTables = new Krypton.Toolkit.KryptonListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.toolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.SuspendLayout();
+            dataGridView = new KryptonDataGridView();
+            panel1 = new System.Windows.Forms.Panel();
+            toolStrip = new KryptonToolStrip();
+            btnWizard = new System.Windows.Forms.ToolStripButton();
+            btnConnectionString = new System.Windows.Forms.ToolStripButton();
+            splitContainer1 = new System.Windows.Forms.SplitContainer();
+            lbTables = new KryptonListBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            panel1.SuspendLayout();
+            toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            SuspendLayout();
             // 
             // dataGridView
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(454, 441);
-            this.dataGridView.TabIndex = 3;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridView.Location = new System.Drawing.Point(0, 0);
+            dataGridView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.Size = new System.Drawing.Size(454, 441);
+            dataGridView.TabIndex = 3;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.toolStrip);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(687, 40);
-            this.panel1.TabIndex = 4;
+            panel1.Controls.Add(toolStrip);
+            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(687, 40);
+            panel1.TabIndex = 4;
             // 
             // toolStrip
             // 
-            this.toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnWizard,
-            this.btnConnectionString});
-            this.toolStrip.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(687, 39);
-            this.toolStrip.TabIndex = 2;
-            this.toolStrip.Text = "kryptonToolStrip1";
+            toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { btnWizard, btnConnectionString });
+            toolStrip.Location = new System.Drawing.Point(0, 0);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new System.Drawing.Size(687, 39);
+            toolStrip.TabIndex = 2;
+            toolStrip.Text = "kryptonToolStrip1";
             // 
             // btnWizard
             // 
-            this.btnWizard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnWizard.Image = global::BBQ.Toolkit.Plugins.DbSchemaBrowser.Properties.Resources.Wizard_32x32;
-            this.btnWizard.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnWizard.Name = "btnWizard";
-            this.btnWizard.Size = new System.Drawing.Size(36, 36);
-            this.btnWizard.Text = "Wizard Connect";
-            this.btnWizard.Click += new System.EventHandler(this.btnWizard_Click);
+            btnWizard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            btnWizard.Image = Properties.Resources.Wizard_32x32;
+            btnWizard.ImageTransparentColor = System.Drawing.Color.Magenta;
+            btnWizard.Name = "btnWizard";
+            btnWizard.Size = new System.Drawing.Size(36, 36);
+            btnWizard.Text = "Wizard Connect";
+            btnWizard.Click += btnWizard_Click;
             // 
             // btnConnectionString
             // 
-            this.btnConnectionString.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnConnectionString.Image = global::BBQ.Toolkit.Plugins.DbSchemaBrowser.Properties.Resources.TextInput_32x32;
-            this.btnConnectionString.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnConnectionString.Name = "btnConnectionString";
-            this.btnConnectionString.Size = new System.Drawing.Size(36, 36);
-            this.btnConnectionString.Text = "Paste Connection String";
-            this.btnConnectionString.Click += new System.EventHandler(this.btnConnectionString_Click);
+            btnConnectionString.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            btnConnectionString.Image = Properties.Resources.TextInput_32x32;
+            btnConnectionString.ImageTransparentColor = System.Drawing.Color.Magenta;
+            btnConnectionString.Name = "btnConnectionString";
+            btnConnectionString.Size = new System.Drawing.Size(36, 36);
+            btnConnectionString.Text = "Paste Connection String";
+            btnConnectionString.Click += btnConnectionString_Click;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 40);
-            this.splitContainer1.Name = "splitContainer1";
+            splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            splitContainer1.Location = new System.Drawing.Point(0, 40);
+            splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.lbTables);
+            splitContainer1.Panel1.Controls.Add(lbTables);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView);
-            this.splitContainer1.Size = new System.Drawing.Size(687, 441);
-            this.splitContainer1.SplitterDistance = 229;
-            this.splitContainer1.TabIndex = 5;
+            splitContainer1.Panel2.Controls.Add(dataGridView);
+            splitContainer1.Size = new System.Drawing.Size(687, 441);
+            splitContainer1.SplitterDistance = 229;
+            splitContainer1.TabIndex = 5;
             // 
             // lbTables
             // 
-            this.lbTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTables.Location = new System.Drawing.Point(0, 0);
-            this.lbTables.Name = "lbTables";
-            this.lbTables.Size = new System.Drawing.Size(229, 441);
-            this.lbTables.TabIndex = 0;
-            this.lbTables.SelectedIndexChanged += new System.EventHandler(this.lbTables_SelectedIndexChanged);
+            lbTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            lbTables.Location = new System.Drawing.Point(0, 0);
+            lbTables.Name = "lbTables";
+            lbTables.Size = new System.Drawing.Size(229, 441);
+            lbTables.TabIndex = 0;
+            lbTables.SelectedIndexChanged += lbTables_SelectedIndexChanged;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Main";
-            this.Size = new System.Drawing.Size(687, 481);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            Controls.Add(splitContainer1);
+            Controls.Add(panel1);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "Main";
+            Size = new System.Drawing.Size(687, 481);
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

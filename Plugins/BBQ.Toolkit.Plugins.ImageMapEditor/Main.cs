@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using BBQ.Toolkit.Common.Properties;
 using BBQ.Toolkit.Plugins.ImageMapEditor.Models;
 using BBQ.Toolkit.Plugins.ImageMapEditor.Views;
 
@@ -18,6 +19,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
         public Main()
         {
             InitializeComponent();
+            tsBtnOpen.Image = CommonImages.OpenFolder_32x32;
         }
 
         private void AddHotSpot(ImageMapHotSpot hotSpot)
@@ -105,6 +107,11 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
                 AddHotSpot(form.HotSpot);
                 DrawRectangle(form.HotSpot.TopLeft, form.HotSpot.BottomRight);
             }
+        }
+
+        private void tsBtnOpen_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

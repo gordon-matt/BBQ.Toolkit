@@ -32,95 +32,106 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
         /// </summary>
         private void InitializeComponent()
         {
-            this.tsBtnRectangle = new System.Windows.Forms.ToolStripButton();
-            this.tsBtnCircle = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip = new KryptonToolStrip();
-            this.tsBtnPolygon = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.txtHtml = new Krypton.Toolkit.KryptonTextBox();
-            this.toolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            this.SuspendLayout();
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            tsBtnRectangle = new System.Windows.Forms.ToolStripButton();
+            tsBtnCircle = new System.Windows.Forms.ToolStripButton();
+            toolStrip = new KryptonToolStrip();
+            tsBtnPolygon = new System.Windows.Forms.ToolStripButton();
+            pictureBox = new System.Windows.Forms.PictureBox();
+            txtHtml = new KryptonTextBox();
+            tsBtnOpen = new System.Windows.Forms.ToolStripButton();
+            toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
+            SuspendLayout();
             // 
             // tsBtnRectangle
             // 
-            this.tsBtnRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnRectangle.Image = global::BBQ.Toolkit.Plugins.ImageMapEditor.Properties.Resources.Rectangle;
-            this.tsBtnRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnRectangle.Name = "tsBtnRectangle";
-            this.tsBtnRectangle.Size = new System.Drawing.Size(36, 36);
-            this.tsBtnRectangle.Text = "Rectangle";
-            this.tsBtnRectangle.Click += new System.EventHandler(this.tsBtnRectangle_Click);
+            tsBtnRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsBtnRectangle.Image = Properties.Resources.Rectangle;
+            tsBtnRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            tsBtnRectangle.Name = "tsBtnRectangle";
+            tsBtnRectangle.Size = new System.Drawing.Size(36, 36);
+            tsBtnRectangle.Text = "Rectangle";
+            tsBtnRectangle.Click += tsBtnRectangle_Click;
             // 
             // tsBtnCircle
             // 
-            this.tsBtnCircle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnCircle.Image = global::BBQ.Toolkit.Plugins.ImageMapEditor.Properties.Resources.Circle;
-            this.tsBtnCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnCircle.Name = "tsBtnCircle";
-            this.tsBtnCircle.Size = new System.Drawing.Size(36, 36);
-            this.tsBtnCircle.Text = "Circle";
-            this.tsBtnCircle.Click += new System.EventHandler(this.tsBtnCircle_Click);
+            tsBtnCircle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsBtnCircle.Image = Properties.Resources.Circle;
+            tsBtnCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            tsBtnCircle.Name = "tsBtnCircle";
+            tsBtnCircle.Size = new System.Drawing.Size(36, 36);
+            tsBtnCircle.Text = "Circle";
+            tsBtnCircle.Click += tsBtnCircle_Click;
             // 
             // toolStrip
             // 
-            this.toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsBtnRectangle,
-            this.tsBtnCircle,
-            this.tsBtnPolygon});
-            this.toolStrip.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(783, 39);
-            this.toolStrip.TabIndex = 25;
-            this.toolStrip.Text = "toolStrip1";
+            toolStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsBtnOpen, tsBtnRectangle, tsBtnCircle, tsBtnPolygon });
+            toolStrip.Location = new System.Drawing.Point(0, 0);
+            toolStrip.Name = "toolStrip";
+            toolStrip.Size = new System.Drawing.Size(913, 39);
+            toolStrip.TabIndex = 25;
+            toolStrip.Text = "toolStrip1";
             // 
             // tsBtnPolygon
             // 
-            this.tsBtnPolygon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnPolygon.Image = global::BBQ.Toolkit.Plugins.ImageMapEditor.Properties.Resources.Polygon;
-            this.tsBtnPolygon.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnPolygon.Name = "tsBtnPolygon";
-            this.tsBtnPolygon.Size = new System.Drawing.Size(36, 36);
-            this.tsBtnPolygon.Text = "Polygon";
-            this.tsBtnPolygon.Click += new System.EventHandler(this.tsBtnPolygon_Click);
+            tsBtnPolygon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsBtnPolygon.Image = Properties.Resources.Polygon;
+            tsBtnPolygon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            tsBtnPolygon.Name = "tsBtnPolygon";
+            tsBtnPolygon.Size = new System.Drawing.Size(36, 36);
+            tsBtnPolygon.Text = "Polygon";
+            tsBtnPolygon.Click += tsBtnPolygon_Click;
             // 
             // pictureBox
             // 
-            this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox.Location = new System.Drawing.Point(0, 39);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(783, 369);
-            this.pictureBox.TabIndex = 23;
-            this.pictureBox.TabStop = false;
+            pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            pictureBox.Location = new System.Drawing.Point(0, 39);
+            pictureBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new System.Drawing.Size(913, 432);
+            pictureBox.TabIndex = 23;
+            pictureBox.TabStop = false;
             // 
             // txtHtml
             // 
-            this.txtHtml.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtHtml.Location = new System.Drawing.Point(0, 408);
-            this.txtHtml.Multiline = true;
-            this.txtHtml.Name = "txtHtml";
-            this.txtHtml.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtHtml.Size = new System.Drawing.Size(783, 118);
-            this.txtHtml.TabIndex = 24;
+            txtHtml.Dock = System.Windows.Forms.DockStyle.Bottom;
+            txtHtml.Location = new System.Drawing.Point(0, 471);
+            txtHtml.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtHtml.Multiline = true;
+            txtHtml.Name = "txtHtml";
+            txtHtml.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            txtHtml.Size = new System.Drawing.Size(913, 136);
+            txtHtml.TabIndex = 24;
+            // 
+            // tsBtnOpen
+            // 
+            tsBtnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsBtnOpen.Image = (System.Drawing.Image)resources.GetObject("tsBtnOpen.Image");
+            tsBtnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            tsBtnOpen.Name = "tsBtnOpen";
+            tsBtnOpen.Size = new System.Drawing.Size(36, 36);
+            tsBtnOpen.Text = "toolStripButton1";
+            tsBtnOpen.Click += tsBtnOpen_Click;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.toolStrip);
-            this.Controls.Add(this.txtHtml);
-            this.Name = "Main";
-            this.Size = new System.Drawing.Size(783, 526);
-            this.Load += new System.EventHandler(this.Main_Load);
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(pictureBox);
+            Controls.Add(toolStrip);
+            Controls.Add(txtHtml);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "Main";
+            Size = new System.Drawing.Size(913, 607);
+            Load += Main_Load;
+            toolStrip.ResumeLayout(false);
+            toolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -131,6 +142,6 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
         private System.Windows.Forms.ToolStripButton tsBtnPolygon;
         private System.Windows.Forms.PictureBox pictureBox;
         private KryptonTextBox txtHtml;
-
+        private System.Windows.Forms.ToolStripButton tsBtnOpen;
     }
 }
