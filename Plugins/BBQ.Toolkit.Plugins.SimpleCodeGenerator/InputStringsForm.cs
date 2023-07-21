@@ -22,7 +22,11 @@ public partial class InputStringsForm : Form, IDataInputForm<IEnumerable<string>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
     private void btnParse_Click(object sender, EventArgs e)
     {
-        Data = txtData.Text.Trim().Split(new[] { Environment.NewLine, "," }, StringSplitOptions.RemoveEmptyEntries);
+        Data = txtData.Text
+            .Trim()
+            .Split(new[] { Environment.NewLine, "," }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(x => x.Trim());
+
         lbItems.DataSource = Data.ToList();
     }
 
