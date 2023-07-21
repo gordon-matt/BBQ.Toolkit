@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common.Properties;
@@ -8,6 +9,7 @@ using Newtonsoft.Json;
 
 namespace BBQ.Toolkit.Plugins.XmlFormatter;
 
+[ToolboxItem(false)]
 public partial class Main : UserControl
 {
     public Main()

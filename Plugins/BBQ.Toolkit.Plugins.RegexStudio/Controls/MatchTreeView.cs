@@ -1,8 +1,10 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.ComponentModel;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace BBQ.Toolkit.Plugins.RegexStudio.Controls
 {
+    [ToolboxItem(false)]
     public class MatchTreeView : TreeView
     {
         public event GroupChangedEventHandler GroupChanged;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
@@ -9,6 +10,7 @@ using Extenso.IO;
 
 namespace BBQ.Toolkit.Plugins.XmlValidator
 {
+    [ToolboxItem(false)]
     public partial class Main : UserControl
     {
         public Main()

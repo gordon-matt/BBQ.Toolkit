@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,6 +9,7 @@ using Microsoft.Data.SqlClient;
 
 namespace BBQ.Toolkit.Plugins.DbSchemaBrowser
 {
+    [ToolboxItem(false)]
     public partial class Main : UserControl
     {
         private string connectionString;
