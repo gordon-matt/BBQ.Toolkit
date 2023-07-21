@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace BBQ.Toolkit.Plugins.FileDiffOutput
         File2Differences
     }
 
+    [ToolboxItem(false)]
     public partial class Main : UserControl
     {
         private OutputType OutputType

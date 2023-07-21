@@ -63,9 +63,39 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Braces_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Braces_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Input_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Input_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MoveLeft_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("MoveLeft_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace BBQ.Toolkit.Plugins.LogFilter
         Matching
     }
 
+    [ToolboxItem(false)]
     public partial class Main : UserControl
     {
         private string InputFile

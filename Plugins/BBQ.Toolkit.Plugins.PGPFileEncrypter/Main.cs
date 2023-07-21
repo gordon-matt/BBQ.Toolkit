@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using BBQ.Toolkit.Common.Properties;
@@ -6,6 +7,7 @@ using PgpCore;
 
 namespace BBQ.Toolkit.Plugins.PGPFileEncrypter
 {
+    [ToolboxItem(false)]
     public partial class Main : UserControl
     {
         public Main()

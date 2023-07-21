@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using Extenso;
 
 namespace BBQ.Toolkit.Plugins.XsdGenerator;
 
+[ToolboxItem(false)]
 public partial class Main : UserControl
 {
     public Main()

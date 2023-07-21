@@ -21,6 +21,9 @@
     <ProjectReference Include="..\..\BBQ.Toolkit.Common\BBQ.Toolkit.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FastColoredTextBox.Net6" Version="1.0.0" />
+    <PackageReference Include="Fluid.Core" Version="2.4.0" />
+    <PackageReference Include="krypton.workspace" Version="70.22.11.312" />
     <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
