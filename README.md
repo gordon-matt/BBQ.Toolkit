@@ -38,6 +38,8 @@ Here are screenshots of some of the tools in the kit
 
 **Simple Code Generator**:
 
+This is by far my favorite tool in the kit. It lets you use the [Liquid Templating language](https://shopify.github.io/liquid/) to generate code from 3 different sources: CSV files, a simpel list of strings or JSON.
+
 <img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/SimpleCodeGenerator_Template.PNG" alt="Simple Code Generator - Template" />
 
 <img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/SimpleCodeGenerator_Results.PNG" alt="Simple Code Generator - Results" />
