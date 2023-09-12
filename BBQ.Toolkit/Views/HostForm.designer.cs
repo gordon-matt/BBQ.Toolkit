@@ -41,7 +41,7 @@ namespace BBQ.Toolkit.Views
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HostForm));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(HostForm));
             pluginMenuStrip = new PluginMenuStrip();
             mnuTools = new ToolStripMenuItem();
             mnuToolsChoosePlugins = new ToolStripMenuItem();
@@ -57,6 +57,7 @@ namespace BBQ.Toolkit.Views
             // 
             // pluginMenuStrip
             // 
+            pluginMenuStrip.Enabled = false;
             pluginMenuStrip.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.World);
             pluginMenuStrip.Items.AddRange(new ToolStripItem[] { mnuTools });
             pluginMenuStrip.Location = new Point(0, 0);
@@ -64,7 +65,8 @@ namespace BBQ.Toolkit.Views
             pluginMenuStrip.Padding = new Padding(7, 2, 0, 2);
             pluginMenuStrip.Size = new Size(1184, 24);
             pluginMenuStrip.TabIndex = 0;
-            pluginMenuStrip.Text = "pluginMenuStrip1";
+            pluginMenuStrip.Text = "Menu";
+            pluginMenuStrip.Visible = false;
             // 
             // mnuTools
             // 
@@ -97,21 +99,21 @@ namespace BBQ.Toolkit.Views
             pluginTreeView.Margin = new Padding(4, 3, 4, 3);
             pluginTreeView.Name = "pluginTreeView";
             pluginTreeView.SelectedImageIndex = 0;
-            pluginTreeView.Size = new Size(280, 657);
+            pluginTreeView.Size = new Size(280, 681);
             pluginTreeView.TabIndex = 1;
             pluginTreeView.AfterSelect += pluginTreeView_AfterSelect;
             // 
             // splitContainer
             // 
             splitContainer.Dock = DockStyle.Fill;
-            splitContainer.Location = new Point(0, 24);
+            splitContainer.Location = new Point(0, 0);
             splitContainer.Margin = new Padding(4, 3, 4, 3);
             splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
             // 
             splitContainer.Panel1.Controls.Add(pluginTreeView);
-            splitContainer.Size = new Size(1184, 657);
+            splitContainer.Size = new Size(1184, 681);
             splitContainer.SplitterDistance = 280;
             splitContainer.SplitterWidth = 5;
             splitContainer.TabIndex = 2;

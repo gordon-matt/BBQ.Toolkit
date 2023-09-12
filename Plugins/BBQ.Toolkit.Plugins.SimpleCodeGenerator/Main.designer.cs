@@ -31,7 +31,7 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             tabControl = new System.Windows.Forms.TabControl();
             tabTemplate = new System.Windows.Forms.TabPage();
             fctTemplate = new FastColoredTextBoxNS.FastColoredTextBox();
@@ -118,7 +118,7 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
             tabResults.Location = new System.Drawing.Point(4, 24);
             tabResults.Name = "tabResults";
             tabResults.Padding = new System.Windows.Forms.Padding(3);
-            tabResults.Size = new System.Drawing.Size(850, 517);
+            tabResults.Size = new System.Drawing.Size(560, 517);
             tabResults.TabIndex = 1;
             tabResults.Text = "Results";
             tabResults.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
             fctResults.RightBracket2 = '}';
             fctResults.SelectionColor = System.Drawing.Color.FromArgb(60, 0, 0, 255);
             fctResults.ServiceColors = (FastColoredTextBoxNS.ServiceColors)resources.GetObject("fctResults.ServiceColors");
-            fctResults.Size = new System.Drawing.Size(844, 511);
+            fctResults.Size = new System.Drawing.Size(554, 511);
             fctResults.TabIndex = 0;
             fctResults.Zoom = 100;
             // 
@@ -199,26 +199,26 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
             tsDDBtnData.ImageTransparentColor = System.Drawing.Color.Magenta;
             tsDDBtnData.Name = "tsDDBtnData";
             tsDDBtnData.Size = new System.Drawing.Size(45, 36);
-            tsDDBtnData.Text = "toolStripDropDownButton1";
+            tsDDBtnData.Text = "Select Data";
             // 
             // tsDDBtnDataListStrings
             // 
             tsDDBtnDataListStrings.Name = "tsDDBtnDataListStrings";
-            tsDDBtnDataListStrings.Size = new System.Drawing.Size(180, 22);
+            tsDDBtnDataListStrings.Size = new System.Drawing.Size(145, 22);
             tsDDBtnDataListStrings.Text = "List of Strings";
             tsDDBtnDataListStrings.Click += tsDDBtnDataListStrings_Click;
             // 
             // tsDDBtnDataCSV
             // 
             tsDDBtnDataCSV.Name = "tsDDBtnDataCSV";
-            tsDDBtnDataCSV.Size = new System.Drawing.Size(180, 22);
+            tsDDBtnDataCSV.Size = new System.Drawing.Size(145, 22);
             tsDDBtnDataCSV.Text = "CSV";
             tsDDBtnDataCSV.Click += tsDDBtnDataCSV_Click;
             // 
             // tsDDBtnDataJSON
             // 
             tsDDBtnDataJSON.Name = "tsDDBtnDataJSON";
-            tsDDBtnDataJSON.Size = new System.Drawing.Size(180, 22);
+            tsDDBtnDataJSON.Size = new System.Drawing.Size(145, 22);
             tsDDBtnDataJSON.Text = "JSON";
             tsDDBtnDataJSON.Click += tsDDBtnDataJSON_Click;
             // 
@@ -240,10 +240,6 @@ namespace BBQ.Toolkit.Plugins.SimpleCodeGenerator
             tsDDBtnLanguage.Name = "tsDDBtnLanguage";
             tsDDBtnLanguage.Size = new System.Drawing.Size(45, 36);
             tsDDBtnLanguage.Text = "Language";
-            // 
-            // dlgOpenFile
-            // 
-            dlgOpenFile.FileName = "openFileDialog1";
             // 
             // splitContainer
             // 
