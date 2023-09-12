@@ -67,15 +67,11 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
                 g = pictureBox.CreateGraphics();
 #pragma warning restore DF0021
             }
-            else
-            {
-                LoadImage();
-            }
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-            LoadImage();
+            //LoadImage();
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
@@ -111,9 +107,7 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             }
         }
 
-        private void tsBtnOpen_Click(object sender, EventArgs e)
-        {
-
-        }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
+        private void tsBtnOpen_Click(object sender, EventArgs e) => LoadImage();
     }
 }

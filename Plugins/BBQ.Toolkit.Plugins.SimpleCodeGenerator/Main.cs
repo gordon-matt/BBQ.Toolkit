@@ -46,6 +46,11 @@ public partial class Main : UserControl
             tsDDBtnLanguage.DropDownItems.Add(toolStripMenuItem);
             toolStripMenuItem.Click += LanguageMenuItem_Click;
         }
+
+        fctTemplate.Text =
+@"{% for item in Model %}
+{{ item.Foo }}
+{% endfor %}";
     }
 
     private void LanguageMenuItem_Click(object sender, System.EventArgs e)
@@ -75,7 +80,7 @@ public partial class Main : UserControl
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
     private void tsBtnNewTemplate_Click(object sender, System.EventArgs e)
     {
-        fctTemplate.Text = null;
+        fctTemplate.Clear();
     }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]

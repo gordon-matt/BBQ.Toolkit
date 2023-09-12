@@ -1,1 +1,63 @@
-# BBQ.Toolkit
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=gordon_matt%40live%2ecom&lc=AU&currency_code=AUD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+
+<img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/BBQ.Toolkit/Resources/Images/BBQ.png" alt="Logo" width="250" />
+
+# BBQ Toolkit
+
+## Intro
+I wrote several tools over the years for doing different things (filtering log files, playing with regular expressions, etc) and some years ago I decided it would be good to keep them all together in one easy toolkit. So I created a Windows Forms app with plugin architecture using MEF and came up with the "BBQ Toolkit". Why BBQ? Why not? I like BBQs.
+
+You can easily add new plugins by simply implementing `IPlugin`, `IUserControlPlugin` or `IFormPlugin` and then also adding the following "Post-build event":
+
+`XCOPY /Y /S "$(TargetDir)*.*" "$(SolutionDir)$(SolutionName)\$(OutDir)Plugins\*.*"`
+
+Look at some of the existing plugins and you'll get the idea.
+
+## Screenshots
+Here are screenshots of some of the tools in the kit
+
+**Startup**:
+
+<img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/_Start.PNG" alt="Startup" />
+
+**Db Schema Browser**:
+
+<img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/DbSchemaBrowser.PNG" alt="Db Schema Browser" />
+
+**Image Map Editor**:
+
+<img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/ImageMapEditor.PNG" alt="Image Map Editor" />
+
+**Json Formatter**:
+
+<img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/JsonFormatter.PNG" alt="Json Formatter" />
+
+**Regex Studio**:
+
+<img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/RegexStudio.PNG" alt="Regex Studio" />
+
+**Simple Code Generator**:
+
+<img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/SimpleCodeGenerator_Template.PNG" alt="Simple Code Generator - Template" />
+
+<img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/SimpleCodeGenerator_Results.PNG" alt="Simple Code Generator - Results" />
+
+**XSD Generator**:
+
+<img src="https://github.com/gordon-matt/BBQ.Toolkit/blob/master/_Misc/Screenshots/XsdGenerator.PNG" alt="XSD Generator" />
+
+## License
+
+This project is licensed under the MIT license.
+
+## Donate
+If you find this project helpful, consider buying me a cup of coffee.  :-)
+
+#### PayPal:
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=gordon_matt%40live%2ecom&lc=AU&currency_code=AUD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+
+#### Crypto:
+- **Bitcoin**: 1EeDfbcqoEaz6bbcWsymwPbYv4uyEaZ3Lp
+- **Ethereum**: 0x277552efd6ea9ca9052a249e781abf1719ea9414
+- **Litecoin**: LRUP8hukWGXRrcPK6Tm7iUp9vPvnNNt3uz

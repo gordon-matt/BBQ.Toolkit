@@ -25,24 +25,32 @@ public partial class InputJsonForm : Form, IDataInputForm<JArray>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Acceptable for WinForms event handlers")]
     private void btnOK_Click(object sender, EventArgs e)
     {
-        var sb = new StringBuilder();
-        sb.AppendLine("Access each JSON property via the 'Model' object.");
-        Data = txtData.Text.StartsWith("[") ? JArray.Parse(txtData.Text) : JArray.Parse($"[{txtData.Text}]");
-        ModelStructure = sb.ToString();
+        try
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("Access each JSON property via the 'Model' object.");
+            Data = txtData.Text.StartsWith("[") ? JArray.Parse(txtData.Text) : JArray.Parse($"[{txtData.Text}]");
+            ModelStructure = sb.ToString();
 
-        //sb.AppendLine("Properties for each item in 'Model' are as follows: ");
-        //var schema = JsonSchema.Parse(txtData.Text);
+            //sb.AppendLine("Properties for each item in 'Model' are as follows: ");
+            //var schema = JsonSchema.Parse(txtData.Text);
 
-        //if (schema.Type == JsonSchemaType.Array)
-        //{
-        //    ModelStructure = GetJArrayProperties(schema, 0);
-        //}
-        //else if (schema.Type == JsonSchemaType.Object)
-        //{
-        //    ModelStructure = GetJObjectProperties(schema, 0);
-        //}
+            //if (schema.Type == JsonSchemaType.Array)
+            //{
+            //    ModelStructure = GetJArrayProperties(schema, 0);
+            //}
+            //else if (schema.Type == JsonSchemaType.Object)
+            //{
+            //    ModelStructure = GetJObjectProperties(schema, 0);
+            //}
 
-        Close();
+            Close();
+        }
+        catch (Exception x)
+        {
+            MessageBox.Show(x.GetBaseException().Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            DialogResult = DialogResult.None;
+        }
     }
 
     //private string GetJArrayProperties(JsonSchema schema, int level)

@@ -36,10 +36,10 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             tsBtnRectangle = new System.Windows.Forms.ToolStripButton();
             tsBtnCircle = new System.Windows.Forms.ToolStripButton();
             toolStrip = new KryptonToolStrip();
+            tsBtnOpen = new System.Windows.Forms.ToolStripButton();
             tsBtnPolygon = new System.Windows.Forms.ToolStripButton();
             pictureBox = new System.Windows.Forms.PictureBox();
             txtHtml = new KryptonTextBox();
-            tsBtnOpen = new System.Windows.Forms.ToolStripButton();
             toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
@@ -75,6 +75,16 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             toolStrip.TabIndex = 25;
             toolStrip.Text = "toolStrip1";
             // 
+            // tsBtnOpen
+            // 
+            tsBtnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsBtnOpen.Image = (System.Drawing.Image)resources.GetObject("tsBtnOpen.Image");
+            tsBtnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            tsBtnOpen.Name = "tsBtnOpen";
+            tsBtnOpen.Size = new System.Drawing.Size(36, 36);
+            tsBtnOpen.Text = "Open Image";
+            tsBtnOpen.Click += tsBtnOpen_Click;
+            // 
             // tsBtnPolygon
             // 
             tsBtnPolygon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -105,16 +115,6 @@ namespace BBQ.Toolkit.Plugins.ImageMapEditor
             txtHtml.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             txtHtml.Size = new System.Drawing.Size(913, 136);
             txtHtml.TabIndex = 24;
-            // 
-            // tsBtnOpen
-            // 
-            tsBtnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            tsBtnOpen.Image = (System.Drawing.Image)resources.GetObject("tsBtnOpen.Image");
-            tsBtnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
-            tsBtnOpen.Name = "tsBtnOpen";
-            tsBtnOpen.Size = new System.Drawing.Size(36, 36);
-            tsBtnOpen.Text = "toolStripButton1";
-            tsBtnOpen.Click += tsBtnOpen_Click;
             // 
             // Main
             // 
