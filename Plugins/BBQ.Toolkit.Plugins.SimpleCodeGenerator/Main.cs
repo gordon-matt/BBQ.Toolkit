@@ -1,8 +1,8 @@
 ﻿using BBQ.Toolkit.Common.Properties;
+using BBQ.Toolkit.Plugins.SimpleCodeGenerator.Extensions;
 using Extenso;
 using FastColoredTextBoxNS;
 using Fluid;
-using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
@@ -24,6 +24,7 @@ public partial class Main : UserControl
         {
             MemberAccessStrategy = new UnsafeMemberAccessStrategy()
         };
+        templateOptions.Filters.AddCustomFilters();
     }
 
     public Main()
