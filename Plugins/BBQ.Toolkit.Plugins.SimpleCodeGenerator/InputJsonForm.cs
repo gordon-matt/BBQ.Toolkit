@@ -27,22 +27,21 @@ public partial class InputJsonForm : Form, IDataInputForm<JArray>
     {
         try
         {
-            var sb = new StringBuilder();
-            sb.AppendLine("Access each JSON property via the 'Model' object.");
             Data = txtData.Text.StartsWith("[") ? JArray.Parse(txtData.Text) : JArray.Parse($"[{txtData.Text}]");
+
+            var sb = new StringBuilder();
+            sb.AppendLine("'Model' is ALWAYS an array, even when the provided data is a single object. Nested arrays are suffixed with '[]', but should be accessed without that suffix.");
+            sb.AppendLine();
+            sb.AppendLine("The following JSON properties can be accessed via the objects in the 'Model' array:");
+            sb.AppendLine();
+
+            var structure = JsonHelper.GetStructure(txtData.Text);
+            foreach (var item in structure)
+            {
+                sb.AppendLine(item);
+            }
+
             ModelStructure = sb.ToString();
-
-            //sb.AppendLine("Properties for each item in 'Model' are as follows: ");
-            //var schema = JsonSchema.Parse(txtData.Text);
-
-            //if (schema.Type == JsonSchemaType.Array)
-            //{
-            //    ModelStructure = GetJArrayProperties(schema, 0);
-            //}
-            //else if (schema.Type == JsonSchemaType.Object)
-            //{
-            //    ModelStructure = GetJObjectProperties(schema, 0);
-            //}
 
             Close();
         }
@@ -52,37 +51,4 @@ public partial class InputJsonForm : Form, IDataInputForm<JArray>
             DialogResult = DialogResult.None;
         }
     }
-
-    //private string GetJArrayProperties(JsonSchema schema, int level)
-    //{
-    //    var sb = new StringBuilder();
-    //    foreach (var item in schema.Items.Where(x => x.Type.HasValue && x.Type == JsonSchemaType.Object))
-    //    {
-    //        sb.AppendLine(GetJObjectProperties(schema, level + 1));
-    //    }
-    //    return sb.ToString();
-    //}
-
-    //private string GetJObjectProperties(JsonSchema schema, int level)
-    //{
-    //    var sb = new StringBuilder();
-
-    //    foreach (var property in schema.Properties)
-    //    {
-    //        switch (property.Value.Type)
-    //        {
-    //            case JsonSchemaType.Array:
-    //                sb.AppendLine(GetJArrayProperties(property.Value, level + 1));
-    //                break;
-    //            case JsonSchemaType.Object:
-    //                sb.AppendLine(property.Key);
-    //                sb.AppendLine(GetJObjectProperties(property.Value, level + 1));
-    //                break;
-    //            default: sb.AppendLine($"{new string(' ', 4 * level)} {property.Key}");
-    //                break;
-    //        }
-    //    }
-
-    //    return sb.ToString();
-    //}
 }
